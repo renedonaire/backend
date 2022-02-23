@@ -1,0 +1,19 @@
+{
+  "name": "clase_4",
+  "version": "1.0.0",
+  "description": "Entrega Clase 4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renedonaire/backend.git#clase_4"
+  },
+  "author": "rene donaire",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renedonaire/backend/issues"
+  },
+  "homepage": "https://github.com/renedonaire/backend/tree/clase_4#readme"
+}
