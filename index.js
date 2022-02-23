@@ -62,7 +62,8 @@ class Products {
          const filteredArray = arrayProducts.filter(e => e.id != index)
          if (filteredArray.length < arrayProducts.length) {
             await fs.promises.writeFile(this.route, JSON.stringify(filteredArray, null, 2))
-            console.log("Registro num. " + index + " eliminado exitosamente")
+            const response = "Registro " + index + " eliminado exitosamente"
+            return response
          } else {
             return null
          }
@@ -76,7 +77,8 @@ class Products {
       try {
          const arrayProducts = []
          await fs.promises.writeFile(this.route, JSON.stringify(arrayProducts, null, 2))
-         return console.log("Todos los registros eliminados")
+         const response = "Todos los registros eliminados"
+         return response
       } catch (err) {
          console.log("Error al borrar todo: " + err)
       }
@@ -84,13 +86,31 @@ class Products {
 }
 
 
+// Función de pruebas
 const test = async () => {
    const dataBase = new Products('productos.txt')
-   console.log(await dataBase.saveProduct({ title: 'La Vuelta al Mundo en 80 días', price: 15900, thumbnail: 'https://images.cdn3.buscalibre.com/fit-in/360x360/cc/ff/ccff1c289cdb7b75f0f6b15c09be499d.jpg' }))
-   console.log(await dataBase.getAll())
-   console.log(await dataBase.getById(1))
+   console.log(await dataBase.saveProduct({
+      title: 'Escuadra',
+      price: 123.45,
+      thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png'
+   }))
+   console.log(await dataBase.saveProduct({
+      title: 'Calculadora',
+      price: 234.56,
+      thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-256.png'
+   }))
+   console.log(await dataBase.saveProduct({
+      title: 'Globo Terráqueo',
+      price: 345.67,
+      thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png'
+   }))
+   console.log('getAll: ', await dataBase.getAll())
+   console.log('getById(1): ', await dataBase.getById(1))
+   console.log('getById(100): ', await dataBase.getById(100))
    console.log(await dataBase.deleteById(2))
+   console.log('getAll: ', await dataBase.getAll())
    console.log(await dataBase.deleteAll())
+   console.log('getAll: ', await dataBase.getAll())
 }
 
 test()
