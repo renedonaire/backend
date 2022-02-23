@@ -11,7 +11,6 @@ class Products {
       try {
          const result = await fs.promises.readFile(this.route, 'utf-8')
          return JSON.parse(result)
-
       } catch (err) {
          await fs.promises.writeFile(this.route, JSON.stringify([], null, 2))
          const result = await fs.promises.readFile(this.route, 'utf-8')
@@ -36,7 +35,6 @@ class Products {
          }
          await fs.promises.writeFile(this.route, JSON.stringify(arrayProducts, null, 2))
          return product.id
-
       } catch (err) {
          console.log('Error al guardar: ', err)
       }
@@ -52,7 +50,6 @@ class Products {
          } else {
             return null
          }
-
       } catch (err) {
          console.log("Error al obtener por id: " + err)
       }
@@ -69,7 +66,6 @@ class Products {
          } else {
             return null
          }
-
       } catch (err) {
          console.log("Error al borrar por id: " + err)
       }
