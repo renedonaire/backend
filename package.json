@@ -2,10 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "entrega clase 8",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
