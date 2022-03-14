@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/renedonaire/backend/issues"
   },
-  "homepage": "https://github.com/renedonaire/backend#readme"
+  "homepage": "https://github.com/renedonaire/backend#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "node": "^17.7.1",
+    "nodemon": "^2.0.15"
+  }
 }
