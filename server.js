@@ -1,5 +1,5 @@
 const express = require('express')
-const routerProductos = require('../router/routerProductos')
+const routerProductos = require('./router/routerProductos')
 const app = express()
 
 app.use(express.urlencoded({ extended: true }))
