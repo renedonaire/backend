@@ -1,12 +1,12 @@
 const express = require('express')
 const app = express()
-const Router = require('./router/routerProductos')
+const Api = require('./router/routerProductos')
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.use(express.json())
 
-const rutas = new Router()
+const rutas = new Api()
 app
 	.get('/api/productos', rutas.getAll)
 	.get('/api/productos/:id', rutas.getById)
