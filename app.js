@@ -1,5 +1,4 @@
 const express = require('express')
-// const routerProductos = require('./router/routerProductos')
 const app = express()
 const Router = require('./router/routerProductos')
 
@@ -7,10 +6,14 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.use(express.json())
 
-const routes = new Router()
-app.get('/api/productos', routes.getAll)
-
-// app.use('/api/productos', routerProductos)
+const rutas = new Router()
+app
+	.get('/api/productos', rutas.getAll)
+	.get('/api/productos/:id', rutas.getById)
+	.post('/api/productos', rutas.addNew)
+	.put('/api/productos/:id', rutas.update)
+	.delete('/api/productos/:id', rutas.delete)
+	.use('*', rutas.error)
 
 const PORT = 8080
 const server = app.listen(PORT, () => {

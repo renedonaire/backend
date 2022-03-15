@@ -1,6 +1,4 @@
 const express = require('express')
-// const { Router } = require('express')
-// const routerProductos = Router()
 
 module.exports = class Router {
 	constructor() {
@@ -27,61 +25,65 @@ module.exports = class Router {
 	}
 
 	getAll = (req, res) => {
-		res.json(this.arrayProductos)
+		res.status(200).json(this.arrayProductos)
+	}
+
+	getById = (req, res) => {
+		const id = req.params.id
+		const result = this.arrayProductos.find((e) => e.id == id)
+		result
+			? res.status(200).json({ result })
+			: res.status(404).json({ error: 'producto no encontrado' })
+	}
+
+	addNew = (req, res) => {
+		const { title, price, thumbnail } = req.body
+		let ident = 0
+		let indexArray = []
+		this.arrayProductos.forEach((element) => indexArray.push(element.id))
+		if (indexArray.length > 0) {
+			const arraySorted = indexArray.sort((a, b) => b - a)
+			ident = arraySorted[0] + 1
+		} else {
+			ident = 1
+		}
+		const response = {
+			title: title,
+			price: price,
+			thumbnail: thumbnail,
+			id: ident,
+		}
+		this.arrayProductos.push(response)
+		res.status(201).json(response)
+	}
+
+	update = (req, res) => {
+		const { title, price, thumbnail } = req.body
+		const ident = req.params.id
+		const producto = {
+			title: title,
+			price: price,
+			thumbnail: thumbnail,
+			id: ident,
+		}
+		const actualizado = this.arrayProductos[parseInt(ident) - 1]
+		if (actualizado) {
+			this.arrayProductos[parseInt(ident) - 1] = producto
+			res.status(200).json({ actualizado: producto })
+		} else {
+			res.status(404).json({ error: 'producto no encontrado' })
+		}
+	}
+
+	delete = (req, res) => {
+		const id = req.params.id
+		const [borrado] = this.arrayProductos.splice(parseInt(id) - 1, 1)
+		borrado
+			? res.status(200).json({ eliminado: borrado })
+			: res.status(404).json({ error: 'producto no encontrado' })
+	}
+
+	error = (req, res) => {
+		res.status(404).json({ error: 'ruta no existe' })
 	}
 }
-
-// routerProductos.get('/:id', (req, res) => {
-// 	const { id } = req.params
-// 	const result = arrayProductos[parseInt(id) - 1]
-// 	result ? res.json({ result }) : res.json({ error: 'producto no encontrado' })
-// })
-
-// routerProductos.post('/', (req, res) => {
-// 	const { title, price, thumbnail } = req.body
-// 	let ident = 0
-// 	let indexArray = []
-// 	arrayProductos.forEach((element) => indexArray.push(element.id))
-// 	if (indexArray.length > 0) {
-// 		const arraySorted = indexArray.sort((a, b) => b - a)
-// 		ident = arraySorted[0] + 1
-// 	} else {
-// 		ident = 1
-// 	}
-// 	const response = {
-// 		title: title,
-// 		price: price,
-// 		thumbnail: thumbnail,
-// 		id: ident,
-// 	}
-// 	arrayProductos.push(response)
-// 	res.json(response)
-// })
-
-// routerProductos.put('/:id', (req, res) => {
-// 	const { title, price, thumbnail } = req.body
-// 	const { ident } = req.params
-// 	const producto = {
-// 		title: title,
-// 		price: price,
-// 		thumbnail: thumbnail,
-// 		id: ident,
-// 	}
-// 	const actualizado = arrayProductos[parseInt(ident) - 1]
-// 	if (actualizado) {
-// 		arrayProductos[parseInt(ident) - 1] = producto
-// 		res.json({ actualizado: producto })
-// 	} else {
-// 		res.json({ error: 'producto no encontrado' })
-// 	}
-// })
-
-// routerProductos.delete('/:id', (req, res) => {
-// 	const { id } = req.params
-// 	const [borrado] = arrayProductos.splice(parseInt(id) - 1, 1)
-// 	borrado
-// 		? res.json({ eliminado: borrado })
-// 		: res.json({ error: 'producto no encontrado' })
-// })
-
-// module.exports = routerProductos
