@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const Api = require('./router/routerProductos')
-const hbs = require('handlebars')
+const exphbs = require('express-handlebars')
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
@@ -9,7 +9,7 @@ app.use(express.json())
 
 app.engine(
 	'hbs',
-	hbs({
+	exphbs.engine({
 		extname: 'hbs',
 	})
 )
@@ -17,6 +17,8 @@ app.set('view engine', 'hbs')
 
 const rutas = new Api()
 app
+	.post('/productos', rutas.cargaProducto)
+	.get('/productos', rutas.listaProductos)
 	.get('/api/productos', rutas.getAll)
 	.get('/api/productos/:id', rutas.getById)
 	.post('/api/productos', rutas.addNew)

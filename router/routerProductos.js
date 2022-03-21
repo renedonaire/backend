@@ -24,6 +24,15 @@ module.exports = class Api {
 		]
 	}
 
+	cargaProducto = (req, res) => {
+		const nuevo = this.addNew(req, res)
+		res.status(200).render('form')
+	}
+
+	listaProductos = (req, res) => {
+		res.status(200).render('list', { list: arrayProductos })
+	}
+
 	getAll = (req, res) => {
 		res.status(200).json(this.arrayProductos)
 	}
