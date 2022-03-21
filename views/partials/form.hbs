@@ -1,0 +1,15 @@
+{{! Lo que se inyecta en el 'body' de 'main' }}
+<body>
+	<h2>Ingrese Producto</h2>
+	<form action='/productos' method='POST'>
+		Title:
+		<input type='text' name='title' />
+		Price:
+		<input type='text' name='price' />
+		Thumbnail:
+		<input type='text' name='thumbnail' />
+		<button type='submit'>Agregar</button>
+	</form>
+	<hr />
+	<button onclick="location.href='/productos'">Ver productos</button>
+</body>
