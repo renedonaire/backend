@@ -1,10 +1,19 @@
 const express = require('express')
 const app = express()
 const Api = require('./router/routerProductos')
+const hbs = require('handlebars')
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.use(express.json())
+
+app.engine(
+	'hbs',
+	hbs({
+		extname: 'hbs',
+	})
+)
+app.set('view engine', 'hbs')
 
 const rutas = new Api()
 app
