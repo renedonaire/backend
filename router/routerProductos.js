@@ -37,7 +37,7 @@ module.exports = class Api {
 	}
 
 	listaProductos = (req, res) => {
-		res.status(200).render('products.pug', { list: this.arrayProductos })
+		res.status(200).render('list.pug', { list: this.arrayProductos })
 	}
 
 	getAll = (req, res) => {

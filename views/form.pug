@@ -2,7 +2,9 @@ html
    head
       title='Pug'
    body
-      h2 Ingrese Producto
+      h2 Ingresar Producto
+      button(onclick="location.href='/productos'") Ir a Lista Productos
+      hr
       form(action='/productos' method='POST')
          | Title: 
          input(type='text' name='title')
@@ -11,5 +13,3 @@ html
          |         Thumbnail: 
          input(type='text' name='thumbnail')
          button(type='submit') Agregar
-      hr
-      button(onclick="location.href='/productos'") Ver productos
