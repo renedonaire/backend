@@ -1,5 +1,6 @@
 {{! Lo que se inyecta en el 'body' de 'main' }}
-<body>
+<button onclick="location.href='/productos'">Ir a Lista Productos</button>
+	<hr />
 	<h2>Ingrese Producto</h2>
 	<form action='/productos' method='POST'>
 		Title:
@@ -10,6 +11,4 @@
 		<input type='text' name='thumbnail' />
 		<button type='submit'>Agregar</button>
 	</form>
-	<hr />
-	<button onclick="location.href='/productos'">Ver productos</button>
-</body>
+	
