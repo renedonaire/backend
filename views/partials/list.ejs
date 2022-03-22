@@ -1,0 +1,17 @@
+<h2>Lista de Productos</h2>
+<button onclick="location.href='/'">Agregar productos</button>
+<hr>
+
+<% const arrayProductos = list %>
+<% if (arrayProductos.length > 0) { %>
+   <% for(var i=0; i <arrayProductos.length; i++) { %>
+		<div>
+         <p><%= arrayProductos[i].title %></p>
+         <p><%= arrayProductos[i].price %></p>
+         <img src=<%= arrayProductos[i].thumbnail %> width="100" height="auto" alt="miniatura">
+         <hr>
+      </div>
+   <% } %>
+<%} else { %>
+   <p>No hay productos </p>
+<% } %>
