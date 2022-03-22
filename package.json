@@ -19,7 +19,6 @@
   "homepage": "https://github.com/renedonaire/backend#readme",
   "dependencies": {
     "express": "^4.17.3",
-    "express-handlebars": "^6.0.3",
     "node": "^17.7.1",
     "nodemon": "^2.0.15"
   }
