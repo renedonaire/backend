@@ -28,16 +28,16 @@ module.exports = class Api {
 	}
 
 	home = (req, res) => {
-		res.status(200).render('partials/form.hbs')
+		res.status(200).render('form.pug')
 	}
 
 	cargaProducto = (req, res) => {
 		const nuevo = this.addNew(req, res)
-		res.status(200).render('partials/form.hbs')
+		res.status(200).render('form.pug')
 	}
 
 	listaProductos = (req, res) => {
-		res.status(200).render('partials/list.hbs', { list: this.arrayProductos })
+		res.status(200).render('products.pug', { list: this.arrayProductos })
 	}
 
 	getAll = (req, res) => {

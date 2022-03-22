@@ -5,6 +5,9 @@ const Api = require('./router/routerProductos')
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
+app.set('views', './views')
+app.set('view engine', 'pug')
+
 const rutas = new Api()
 app
 	.get('/', rutas.home)

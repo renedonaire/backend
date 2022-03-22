@@ -1,0 +1,15 @@
+html
+   head
+      title='Pug'
+   body
+      h2 Ingrese Producto
+      form(action='/productos' method='POST')
+         | Title: 
+         input(type='text' name='title')
+         |         Price: 
+         input(type='text' name='price')
+         |         Thumbnail: 
+         input(type='text' name='thumbnail')
+         button(type='submit') Agregar
+      hr
+      button(onclick="location.href='/productos'") Ver productos
