@@ -4,7 +4,6 @@ const Api = require('./router/routerProductos')
 const exphbs = require('express-handlebars')
 
 app.use(express.urlencoded({ extended: true }))
-app.use(express.static('public'))
 app.use(express.json())
 
 app.engine(
@@ -17,6 +16,7 @@ app.set('view engine', 'hbs')
 
 const rutas = new Api()
 app
+	.get('/', rutas.home)
 	.post('/productos', rutas.cargaProducto)
 	.get('/productos', rutas.listaProductos)
 	.get('/api/productos', rutas.getAll)
