@@ -1,10 +1,16 @@
 const express = require('express')
-const app = express()
 const Api = require('./router/routerProductos')
 const exphbs = require('express-handlebars')
+const { Server: HttpServer } = require('http')
+const { Server: IOServer } = require('socket.io')
 
+const app = express()
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.use(express.static('./public'))
+
+const httpServer = new HttpServer(app)
+const io = new IOServer(httpServer)
 
 app.engine(
 	'hbs',
@@ -26,9 +32,23 @@ app
 	.delete('/api/productos/:id', rutas.delete)
 	.use('*', rutas.error)
 
-const PORT = 8080
-const server = app.listen(PORT, () => {
-	console.log(`Servidor escuchando el puerto ${server.address().port}`)
+const messages = [
+	{ author: 'Juan', text: '¡Hola! ¿Que tal?' },
+	{ author: 'Pedro', text: '¡Muy bien! ¿Y vos?' },
+	{ author: 'Ana', text: '¡Genial!' },
+]
+
+io.on('connection', (socket) => {
+	console.log('Un cliente se ha conectado')
+	socket.emit('messages', messages)
+	socket.on('new-message', (data) => {
+		messages.push(data)
+		io.sockets.emit('messages', messages)
+	})
 })
 
-server.on('error', (error) => console.log(`Error en servidor ${error}`))
+httpServer.listen(8080, function () {
+	console.log('Servidor corriendo en http://localhost:8080')
+})
+
+httpServer.on('error', (error) => console.log(`Error en servidor ${error}`))
