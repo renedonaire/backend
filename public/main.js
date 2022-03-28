@@ -1,50 +1,73 @@
 const socket = io.connect()
 
-function addMessage(e) {
-	const mensaje = {
-		author: document.getElementById('username').value,
-		text: document.getElementById('texto').value,
-	}
-	socket.emit('new-message', mensaje)
-	return false
-}
+socket.on('messages', async (data) => {
+	renderMessages(data)
+})
 
-function addProduct(e) {
+socket.on('products', (data) => {
+	renderProducts(data)
+})
+
+function addProduct() {
 	const product = {
 		title: document.getElementById('title').value,
 		price: document.getElementById('price').value,
 		thumbnail: document.getElementById('thumbnail').value,
 	}
 	socket.emit('new-product', product)
+	document.getElementById('title').value = ''
+	document.getElementById('price').value = ''
+	document.getElementById('thumbnail').value = ''
 	return false
 }
 
-function render(messages) {
-	const html = messages
-		.map((elem) => {
-			return `<div>
-            <strong>${elem.author}</strong>:
-            <em>${elem.text}</em> </div>`
-		})
-		.join(' ')
-	document.getElementById('messages').innerHTML = html
+const addMessage = () => {
+	const usuario = document.getElementById('email').value
+	const fecha = new Date().toLocaleString('en-GB')
+	const mensaje = {
+		autor: document.getElementById('email').value,
+		texto: document.getElementById('texto').value,
+		fecha: fecha,
+	}
+	socket.emit('new-message', mensaje)
+	document.getElementById('email').value = usuario
+	document.getElementById('texto').value = ''
+	return false
 }
 
-function render(products) {
+const renderMessages = (messages) => {
+	let html = ''
+	if (messages.length > 0) {
+		messages.forEach((element) => {
+			html =
+				html +
+				`
+                  <p>
+                  <span style="color:blue;"><b>${element.autor}</b></span>
+                  <span style="color:brown;">[${element.fecha}]</span>
+                  <span style="color:green;"><i>${element.texto}</i></span>
+                  </p> 
+               `
+		})
+	} else {
+		html = 'No hay mensajes'
+	}
+	document.getElementById('mensajes').innerHTML = html
+}
+
+const renderProducts = (products) => {
 	const html = products
-		.map((elem) => {
-			return `<table>
-				<tr>
-					<td>${elem.title}</td>
-					<td>${elem.price}</td>
-					<td></td>
-				</tr>
-			</table>`
+		.map((element) => {
+			return `
+            <tr>
+               <td> ${element.title} </td>
+               <td> ${element.price} </td>
+               <td>
+                  <img src=" ${element.thumbnail} " width="50" height="auto" alt="miniatura no disponible">
+               </td>
+            </tr>
+      `
 		})
 		.join(' ')
-	document.getElementById('products').innerHTML = html
+	document.getElementById('productos').innerHTML = html
 }
-
-socket.on('messages', function (messages) {
-	render(messages)
-})
