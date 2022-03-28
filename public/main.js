@@ -21,9 +21,11 @@ const addMessage = () => {
 		texto: document.getElementById('texto').value,
 		fecha: fecha,
 	}
-	socket.emit('new-message', mensaje)
-	document.getElementById('email').value = usuario
-	document.getElementById('texto').value = ''
+	if (usuario) {
+		socket.emit('new-message', mensaje)
+		document.getElementById('email').value = usuario
+		document.getElementById('texto').value = ''
+	}
 	return false
 }
 
@@ -34,12 +36,12 @@ const renderMessages = (messages) => {
 			html =
 				html +
 				`
-                  <p>
-                  <span style="color:blue;"><b>${element.autor}</b></span>
-                  <span style="color:brown;">[${element.fecha}]</span>
-                  <span style="color:green;"><i>${element.texto}</i></span>
-                  </p> 
-               `
+					<p>
+					<span style="color:blue;"><b>${element.autor}</b></span>
+					<span style="color:brown;">[${element.fecha}]</span>
+					<span style="color:green;"><i>${element.texto}</i></span>
+					</p>
+				`
 		})
 	} else {
 		html = 'No hay mensajes'
@@ -48,19 +50,21 @@ const renderMessages = (messages) => {
 }
 
 const renderProducts = (products) => {
-	const html = products
-		.map((element) => {
-			return `
-            <tr>
-               <td> ${element.title} </td>
-               <td> ${element.price} </td>
-               <td>
-                  <img src=" ${element.thumbnail} " width="50" height="auto" alt="miniatura no disponible">
-               </td>
-            </tr>
-      `
-		})
-		.join(' ')
+	const html =
+		'<tr><th>Title</th><th>Price</th><th>Thumbnail</th><tr/>' +
+		products
+			.map((element) => {
+				return `
+				<tr>
+					<td> ${element.title} </td>
+					<td> ${element.price} </td>
+					<td>
+						<img src=" ${element.thumbnail} " width="50" height="auto" alt="miniatura no disponible">
+					</td>
+				</tr>
+			`
+			})
+			.join(' ')
 	document.getElementById('productos').innerHTML = html
 }
 
