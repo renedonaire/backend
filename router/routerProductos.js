@@ -28,7 +28,7 @@ module.exports = class Api {
 	}
 
 	home = (req, res) => {
-		res.status(200).render('partials/form.hbs')
+		res.status(200).render('layouts/main.hbs')
 	}
 
 	cargaProducto = (req, res) => {
@@ -36,21 +36,21 @@ module.exports = class Api {
 		res.status(200).render('partials/form.hbs')
 	}
 
-	listaProductos = (req, res) => {
-		res.status(200).render('partials/list.hbs', { list: this.arrayProductos })
-	}
+	// listaProductos = (req, res) => {
+	// 	res.status(200).render('partials/list.hbs', { list: this.arrayProductos })
+	// }
 
-	getAll = (req, res) => {
-		res.status(200).json(this.arrayProductos)
-	}
+	// getAll = (req, res) => {
+	// 	res.status(200).json(this.arrayProductos)
+	// }
 
-	getById = (req, res) => {
-		const id = req.params.id
-		const result = this.arrayProductos.find((e) => e.id == id)
-		result
-			? res.status(200).json({ result })
-			: res.status(404).json({ error: 'producto no encontrado' })
-	}
+	// getById = (req, res) => {
+	// 	const id = req.params.id
+	// 	const result = this.arrayProductos.find((e) => e.id == id)
+	// 	result
+	// 		? res.status(200).json({ result })
+	// 		: res.status(404).json({ error: 'producto no encontrado' })
+	// }
 
 	addNew = (req, res) => {
 		const { title, price, thumbnail } = req.body
@@ -70,35 +70,34 @@ module.exports = class Api {
 			id: ident,
 		}
 		this.arrayProductos.push(response)
-		// res.status(201).json(response)
 		res.end
 	}
 
-	update = (req, res) => {
-		const { title, price, thumbnail } = req.body
-		const ident = req.params.id
-		const producto = {
-			title: title,
-			price: price,
-			thumbnail: thumbnail,
-			id: ident,
-		}
-		const actualizado = this.arrayProductos[parseInt(ident) - 1]
-		if (actualizado) {
-			this.arrayProductos[parseInt(ident) - 1] = producto
-			res.status(200).json({ actualizado: producto })
-		} else {
-			res.status(404).json({ error: 'producto no encontrado' })
-		}
-	}
+	// update = (req, res) => {
+	// 	const { title, price, thumbnail } = req.body
+	// 	const ident = req.params.id
+	// 	const producto = {
+	// 		title: title,
+	// 		price: price,
+	// 		thumbnail: thumbnail,
+	// 		id: ident,
+	// 	}
+	// 	const actualizado = this.arrayProductos[parseInt(ident) - 1]
+	// 	if (actualizado) {
+	// 		this.arrayProductos[parseInt(ident) - 1] = producto
+	// 		res.status(200).json({ actualizado: producto })
+	// 	} else {
+	// 		res.status(404).json({ error: 'producto no encontrado' })
+	// 	}
+	// }
 
-	delete = (req, res) => {
-		const id = req.params.id
-		const [borrado] = this.arrayProductos.splice(parseInt(id) - 1, 1)
-		borrado
-			? res.status(200).json({ eliminado: borrado })
-			: res.status(404).json({ error: 'producto no encontrado' })
-	}
+	// delete = (req, res) => {
+	// 	const id = req.params.id
+	// 	const [borrado] = this.arrayProductos.splice(parseInt(id) - 1, 1)
+	// 	borrado
+	// 		? res.status(200).json({ eliminado: borrado })
+	// 		: res.status(404).json({ error: 'producto no encontrado' })
+	// }
 
 	error = (req, res) => {
 		res.status(404).json({ error: 'ruta no existe' })
