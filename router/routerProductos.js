@@ -10,7 +10,7 @@ app.use(express.json())
 const arrayProductos = JSON.stringify(getProducts())
 
 routerProductos.get('/', (req, res) => {
-	res.render('list', { list: arrayProductos })
+	res.render('../views/layouts/main.hbs', { list: arrayProductos })
 })
 
 module.exports = routerProductos

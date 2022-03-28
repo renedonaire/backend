@@ -1,14 +1,6 @@
 const socket = io.connect()
 
-socket.on('messages', async (data) => {
-	renderMessages(data)
-})
-
-socket.on('products', (data) => {
-	renderProducts(data)
-})
-
-function addProduct() {
+const addProduct = () => {
 	const product = {
 		title: document.getElementById('title').value,
 		price: document.getElementById('price').value,
@@ -71,3 +63,11 @@ const renderProducts = (products) => {
 		.join(' ')
 	document.getElementById('productos').innerHTML = html
 }
+
+socket.on('messages', async (data) => {
+	renderMessages(data)
+})
+
+socket.on('products', (data) => {
+	renderProducts(data)
+})

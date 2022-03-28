@@ -1,13 +1,22 @@
+{{!-- <h2>Lista de Productos</h2>
+<div id="products"></div> --}}
 <h2>Lista de Productos</h2>
-<div id="products"></div>
-{{!-- {{#each list}}
-	<div>
-		<p>Title: {{title}}</p>
-		<p>Price: {{price}}</p>
-		<img src='{{thumbnail}}' width='100' height='auto' alt='miniatura' />
-		<hr />
-	</div>
-{{else}}
-	<p>No hay productos</p>
-{{/each}} --}}
-<hr />
+<table id="productos">
+    <tr>
+        <th>Título</th>
+        <th>Precio</th>
+        <th>Miniatura</th>
+    </tr>
+    {{#each list}}
+        <tr>
+            <td>{{title}}</td>
+            <td>{{price}}</td>
+            <td>
+                <img src="{{thumbnail}}" width="50" height="auto" alt="miniatura no disponible">
+            </td>
+        </tr>
+    {{else}}
+        <td>No hay productos</td>
+    {{/each}}
+</table>
+<hr>

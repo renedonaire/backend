@@ -1,11 +1,8 @@
 <h2>Ingresar Producto</h2>
-<form action='/' method='POST'>
-	Title:
-	<input type='text' name='title' />
-	Price:
-	<input type='text' name='price' />
-	Thumbnail:
-	<input type='text' name='thumbnail' />
-	<button type='submit'>Agregar</button>
+<form onsubmit="return addProduct(this)">
+	Title: <input type="text" id="title" />
+	Price: <input type="text" id="price" />
+	Thumbnail: <input type="text" id="thumbnail" />
+	<input type="submit" value="Agregar">
 </form>
-<hr />
+<hr>

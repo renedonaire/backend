@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "autor": "rene@editorialblackdog.cl",
+    "texto": "mamenmalo con masho",
+    "fecha": "27/03/2022, 21:52:45"
+  },
+  {
+    "autor": "rene.donaire@gmail.com",
+    "texto": "holsa pos",
+    "fecha": "27/03/2022, 21:51:11"
+  },
+  {
+    "autor": "lapreprensa@gmail.com",
+    "texto": "hola",
+    "fecha": "27/03/2022, 21:50:41"
+  }
+]
