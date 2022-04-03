@@ -1,17 +1,5 @@
 import fs from 'fs'
 
-// const { pathname: routeProducts } = new URL(
-// 	'../data/productos.txt',
-// 	import.meta.url
-// )
-
-// const routeProducts = fs.readFileSync(
-// 	process.cwd() + '../data/productos.txt',
-// 	'utf8'
-// )
-
-// const routeProducts = path.join(__dirname, '../data/productos.txt')
-
 const routeProducts = 'data/productos.txt'
 
 export const getProducts = async () => {
@@ -49,7 +37,6 @@ export const saveProduct = async (product) => {
 		stock: stock,
 	}
 	arrayProducts.unshift(response)
-
 	try {
 		await fs.promises.writeFile(
 			routeProducts,
@@ -76,10 +63,8 @@ export const updateProduct = async (product, ident) => {
 		precio: precio,
 		stock: stock,
 	}
-
 	const actualizado = JSON.stringify(arrayProducts.find((e) => e.id === id))
 	const index = arrayProducts.findIndex((e) => e.id === id)
-
 	if (actualizado) {
 		arrayProducts[index] = updated
 		try {
@@ -100,7 +85,6 @@ export const deleteProduct = async (ident) => {
 	const arrayProducts = await getProducts()
 	const id = parseInt(ident.id)
 	const index = arrayProducts.findIndex((e) => e.id === id)
-
 	if (index != -1) {
 		try {
 			const borrado = arrayProducts.filter((e) => e.id != id)

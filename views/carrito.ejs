@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Carrito</title>
-    </head>
-
-    <body>
-        <h1>Carrito</h1>
-        <hr>
-        <h3>Ruta '/api/carrito/'</h3>
-        <ul>
-            <li>
-                <strong>POST: '/': </strong>Crea un carrito y devuelve su id.
-            </li>
-            <p></p>
-            <li>
-                <strong>DELETE: '/:id': </strong>Elimina el carrito por 'id'
-            </li>
-            <p></p>
-            <li>
-                <strong>GET: '/:id/productos': </strong>Lista todos los productos guardados en el carrito 'id'
-            </li>
-            <p></p>
-            <li>
-                <strong>POST: '/:id/productos/:id_prod': </strong>Agrega el producto 'id_prod' al carrito 'id'
-            </li>
-            <p></p>
-            <li>
-                <strong>DELETE: '/:id/productos/:id_prod': </strong>Elimina el producto 'id_prod' del carrito 'id'.
-            </li>
-        </ul>
-        <hr>
-    </body>
-
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Carrito</title>
+	</head>
+	<body>
+		<h1>Carrito</h1>
+		<hr />
+		<h3>Ruta '/api/carrito/'</h3>
+		<ul>
+			<li><strong>POST: '/': </strong>Crea un carrito y devuelve su id.</li>
+			<p></p>
+			<li><strong>DELETE: '/:id': </strong>Elimina el carrito por 'id'</li>
+			<p></p>
+			<li>
+				<strong>GET: '/:id/productos': </strong>Lista todos los productos
+				guardados en el carrito 'id'
+			</li>
+			<p></p>
+			<li>
+				<strong>POST: '/:id/productos/:id_prod': </strong>Agrega el producto
+				'id_prod' al carrito 'id'
+			</li>
+			<p></p>
+			<li>
+				<strong>DELETE: '/:id/productos/:id_prod': </strong>Elimina el producto
+				'id_prod' del carrito 'id'.
+			</li>
+		</ul>
+		<hr />
+	</body>
 </html>

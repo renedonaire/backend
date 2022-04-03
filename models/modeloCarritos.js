@@ -1,10 +1,6 @@
 import fs from 'fs'
-
 import { getProductById } from './modeloProductos.js'
-// const { pathname: routeCarts } = new URL(
-// 	'../data/carritos.txt',
-// 	import.meta.url
-// )
+
 const routeCarts = 'data/carritos.txt'
 
 export const createCart = async () => {
@@ -21,7 +17,6 @@ export const createCart = async () => {
 	}
 	const nuevo = { id: ident, timestamp: stamp, productos: [] }
 	arrayCarts.unshift(nuevo)
-
 	try {
 		await fs.promises.writeFile(routeCarts, JSON.stringify(arrayCarts, null, 2))
 		return { estado: 'carrito creado - ', ident }
@@ -48,18 +43,15 @@ export const addProductById = async (cart, prod) => {
 	if (errorProd != -1) {
 		return { error: 'producto no existe' }
 	}
-
 	const idCart = { id: cart }
 	const productosCarro = await getCartProductsById(idCart)
 	const errorCarro = JSON.stringify(productosCarro).search('error')
 	if (errorCarro != -1) {
 		return { error: 'carrito no existe' }
 	}
-
 	let actualizado = []
 	productosCarro.forEach((e) => actualizado.push(e))
 	actualizado.push(product)
-
 	const response = await updateCart(actualizado, cart)
 	return response
 }
@@ -70,10 +62,8 @@ export const updateCart = async (cart, ident) => {
 	const productos = cart
 	const stamp = new Date().toLocaleString('en-GB')
 	const updated = { id: id, timestamp: stamp, productos: productos }
-
 	const actualizado = JSON.stringify(arrayCarts.find((e) => e.id === id))
 	const index = arrayCarts.findIndex((e) => e.id === id)
-
 	if (actualizado) {
 		arrayCarts[index] = updated
 		try {
@@ -94,17 +84,14 @@ export const deleteProductById = async (cart, ident) => {
 	const arrayCarts = await getCarts()
 	const stamp = new Date().toLocaleString('en-GB')
 	const id = parseInt(ident)
-
 	const index = arrayCarts.findIndex((e) => e.id == cart)
 	if (index === -1) {
 		return { error: 'carrito no existe' }
 	}
-
 	const indice = arrayCarts[index].productos.findIndex((e) => e.id == id)
 	if (indice === -1) {
 		return { error: 'producto no existe en el carrito' }
 	}
-
 	try {
 		const newProduct = arrayCarts[index].productos.filter((e) => e.id != id)
 		arrayCarts[index].productos = newProduct
@@ -120,7 +107,6 @@ export const deleteCart = async (ident) => {
 	const arrayCarts = await getCarts()
 	const id = parseInt(ident.id)
 	const index = arrayCarts.findIndex((e) => e.id === id)
-
 	if (index != -1) {
 		try {
 			const borrado = arrayCarts.filter((e) => e.id != id)

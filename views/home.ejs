@@ -1,69 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Home</title>
-    </head>
-
-    <body>
-        <h1>Home</h1>
-        <hr>
-        <h3>Ruta '/api/productos/'</h3>
-        <ul>
-            <li>
-                <strong>GET: '/': </strong>Lista todos los productos disponibles (disponible para usuarios y
-                administradores)
-            </li>
-            <p></p>
-            <li>
-                <strong>GET: '/:id': </strong>Obtiene un producto por su id (disponible para usuarios y
-                administradores)
-            </li>
-            <p></p>
-            <li>
-                <strong>POST: '/': </strong>Para incorporar productos al listado (disponible sólo para
-                administradores)<br> Para incorporar productos al listado (disponible sólo para administradores)<br>El
-                producto debe ser en formato:<br><i>{ "nombre": string, "descripcion": string, "codigo": string, "url":
-                string, "precio": number, "stock": number }</i><br>pues 'id' y 'timestamp' son agregados automáticamente.
-            </li>
-            <p></p>
-            <li>
-                <strong>PUT: '/:id': </strong>Actualiza un producto por su id (disponible sólo para
-                administradores)<br>El producto debe ser en formato:<br><i>{ "nombre": string, "descripcion": string,
-                "codigo": string, "url": string, "precio": number, "stock": number }</i><br>pues 'id' y 'timestamp' son
-                agregados automáticamente.
-            </li>
-            <p></p>
-            <li>
-                <strong>DELETE: '/:id': </strong>Borra un producto por su id (disponible para administradores)
-            </li>
-        </ul>
-        <hr>
-        <h3>Ruta '/api/carrito/'</h3>
-        <ul>
-            <li>
-                <strong>POST: '/': </strong>Crea un carrito y devuelve su id.
-            </li>
-            <p></p>
-            <li>
-                <strong>DELETE: '/:id': </strong>Elimina el carrito por 'id'
-            </li>
-            <p></p>
-            <li>
-                <strong>GET: '/:id/productos': </strong>Lista todos los productos guardados en el carrito 'id'
-            </li>
-            <p></p>
-            <li>
-                <strong>POST: '/:id/productos/:id_prod': </strong>Agrega el producto 'id_prod' al carrito 'id'
-            </li>
-            <p></p>
-            <li>
-                <strong>DELETE: '/:id/productos/:id_prod': </strong>Elimina el producto 'id_prod' del carrito 'id'.
-            </li>
-        </ul>
-    </body>
-
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home</title>
+	</head>
+	<body>
+		<h1>Home</h1>
+		<hr />
+		<h3>Ruta '/api/productos/'</h3>
+		<ul>
+			<li>
+				<strong>GET: '/': </strong>Lista todos los productos disponibles
+				(disponible para usuarios y administradores)
+			</li>
+			<p></p>
+			<li>
+				<strong>GET: '/:id': </strong>Obtiene un producto por su id (disponible
+				para usuarios y administradores)
+			</li>
+			<p></p>
+			<li>
+				<strong>POST: '/': </strong>Para incorporar productos al listado
+				(disponible sólo para administradores)<br />
+				Para incorporar productos al listado (disponible sólo para
+				administradores)<br />El producto debe ser en formato:<br /><i
+					>{ "nombre": string, "descripcion": string, "codigo": string, "url":
+					string, "precio": number, "stock": number }</i
+				><br />pues 'id' y 'timestamp' son agregados automáticamente.
+			</li>
+			<p></p>
+			<li>
+				<strong>PUT: '/:id': </strong>Actualiza un producto por su id
+				(disponible sólo para administradores)<br />El producto debe ser en
+				formato:<br /><i
+					>{ "nombre": string, "descripcion": string, "codigo": string, "url":
+					string, "precio": number, "stock": number }</i
+				><br />pues 'id' y 'timestamp' son agregados automáticamente.
+			</li>
+			<p></p>
+			<li>
+				<strong>DELETE: '/:id': </strong>Borra un producto por su id (disponible
+				para administradores)
+			</li>
+		</ul>
+		<hr />
+		<h3>Ruta '/api/carrito/'</h3>
+		<ul>
+			<li><strong>POST: '/': </strong>Crea un carrito y devuelve su id.</li>
+			<p></p>
+			<li><strong>DELETE: '/:id': </strong>Elimina el carrito por 'id'</li>
+			<p></p>
+			<li>
+				<strong>GET: '/:id/productos': </strong>Lista todos los productos
+				guardados en el carrito 'id'
+			</li>
+			<p></p>
+			<li>
+				<strong>POST: '/:id/productos/:id_prod': </strong>Agrega el producto
+				'id_prod' al carrito 'id'
+			</li>
+			<p></p>
+			<li>
+				<strong>DELETE: '/:id/productos/:id_prod': </strong>Elimina el producto
+				'id_prod' del carrito 'id'.
+			</li>
+		</ul>
+	</body>
 </html>
