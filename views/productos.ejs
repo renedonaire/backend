@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Productos</title>
+    </head>
+
+    <body>
+        <h1>Productos</h1>
+        <hr>
+        <p><strong>Ajuste nivel de usuario: </strong>folder 'data' - archivo 'userLevel.js'</p>
+        <hr>
+        <h3>Ruta '/api/productos/'</h3>
+        <ul>
+            <li>
+                <strong>GET: '/': </strong>Lista todos los productos disponibles (disponible para usuarios y
+                administradores)
+            </li>
+            <p></p>
+            <li>
+                <strong>GET: '/:id': </strong>Obtiene un producto por su id (disponible para usuarios y
+                administradores)
+            </li>
+            <p></p>
+            <li>
+                <strong>POST: '/': </strong>Para incorporar productos al listado (disponible sólo para
+                administradores)<br> Para incorporar productos al listado (disponible sólo para administradores)<br>El
+                producto debe ser en formato:<br><i>{ "nombre": string, "descripcion": string, "codigo": string, "url":
+                string, "precio": number, "stock": number }</i><br>pues 'id' y 'timestamp' son agregados automáticamente.
+            </li>
+            <p></p>
+            <li>
+                <strong>PUT: '/:id': </strong>Actualiza un producto por su id (disponible sólo para
+                administradores)<br>El producto debe ser en formato:<br><i>{ "nombre": string, "descripcion": string,
+                "codigo": string, "url": string, "precio": number, "stock": number }</i><br>pues 'id' y 'timestamp' son
+                agregados automáticamente.
+            </li>
+            <p></p>
+            <li>
+                <strong>DELETE: '/:id': </strong>Borra un producto por su id (disponible para administradores)
+            </li>
+        </ul>
+        <hr>
+    </body>
+
+</html>
