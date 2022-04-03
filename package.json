@@ -2,11 +2,11 @@
   "name": "primera_entrega",
   "version": "2.0.0",
   "description": "",
-  "main": "./js/index.js",
+  "main": "./server.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
