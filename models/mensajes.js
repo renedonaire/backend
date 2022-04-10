@@ -1,31 +1,32 @@
 const fs = require('fs')
-const path = require('path')
 
-const route = path.join(__dirname, '../storage/mensajes.txt')
-
-const getMessages = async () => {
-	try {
-		const result = await fs.promises.readFile(route, 'utf-8')
-		return JSON.parse(result)
-	} catch (err) {
-		await fs.promises.writeFile(route, JSON.stringify([], null, 2))
-		const result = await fs.promises.readFile(route, 'utf-8')
-		return JSON.parse(result)
+module.exports = class Mensajes {
+	constructor(ruta) {
+		this.route = ruta
 	}
-}
 
-const saveMessage = async (message) => {
-	const arrayMessages = await getMessages()
-	try {
-		arrayMessages.unshift(message)
-		await fs.promises.writeFile(route, JSON.stringify(arrayMessages, null, 2))
-		return arrayMessages
-	} catch (err) {
-		console.log('Error al guardar: ', err)
+	getMessages = async () => {
+		try {
+			const result = await fs.promises.readFile(this.route, 'utf-8')
+			return JSON.parse(result)
+		} catch (err) {
+			await fs.promises.writeFile(this.route, JSON.stringify([], null, 2))
+			const result = await fs.promises.readFile(route, 'utf-8')
+			return JSON.parse(result)
+		}
 	}
-}
 
-module.exports = {
-	getMessages,
-	saveMessage,
+	saveMessage = async (message) => {
+		const arrayMessages = await this.getMessages()
+		try {
+			arrayMessages.unshift(message)
+			await fs.promises.writeFile(
+				this.route,
+				JSON.stringify(arrayMessages, null, 2)
+			)
+			return arrayMessages
+		} catch (err) {
+			console.log('Error al guardar: ', err)
+		}
+	}
 }
