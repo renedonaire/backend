@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "autor": "rdonaire@onelabel.cl",
+    "texto": "weeena chuchetumare",
+    "fecha": "10/04/2022, 18:37:02"
+  },
+  {
+    "autor": "lapreprensa@gmail.com",
+    "texto": "hi",
+    "fecha": "10/04/2022, 18:36:53"
+  }
+]
