@@ -1,4 +1,4 @@
-export const mysql = {
+const mysql = {
 	client: 'mysql',
 	connection: {
 		host: 'localhost',
@@ -8,8 +8,10 @@ export const mysql = {
 	},
 }
 
-export const sqlite3 = {
+const sqlite3 = {
 	client: 'sqlite3',
 	connection: { filename: 'storage/mensajes.sqlite3' },
 	useNullAsDefault: true,
 }
+
+module.exports = { mysql, sqlite3 }
