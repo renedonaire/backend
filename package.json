@@ -18,8 +18,11 @@
   },
   "homepage": "https://github.com/renedonaire/backend#readme",
   "dependencies": {
+    "@vscode/sqlite3": "^5.0.8",
     "express": "^4.17.3",
     "express-handlebars": "^6.0.3",
+    "knex": "^1.0.5",
+    "mysql": "^2.18.1",
     "node": "^17.7.1",
     "nodemon": "^2.0.15",
     "socket.io": "^4.4.1"
