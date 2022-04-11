@@ -68,10 +68,10 @@ const renderProducts = (products) => {
 	document.getElementById('productos').innerHTML = html
 }
 
-socket.on('messages', async (data) => {
-	renderMessages(data)
-})
-
-socket.on('products', (data) => {
-	renderProducts(data)
-})
+socket
+	.on('messages', async (data) => {
+		renderMessages(data)
+	})
+	.on('products', (data) => {
+		renderProducts(data)
+	})
