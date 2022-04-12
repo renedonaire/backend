@@ -10,8 +10,8 @@ const mysql = {
 
 const sqlite3 = {
 	client: 'sqlite3',
-	connection: { filename: 'storage/mensajes.sqlite3' },
-	useNullAsDefault: true,
+	connection: { filename: 'ecommerce/mensajes.sqlite3' },
+	useNullAsDefault: false,
 }
 
 module.exports = { mysql, sqlite3 }

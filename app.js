@@ -17,7 +17,7 @@ const io = new SocketServer(httpServer)
 
 /* ---------------------------- Clases en memoria --------------------------- */
 // const path = require('path')
-// const route = path.join(__dirname, './storage/mensajes.txt')
+// const route = path.join(__dirname, './ecommerce/mensajes.txt')
 // const Mensajes = require('./models/mensajes')
 // const Productos = require('./models/productos')
 // const mensajes = new Mensajes(route)
@@ -33,15 +33,9 @@ const {
 } = require('./models/valoresIniciales.js')
 
 const mensajes = new Mensajes(sqlite3)
-mensajes
-	.crearTablaMensajes()
-	.then(() => {
-		return mensajes.saveMessage(mensajesInicial)
-	})
-	.then(() => console.log('Tabla Mensajes creada'))
-	.catch((err) => {
-		console.log(err)
-	})
+mensajes.crearTablaMensajes().catch((err) => {
+	console.log(err)
+})
 
 const productos = new Productos(mysql)
 productos
