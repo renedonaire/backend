@@ -1,4 +1,5 @@
 const knex = require('knex')
+const productosInicial = require('./valoresIniciales.js')
 
 module.exports = class Productos {
 	constructor(config) {

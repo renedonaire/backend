@@ -1,5 +1,4 @@
 const knex = require('knex')
-const mensajesInicial = require('./valoresIniciales.js')
 
 module.exports = class Mensajes {
 	constructor(config) {
@@ -7,20 +6,14 @@ module.exports = class Mensajes {
 	}
 
 	crearTablaMensajes() {
-		if (!this.knex.schema.hasTable('mensajes')) {
-			this.knex.schema.createTable('mensajes', (table) => {
+		return this.knex.schema.dropTableIfExists('mensajes').then(() => {
+			return this.knex.schema.createTable('mensajes', (table) => {
 				table.increments('id').primary()
 				table.string('autor', 50).notNullable()
 				table.string('texto', 100).notNullable()
 				table.string('fecha', 50).notNullable()
 			})
-			mensajes.saveMessage(mensajesInicial)
-			console.log('Tabla mensajes creada')
-			return this.knex.schema
-		} else {
-			console.log('Tabla mensajes ya existe')
-			return this.knex.schema
-		}
+		})
 	}
 
 	cerrarBDMensajes() {

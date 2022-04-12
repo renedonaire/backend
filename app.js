@@ -33,9 +33,15 @@ const {
 } = require('./models/valoresIniciales.js')
 
 const mensajes = new Mensajes(sqlite3)
-mensajes.crearTablaMensajes().catch((err) => {
-	console.log(err)
-})
+mensajes
+	.crearTablaMensajes()
+	.then(() => {
+		return mensajes.saveMessage(mensajesInicial)
+	})
+	.then(() => console.log('Tabla Mensajes creada'))
+	.catch((err) => {
+		console.log(err)
+	})
 
 const productos = new Productos(mysql)
 productos
