@@ -7,13 +7,20 @@ module.exports = class Productos {
 	}
 
 	crearTablaProductos() {
-		return this.knex.schema.dropTableIfExists('productos').then(() => {
-			return this.knex.schema.createTable('productos', (table) => {
-				table.increments('id').primary()
-				table.string('title', 1000).notNullable()
-				table.integer('price').notNullable()
-				table.string('thumbnail', 1000).notNullable()
-			})
+		return this.knex.schema.hasTable('productos').then((exists) => {
+			if (!exists) {
+				this.knex.schema.createTable('productos', (table) => {
+					table.increments('id').primary()
+					table.string('title', 1000).notNullable()
+					table.integer('price').notNullable()
+					table.string('thumbnail', 1000).notNullable()
+				})
+				console.log('Tabla Productos creada')
+				return this.knex('productos').saveProduct(productosInicial)
+			} else {
+				console.log('Tabla Productos ya existe')
+				return this.knex.schema
+			}
 		})
 	}
 

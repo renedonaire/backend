@@ -27,32 +27,16 @@ const io = new SocketServer(httpServer)
 const Mensajes = require('./models/mensajesSQL.js')
 const Productos = require('./models/productosMariaDB.js')
 const { sqlite3, mysql } = require('./src/options.js')
-const {
-	mensajesInicial,
-	productosInicial,
-} = require('./models/valoresIniciales.js')
 
 const mensajes = new Mensajes(sqlite3)
-mensajes
-	.crearTablaMensajes()
-	.then(() => {
-		return mensajes.saveMessage(mensajesInicial)
-	})
-	.then(() => console.log('Tabla Mensajes creada'))
-	.catch((err) => {
-		console.log(err)
-	})
+mensajes.crearTablaMensajes().catch((err) => {
+	console.log(err)
+})
 
 const productos = new Productos(mysql)
-productos
-	.crearTablaProductos()
-	.then(() => {
-		return productos.saveProduct(productosInicial)
-	})
-	.then(() => console.log('Tabla Productos creada'))
-	.catch((err) => {
-		console.log(err)
-	})
+productos.crearTablaProductos().catch((err) => {
+	console.log(err)
+})
 
 /* ------------------------------- Handlebars ------------------------------- */
 const exphbs = require('express-handlebars')

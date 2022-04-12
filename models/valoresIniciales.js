@@ -1,5 +1,3 @@
-const mensajesInicial = [{ autor: 'server:', texto: 'Bienvenido', fecha: '' }]
-
 const productosInicial = [
 	{
 		title: 'La Vuelta al Mundo en 80 días',
@@ -36,4 +34,4 @@ const productosInicial = [
 	},
 ]
 
-module.exports = { mensajesInicial, productosInicial }
+module.exports = { productosInicial }
