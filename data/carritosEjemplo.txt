@@ -1,0 +1,72 @@
+[
+  {
+    "timestamp": "03/04/2022, 12:56:44",
+    "productos": [
+      {
+        "id": 4,
+        "timestamp": "03/04/2022, 12:53:42",
+        "nombre": "Trilogía de Trajano",
+        "descripcion": "Trilogía de Trajano de Santiago Por Santiago Posteguillo, Los asesinos del emperador. El ascenso de trajano, el primer emperador hispano de la Historia 18 de septiembre del 96 d . C. Un grupo de gladiadores dispuestos a todo avanza por las alcantarillas de Roma. Nada ni nadie puede detenerlos. Ni siquiera la Historia. Circo máximo la ira de Trajano. La historia de trajano y su gobierno, guerras y traiciones, lealtades insobornables e historias de amor imposibles. En esos momentos, todo es posible y hasta la vida de Trajano puede correr peligro.",
+        "codigo": "9789584255983",
+        "url": "https://www.antartica.cl/media/catalog/product/9/7/9789584255983_1.png?quality=80&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700&format=jpeg",
+        "precio": 59900,
+        "stock": 4
+      },
+      {
+        "id": 5,
+        "timestamp": "03/04/2022, 12:54:08",
+        "nombre": "Boulevard",
+        "descripcion": "Luke y Hasley no eran el prototipo de una pareja perfecta. Sin embargo, ambos le pusieron definición a lo que ellos crearon. Una historia de dos adolescentes que crean su propio boulevard ante la llovizna que hay en sus corazones, donde se entremezcla, por un lado, un azul cálido, y por el otro, un azul eléctrico, tiñéndose este por completo de un gris nostálgico. ¿Quién dijo que después de la tormenta sale el sol cuando puede haber un rayo?",
+        "codigo": "9789566026914",
+        "url": "https://www.antartica.cl/media/catalog/product/B/o/Boulevard_9789566026914_1.JPG?quality=80&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700",
+        "precio": 11900,
+        "stock": 5
+      },
+      {
+        "id": 6,
+        "timestamp": "03/04/2022, 12:54:25",
+        "nombre": "Las Setenta Grandes Obras De Arte De La Historia",
+        "descripcion": "Un análisis de las grandes obras de arte de la historia desde la prehistoria hasta el siglo XIX. Una excepcional crónica cultural que desvela cómo han visto a lo largo de la historia los artistas el mundo que les tocó vivir y cómo decidieron representarlo. ¿Qué es y cómo se hace una obra maestra? He aquí setenta respuestas. Una lectura esencial para todos aquellos amantes del arte. A lo largo de la historia aparecen de vez en cuando obras de arte cuya calidad traspasa las fronteras de las épocas y los países. ",
+        "codigo": "9788498015188",
+        "url": "https://www.antartica.cl/media/catalog/product/9/7/9788498015188_1_1.png?quality=80&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700&format=jpeg",
+        "precio": 24800,
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "timestamp": "03/04/2022, 12:56:25",
+    "productos": [
+      {
+        "id": 1,
+        "timestamp": "03/04/2022, 12:51:54",
+        "nombre": "La Vuelta al Mundo en 80 días",
+        "descripcion": "El misterioso y solitario Phileas Fogg deja su vida disciplinada para superar la apuesta que ha hecho con los miembros de su club: podrá dar la vuelta al mundo en 80 días. Así comienza la historia de un viaje que sale de Londres y sigue por Francia, Italia, Suez, Bombay, Calcuta, Hong Kong, Yokohama, San Francisco y Nueva York. En tren, en barco, en elefante o en trineo, esta tremenda serie de aventuras ofrece también un mosaico de culturas y costumbres distintas y divertidas.",
+        "codigo": "9788417127916",
+        "url": "https://www.antartica.cl/media/catalog/product/9/7/9788417127916_1.png?quality=80&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700&format=jpeg",
+        "precio": 15900,
+        "stock": 1
+      },
+      {
+        "id": 2,
+        "timestamp": "03/04/2022, 12:52:16",
+        "nombre": "Primera Persona Del Singular",
+        "descripcion": "Los personajes y las escenas de este esperadísimo volumen de relatos hacen saltar por los aires los límites entre la imaginación y el mundo real. Y nos devuelven, intactos, los amores perdidos, las relaciones truncadas y la soledad, la adolescencia, los reencuentros y, sobre todo, la memoria del amor, porque «nadie podrá arrebatarnos el recuerdo de haber amado o de haber estado enamorados alguna vez en la vida», asegura el narrador. Un narrador en primera persona que, a veces, podría ser el propio Murakami.",
+        "codigo": "9789569961212",
+        "url": "https://www.antartica.cl/media/catalog/product/9/7/9789569961212_1.png?quality=80&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700&format=jpeg",
+        "precio": 19900,
+        "stock": 2
+      },
+      {
+        "id": 3,
+        "timestamp": "03/04/2022, 12:53:23",
+        "nombre": "Ajuste de Cuentas",
+        "descripcion": "Pete Banning era el hijo predilecto de Clanton, Misisipi. Héroe condecorado de la Segunda Guerra Mundial, patriarca de una notoria familia, granjero, padre, vecino y miembro incondicional de la iglesia metodista. Una buena mañana de octubre de 1946 se levantó temprano, condujo hasta la iglesia y allí disparó y mató a su amigo, el reverendo Dexter Bell. Por si el asesinato no fuera suficientemente asombroso, Pete solo dijo al sheriff, a sus abogados, al jurado, al juez y a su familia <No tengo nada que decir>. No temía a la muerte y estaba dispuesto a llevar sus razones a la tumba. ",
+        "codigo": "9789569646867 ",
+        "url": "https://www.antartica.cl/media/catalog/product/9/7/9789569646867_1.png?quality=80&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700&format=jpeg",
+        "precio": 15000,
+        "stock": 3
+      }
+    ]
+  }
+]
