@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker'
+const { faker } = require('@faker-js/faker')
 faker.setLocale('es')
 
 const unProducto = async () => {
@@ -13,6 +13,7 @@ const variosProductos = async (cantidad) => {
 	for (let i = 1; i <= cantidad; i++) {
 		resultado.push(await unProducto())
 	}
+	console.log(resultado)
 	return resultado
 }
 

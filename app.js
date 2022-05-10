@@ -46,9 +46,18 @@ app.engine(
 		extname: 'hbs',
 	})
 )
+
 routerProductos.get('/', async (req, res) => {
 	const arrayProductos = await productos.getProducts()
-	res.render('../views/layouts/main.hbs', { list: arrayProductos })
+	console.log(arrayProductos)
+	res.render('../views/partials/list.hbs', { list: arrayProductos })
+})
+
+const { variosProductos } = require('./api/fakerApi.js')
+routerProductos.get('/api/productos-test', async (req, res) => {
+	const arrayProductos = await variosProductos(5)
+	console.log(arrayProductos)
+	await res.render('../views/partials/listTest.hbs', { list: arrayProductos })
 })
 
 io.on('connection', async (socket) => {
