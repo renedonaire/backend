@@ -1,21 +1,36 @@
 <h2>Centro de Mensajes</h2>
-<form onsubmit="return addMessage(this)">
-	Usuario: <input type="text" id="email" placeholder="Tu email" required><br>
-	Mensaje: <input type="text" id="texto" placeholder="Mensaje">
-	<input type="submit" value="Enviar">
+<form onsubmit='return addMessage(this)'>
+	Nombre:
+	<input type='text' id='nombre' placeholder='Tu nombre' /><br />
+	Apellido:
+	<input type='text' id='apellido' placeholder='Tu apellido' /><br />
+	Edad:
+	<input type='number' id='edad' placeholder='Edad' /><br />
+	Email:
+	<input type='email' id='email' placeholder='Email' /><br />
+	Alias:
+	<input type='text' id='alias' placeholder='Alias' /><br />
+	Avatar:
+	<input type='text' id='avatar' placeholder='url avatar' /><br />
+	Mensaje:
+	<input type='text' id='mensaje' placeholder='Mensaje' />
+	<input type='submit' value='Enviar' />
 </form>
-<div id="mensajes"></div>
+<div id='mensajes'></div>
 <hr />
 
 <h2>Ingresar Producto</h2>
-<form onsubmit="return addProduct(this)">
-	Title: <input type="text" id="title" required/>
-	Price: <input type="number" id="price" required/>
-	Thumbnail: <input type="text" id="thumbnail" required/>
-	<input type="submit" value="Agregar">
+<form onsubmit='return addProduct(this)'>
+	Title:
+	<input type='text' id='title' required />
+	Price:
+	<input type='number' id='price' required />
+	Thumbnail:
+	<input type='text' id='thumbnail' required />
+	<input type='submit' value='Agregar' />
 </form>
-<hr>
+<hr />
 
 <h2>Lista de Productos</h2>
-<table id="productos"></table>
+<table id='productos'></table>
 <hr />

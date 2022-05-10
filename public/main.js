@@ -14,14 +14,21 @@ const addProduct = () => {
 }
 
 const addMessage = () => {
-	const usuario = document.getElementById('email').value
+	const email = document.getElementById('email').value
 	const fecha = new Date().toLocaleString('en-GB')
-	const mensaje = {
-		autor: document.getElementById('email').value,
-		texto: document.getElementById('texto').value,
-		fecha: fecha,
+	const usuario = {
+		id: document.getElementById('email').value,
+		nombre: document.getElementById('nombre').value,
+		apellido: document.getElementById('apellido').value,
+		edad: document.getElementById('edad').value,
+		alias: document.getElementById('alias').value,
+		avatar: document.getElementById('avatar').value,
 	}
-	if (usuario) {
+	const mensaje = {
+		author: usuario,
+		text: document.getElementById('mensaje').value,
+	}
+	if (email) {
 		socket.emit('new-message', mensaje)
 		document.getElementById('email').value = usuario
 		document.getElementById('texto').value = ''
