@@ -25,6 +25,7 @@ const addMessage = () => {
 		avatar: document.getElementById('avatar').value,
 	}
 	const mensaje = {
+		msgDate: fecha,
 		author: usuario,
 		text: document.getElementById('mensaje').value,
 	}
