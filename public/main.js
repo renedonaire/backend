@@ -30,9 +30,14 @@ const addMessage = () => {
 		text: document.getElementById('mensaje').value,
 	}
 	if (email) {
+		document.getElementById('nombre').value = usuario.nombre
+		document.getElementById('apellido').value = usuario.apellido
+		document.getElementById('edad').value = usuario.edad
+		document.getElementById('email').value = usuario.id
+		document.getElementById('alias').value = usuario.alias
+		document.getElementById('avatar').value = usuario.avatar
 		socket.emit('new-message', mensaje)
-		document.getElementById('email').value = usuario
-		document.getElementById('texto').value = ''
+		document.getElementById('mensaje').value = ''
 	}
 	return false
 }
@@ -45,9 +50,9 @@ const renderMessages = (messages) => {
 				html +
 				`
 					<p>
-					<span style="color:blue;"><b>${element.autor}</b></span>
-					<span style="color:brown;">[${element.fecha}]</span>
-					<span style="color:green;"><i>${element.texto}</i></span>
+					<span style="color:blue;"><b>${element.author.alias}</b></span>
+					<span style="color:brown;">[${element.msgDate}]</span>
+					<span style="color:green;"><i>${element.text}</i></span>
 					</p>
 				`
 		})

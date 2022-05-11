@@ -5,7 +5,7 @@ config({ path: process.ENV })
 
 const client = new MongoClient(process.env.MONGO_cnxStr, mongodb.options)
 client.connect()
-console.log('conectado a ', process.env.MONGO_cnxStr)
+console.log('conectado a mongodb')
 
 module.exports = class Mensajes {
 	constructor(baseDatos, coleccion) {

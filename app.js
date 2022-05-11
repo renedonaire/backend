@@ -24,6 +24,8 @@ const mensajes = new Mensajes(
 	process.env.MONGO_database,
 	process.env.MONGO_collection
 )
+
+// REQUERIDO para mensajes en sqlite3
 // mensajes.crearTablaMensajes().catch((err) => {
 // 	console.log(err)
 // })
