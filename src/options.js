@@ -1,3 +1,6 @@
+const { config } = require('dotenv')
+config({ path: process.ENV })
+
 const mysql = {
 	client: 'mysql',
 	connection: {
@@ -14,4 +17,13 @@ const sqlite3 = {
 	useNullAsDefault: false,
 }
 
-module.exports = { mysql, sqlite3 }
+const mongodb = {
+	cnxStr: process.env.MONGO_cnxStr,
+	options: {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		serverSelectionTimeoutMS: 5000,
+	},
+}
+
+module.exports = { mysql, sqlite3, mongodb }

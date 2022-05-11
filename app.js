@@ -15,23 +15,18 @@ const { Server: SocketServer } = require('socket.io')
 const httpServer = new HTTPServer(app)
 const io = new SocketServer(httpServer)
 
-/* ---------------------------- Clases en memoria --------------------------- */
-// const path = require('path')
-// const route = path.join(__dirname, './ecommerce/mensajes.txt')
-// const Mensajes = require('./models/mensajes')
-// const Productos = require('./models/productos')
-// const mensajes = new Mensajes(route)
-// const productos = new Productos()
-
 /* ------------------------ Clases en bases de datos ------------------------ */
-const Mensajes = require('./models/mensajesSQL.js')
+const Mensajes = require('./models/mensajesMongoDb.js')
 const Productos = require('./models/productosMariaDB.js')
-const { sqlite3, mysql } = require('./src/options.js')
+const { sqlite3, mysql, mongodb } = require('./src/options.js')
 
-const mensajes = new Mensajes(sqlite3)
-mensajes.crearTablaMensajes().catch((err) => {
-	console.log(err)
-})
+const mensajes = new Mensajes(
+	process.env.MONGO_database,
+	process.env.MONGO_collection
+)
+// mensajes.crearTablaMensajes().catch((err) => {
+// 	console.log(err)
+// })
 
 const productos = new Productos(mysql)
 productos.crearTablaProductos().catch((err) => {
@@ -49,14 +44,12 @@ app.engine(
 
 routerProductos.get('/', async (req, res) => {
 	const arrayProductos = await productos.getProducts()
-	console.log(arrayProductos)
 	res.render('../views/partials/list.hbs', { list: arrayProductos })
 })
 
 const { variosProductos } = require('./api/fakerApi.js')
 routerProductos.get('/api/productos-test', async (req, res) => {
 	const arrayProductos = await variosProductos(5)
-	console.log(arrayProductos)
 	await res.render('../views/partials/listTest.hbs', { list: arrayProductos })
 })
 
