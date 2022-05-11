@@ -17,6 +17,6 @@ el string de conexión está en el archivo '.env'
 ## Iniciar chat sobre sockets:
 - npm start
   
-## Ejecutar normalización
-- npm normalizar
+## Ejecutar normalización:
+- node 'normalizar.js'
   
