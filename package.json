@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "entrega clase 16 bases de datos",
+  "description": "entrega clase 22 normalización",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -28,6 +28,7 @@
     "mysql": "^2.18.1",
     "node": "^17.7.1",
     "nodemon": "^2.0.15",
+    "normalizr": "^3.6.2",
     "socket.io": "^4.4.1"
   }
 }
