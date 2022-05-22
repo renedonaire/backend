@@ -2,12 +2,35 @@
 const express = require('express')
 const { Router } = require('express')
 const routerProductos = Router()
+const cookieParser = require('cookie-parser')
+const session = require('express-session')
+const connectMongo = require('connect-mongo')
+
+const MongoStore = connectMongo.create({
+	mongoUrl:
+		'mongodb+srv://renedonaire:YYY3fYzJ76EBkUp@cluster0.ux8ja.mongodb.net/coderhouse?retryWrites=true&w=majority',
+	// mongoUrl: 'mongodb://localhost:27017/sesiones',
+	ttl: 60,
+})
+
 const app = express()
 app
 	.use(express.urlencoded({ extended: true }))
 	.use(express.static('public'))
 	.use(express.json())
 	.use('/', routerProductos)
+
+/* --------------------------------- Session -------------------------------- */
+app.use(cookieParser())
+app.use(
+	session({
+		store: MongoStore,
+		secret: 'akjshsdj76%&ghfah',
+		resave: false,
+		saveUninitialized: false,
+		// cookie: { maxAge: 60000 }, ahora la caducidad la maneja TTL
+	})
+)
 
 /* --------------------------------- Sockets -------------------------------- */
 const { Server: HTTPServer } = require('http')
@@ -39,9 +62,34 @@ app.engine(
 	})
 )
 
-routerProductos.get('/', async (req, res) => {
-	const arrayProductos = await productos.getProducts()
-	res.render('../views/partials/list.hbs', { list: arrayProductos })
+app.get('/', async (req, res) => {
+	if (req.session.nombre) {
+		const arrayProductos = await productos.getProducts()
+		res.render('../views/partials/list.hbs', { list: arrayProductos })
+	} else {
+		res.redirect('/login')
+	}
+})
+
+app.get('/login', (req, res) => {
+	res.render('../views/partials/login.hbs')
+})
+
+app.post('/login', (req, res) => {
+	const { nombre } = req.body
+	console.log(nombre)
+	req.session.nombre = nombre
+	res.redirect('/')
+})
+
+app.get('/logout', (req, res) => {
+	req.session.destroy((err) => {
+		if (err) {
+			console.log(err)
+		} else {
+			res.send('logout OK')
+		}
+	})
 })
 
 const { variosProductos } = require('./api/fakerApi.js')
