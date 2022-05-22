@@ -20,15 +20,18 @@
   "dependencies": {
     "@faker-js/faker": "^6.3.1",
     "@vscode/sqlite3": "^5.0.8",
+    "connect-mongo": "^4.6.0",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.1",
-    "express": "^4.17.3",
-    "express-handlebars": "^6.0.3",
-    "knex": "^1.0.5",
-    "mongodb": "^4.5.0",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "knex": "^2.0.0",
+    "mongodb": "^4.6.0",
     "mysql": "^2.18.1",
-    "node": "^17.7.1",
-    "nodemon": "^2.0.15",
+    "node": "^17.7.2",
+    "nodemon": "^2.0.16",
     "normalizr": "^3.6.2",
-    "socket.io": "^4.4.1"
+    "socket.io": "^4.5.1"
   }
 }
