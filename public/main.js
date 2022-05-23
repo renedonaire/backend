@@ -14,37 +14,27 @@ const addProduct = () => {
 }
 
 const addMessage = () => {
-	// const email = document.getElementById('email').value
-	const fecha = new Date().toLocaleString('en-GB')
-	const usuario = {
-		nombre: req.session.nombre,
-		// id: document.getElementById('email').value,
-		// nombre: document.getElementById('nombre').value,
-		// apellido: document.getElementById('apellido').value,
-		// edad: document.getElementById('edad').value,
-		// alias: document.getElementById('alias').value,
-		// avatar: document.getElementById('avatar').value,
-	}
-	const mensaje = {
-		msgDate: fecha,
-		author: usuario,
-		text: document.getElementById('mensaje').value,
-	}
-	console.log(mensaje)
-	if (nombre) {
-		document.getElementById('nombre').value = usuario.nombre
-		// document.getElementById('apellido').value = usuario.apellido
-		// document.getElementById('edad').value = usuario.edad
-		// document.getElementById('email').value = usuario.id
-		// document.getElementById('alias').value = usuario.alias
-		// document.getElementById('avatar').value = usuario.avatar
+	try {
+		console.log('addMessage')
+		const fecha = new Date().toLocaleString('en-GB')
+		const usuario = {
+			nombre: req.session.nombre,
+		}
+		const mensaje = {
+			msgDate: fecha,
+			author: usuario,
+			text: document.getElementById('mensaje').value,
+		}
 		socket.emit('new-message', mensaje)
 		document.getElementById('mensaje').value = ''
+		return false
+	} catch (error) {
+		console.log(error)
 	}
-	return false
 }
 
 const renderMessages = (messages) => {
+	console.log('renderMessages', messages)
 	let html = ''
 	if (messages.length > 0) {
 		messages.forEach((element) => {
@@ -85,6 +75,7 @@ const renderProducts = (products) => {
 
 socket
 	.on('messages', async (data) => {
+		console.log('socket on messages', data)
 		renderMessages(data)
 	})
 	.on('products', (data) => {

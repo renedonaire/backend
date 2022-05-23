@@ -1,7 +1,7 @@
 /* --------------------------------- Express -------------------------------- */
 const express = require('express')
-const { Router } = require('express')
-const routerProductos = Router()
+// const { Router } = require('express')
+// const routerProductos = Router()
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const connectMongo = require('connect-mongo')
@@ -12,13 +12,14 @@ const MongoStore = connectMongo.create({
 	// mongoUrl: 'mongodb://localhost:27017/sesiones',
 	ttl: 60,
 })
+console.log('conectado a mongodb - sesiones')
 
 const app = express()
 app
 	.use(express.urlencoded({ extended: true }))
 	.use(express.static('public'))
 	.use(express.json())
-	.use('/', routerProductos)
+// .use('/', routerProductos)
 
 /* --------------------------------- Session -------------------------------- */
 app.use(cookieParser())
@@ -81,7 +82,6 @@ app.get('/login', (req, res) => {
 
 app.post('/login', (req, res) => {
 	const { nombre } = req.body
-	console.log(nombre)
 	req.session.nombre = nombre
 	res.redirect('/')
 })
@@ -97,7 +97,7 @@ app.get('/logout', (req, res) => {
 })
 
 const { variosProductos } = require('./api/fakerApi.js')
-routerProductos.get('/api/productos-test', async (req, res) => {
+app.get('/api/productos-test', async (req, res) => {
 	const arrayProductos = await variosProductos(5)
 	await res.render('../views/partials/listTest.hbs', { list: arrayProductos })
 })
@@ -111,9 +111,12 @@ io.on('connection', async (socket) => {
 
 	socket
 		.on('new-message', async (message) => {
+			console.log('on new-message')
 			await mensajes.saveMessage(message)
+			console.log('mensaje guardado')
 			const allMessages = await mensajes.getMessages()
 			io.sockets.emit('messages', allMessages)
+			console.log('mensajes emitidos')
 		})
 		.on('new-product', async (product) => {
 			await productos.saveProduct(product)

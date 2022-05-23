@@ -5,7 +5,7 @@ config({ path: process.ENV })
 
 const client = new MongoClient(process.env.MONGO_cnxStr, mongodb.options)
 client.connect()
-console.log('conectado a mongodb')
+console.log('conectado a mongodb - mensajes')
 
 module.exports = class Mensajes {
 	constructor(baseDatos, coleccion) {
@@ -14,6 +14,7 @@ module.exports = class Mensajes {
 	}
 
 	async saveMessage(mensajes) {
+		console.log('saveMessage')
 		try {
 			const result = await client
 				.db(this.baseDatos)
@@ -26,6 +27,7 @@ module.exports = class Mensajes {
 	}
 
 	async getMessages() {
+		console.log('getMessages')
 		try {
 			const result = await client
 				.db(this.baseDatos)
