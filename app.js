@@ -65,7 +65,11 @@ app.engine(
 app.get('/', async (req, res) => {
 	if (req.session.nombre) {
 		const arrayProductos = await productos.getProducts()
-		res.render('../views/partials/list.hbs', { list: arrayProductos })
+		const nombre = req.session.nombre
+		res.render('../views/partials/list.hbs', {
+			list: arrayProductos,
+			nombre: nombre,
+		})
 	} else {
 		res.redirect('/login')
 	}

@@ -1,5 +1,8 @@
 <h2>Centro de Mensajes</h2>
-<h3>Bienvenido {{nombre}}</h3>
+<h3>Bienvenido
+	{{nombre}}
+	<button onclick="location.href = '/logout'">Logout</button>
+</h3>
 <form onsubmit='return addMessage(this)'>
 	{{! Nombre:
 	<input type='text' id='nombre' placeholder='Tu nombre' /><br />
