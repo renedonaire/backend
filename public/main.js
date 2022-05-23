@@ -14,23 +14,18 @@ const addProduct = () => {
 }
 
 const addMessage = () => {
-	try {
-		console.log('addMessage')
-		const fecha = new Date().toLocaleString('en-GB')
-		const usuario = {
-			nombre: req.session.nombre,
-		}
-		const mensaje = {
-			msgDate: fecha,
-			author: usuario,
-			text: document.getElementById('mensaje').value,
-		}
-		socket.emit('new-message', mensaje)
-		document.getElementById('mensaje').value = ''
-		return false
-	} catch (error) {
-		console.log(error)
+	const fecha = new Date().toLocaleString('en-GB')
+	const usuario = {
+		nombre: 'nombre',
 	}
+	const mensaje = {
+		msgDate: fecha,
+		author: usuario,
+		text: document.getElementById('mensaje').value,
+	}
+	socket.emit('new-message', mensaje)
+	document.getElementById('mensaje').value = ''
+	return false
 }
 
 const renderMessages = (messages) => {
