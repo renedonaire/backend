@@ -15,10 +15,9 @@ const addProduct = () => {
 
 const addMessage = () => {
 	const fecha = new Date().toLocaleString('en-GB')
-	const autor = 'autor'
 	const mensaje = {
 		msgDate: fecha,
-		author: autor,
+		author: document.getElementById('autor').value,
 		text: document.getElementById('mensaje').value,
 	}
 	socket.emit('new-message', mensaje)

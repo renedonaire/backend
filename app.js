@@ -95,19 +95,6 @@ app.get('/logout', (req, res) => {
 	})
 })
 
-app.post('/mensajes', async (req, res) => {
-	console.log('post mensajes, ', req.body)
-	const fecha = new Date().toLocaleString('en-GB')
-	const mensaje = {
-		msgDate: fecha,
-		author: req.session.nombre,
-		text: req.body.mensaje,
-	}
-	await mensajes.saveMessage(mensaje)
-	io.emit('mensaje', mensaje)
-	res.redirect('/')
-})
-
 const { variosProductos } = require('./api/fakerApi.js')
 app.get('/api/productos-test', async (req, res) => {
 	const arrayProductos = await variosProductos(5)

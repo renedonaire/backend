@@ -4,9 +4,12 @@
 	<button onclick="location.href = '/logout'">Logout</button>
 </h3>
 <form onsubmit='return addMessage(this)'>
+	Alias:
+	<input type='text' name='autor' id='autor' value={{nombre}} />
+	<br />
 	Mensaje:
-	<input type='text' id='mensaje' placeholder='Mensaje' />
-	<input type='submit' value='Enviar' />
+	<input type='text' name='mensaje' id='mensaje' placeholder='Mensaje' />
+	<input type='submit' value='Postear' />
 </form>
 <div id='mensajes'></div>
 <hr />
