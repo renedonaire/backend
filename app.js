@@ -1,7 +1,5 @@
 /* --------------------------------- Express -------------------------------- */
 const express = require('express')
-// const { Router } = require('express')
-// const routerProductos = Router()
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const { config } = require('dotenv')
@@ -10,8 +8,6 @@ const connectMongo = require('connect-mongo')
 
 const MongoStore = connectMongo.create({
 	mongoUrl: process.env.MONGO_cnxStr,
-	// 'mongodb+srv://renedonaire:YYY3fYzJ76EBkUp@cluster0.ux8ja.mongodb.net/coderhouse?retryWrites=true&w=majority',
-	// mongoUrl: 'mongodb://localhost:27017/sesiones',
 	ttl: process.env.tiempoTTL,
 })
 console.log('conectado a mongodb - sesiones')
@@ -21,7 +17,6 @@ app
 	.use(express.urlencoded({ extended: true }))
 	.use(express.static('public'))
 	.use(express.json())
-// .use('/', routerProductos)
 
 /* --------------------------------- Session -------------------------------- */
 app.use(cookieParser())

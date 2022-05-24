@@ -14,6 +14,9 @@ Debe existir una base de datos llamada 'Coderhouse_BD'
 Debe haber acceso a una instancia en la nube;
 el string de conexión está en el archivo '.env'
   
+## Tiempo de caducidad de la sesión  
+Está definido en el archivo '.env'
+
 ## Iniciar chat sobre sockets:
 - npm start
   
