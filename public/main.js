@@ -26,7 +26,6 @@ const addMessage = () => {
 }
 
 const renderMessages = (messages) => {
-	console.log('renderMessages', messages)
 	let html = ''
 	if (messages.length > 0) {
 		messages.forEach((element) => {

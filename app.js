@@ -110,12 +110,9 @@ io.on('connection', async (socket) => {
 
 	socket
 		.on('new-message', async (message) => {
-			console.log('on new-message')
 			await mensajes.saveMessage(message)
-			console.log('mensaje guardado')
 			const allMessages = await mensajes.getMessages()
 			io.sockets.emit('messages', allMessages)
-			console.log('mensajes emitidos')
 		})
 		.on('new-product', async (product) => {
 			await productos.saveProduct(product)
