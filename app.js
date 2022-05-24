@@ -86,17 +86,16 @@ app.post('/login', (req, res) => {
 })
 
 app.get('/logout', (req, res) => {
-	res.render('../views/partials/logout.hbs', { nombre: req.session.nombre })
-	function salir() {
-		req.session.destroy((err) => {
-			if (err) {
-				console.log(err)
-			} else {
-				res.redirect('/login')
-			}
-		})
-	}
-	setTimeout(salir, 2000)
+	const nombre = req.session.nombre
+	req.session.destroy((err) => {
+		if (err) {
+			console.log(err)
+		} else {
+			res.render('../views/partials/logout.hbs', {
+				nombre: nombre,
+			})
+		}
+	})
 })
 
 const { variosProductos } = require('./api/fakerApi.js')
