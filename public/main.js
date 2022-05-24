@@ -15,12 +15,10 @@ const addProduct = () => {
 
 const addMessage = () => {
 	const fecha = new Date().toLocaleString('en-GB')
-	const usuario = {
-		nombre: 'nombre',
-	}
+	const autor = 'autor'
 	const mensaje = {
 		msgDate: fecha,
-		author: usuario,
+		author: autor,
 		text: document.getElementById('mensaje').value,
 	}
 	socket.emit('new-message', mensaje)
@@ -37,7 +35,7 @@ const renderMessages = (messages) => {
 				html +
 				`
 					<p>
-					<span style="color:blue;"><b>${element.author.alias}</b></span>
+					<span style="color:blue;"><b>${element.author}</b></span>
 					<span style="color:brown;">[${element.msgDate}]</span>
 					<span style="color:green;"><i>${element.text}</i></span>
 					</p>
@@ -70,7 +68,6 @@ const renderProducts = (products) => {
 
 socket
 	.on('messages', async (data) => {
-		console.log('socket on messages', data)
 		renderMessages(data)
 	})
 	.on('products', (data) => {

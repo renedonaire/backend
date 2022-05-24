@@ -14,7 +14,7 @@ module.exports = class Mensajes {
 	}
 
 	async saveMessage(mensajes) {
-		console.log('saveMessage')
+		console.log('saveMessage. ', mensajes)
 		try {
 			const result = await client
 				.db(this.baseDatos)

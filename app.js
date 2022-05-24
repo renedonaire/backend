@@ -66,10 +66,9 @@ app.engine(
 app.get('/', async (req, res) => {
 	if (req.session.nombre) {
 		const arrayProductos = await productos.getProducts()
-		const nombre = req.session.nombre
 		res.render('../views/partials/list.hbs', {
 			list: arrayProductos,
-			nombre: nombre,
+			nombre: req.session.nombre,
 		})
 	} else {
 		res.redirect('/login')
@@ -94,6 +93,19 @@ app.get('/logout', (req, res) => {
 			res.send('logout OK')
 		}
 	})
+})
+
+app.post('/mensajes', async (req, res) => {
+	console.log('post mensajes, ', req.body)
+	const fecha = new Date().toLocaleString('en-GB')
+	const mensaje = {
+		msgDate: fecha,
+		author: req.session.nombre,
+		text: req.body.mensaje,
+	}
+	await mensajes.saveMessage(mensaje)
+	io.emit('mensaje', mensaje)
+	res.redirect('/')
 })
 
 const { variosProductos } = require('./api/fakerApi.js')
