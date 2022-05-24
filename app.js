@@ -4,13 +4,15 @@ const express = require('express')
 // const routerProductos = Router()
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
+const { config } = require('dotenv')
+config({ path: process.ENV })
 const connectMongo = require('connect-mongo')
 
 const MongoStore = connectMongo.create({
-	mongoUrl:
-		'mongodb+srv://renedonaire:YYY3fYzJ76EBkUp@cluster0.ux8ja.mongodb.net/coderhouse?retryWrites=true&w=majority',
+	mongoUrl: process.env.MONGO_cnxStr,
+	// 'mongodb+srv://renedonaire:YYY3fYzJ76EBkUp@cluster0.ux8ja.mongodb.net/coderhouse?retryWrites=true&w=majority',
 	// mongoUrl: 'mongodb://localhost:27017/sesiones',
-	ttl: 60,
+	ttl: process.env.tiempoTTL,
 })
 console.log('conectado a mongodb - sesiones')
 
