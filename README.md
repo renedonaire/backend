@@ -19,7 +19,3 @@ Está definido en el archivo '.env'
 
 ## Iniciar chat sobre sockets:
 - npm start
-  
-## Ejecutar normalización:
-- node 'normalizar.js'
-  
