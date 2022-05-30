@@ -27,7 +27,7 @@ passport.use(
 				return done(
 					null,
 					false,
-					req.flash('signupMessage', 'The Email is already Taken.')
+					req.flash('signupMessage', 'Ese email ya está registrado')
 				)
 			} else {
 				const newUser = new User()
@@ -53,14 +53,18 @@ passport.use(
 			const user = await User.findOne({ email: email })
 			if (!user) {
 				console.log('No user found')
-				return done(null, false, req.flash('signinMessage', 'No User Found'))
+				return done(
+					null,
+					false,
+					req.flash('signinMessage', 'No se encontró el usuario')
+				)
 			}
 			if (!user.comparePassword(password)) {
 				console.log('Wrong password')
 				return done(
 					null,
 					false,
-					req.flash('signinMessage', 'Incorrect Password')
+					req.flash('signinMessage', 'Password incorrecto')
 				)
 			}
 			console.log('User found', user)
