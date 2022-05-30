@@ -1,41 +1,42 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "entrega clase 22 normalización",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/renedonaire/backend.git"
-  },
-  "author": "renedonaire",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/renedonaire/backend/issues"
-  },
-  "homepage": "https://github.com/renedonaire/backend#readme",
-  "dependencies": {
-    "@faker-js/faker": "^7.1.0",
-    "@vscode/sqlite3": "^5.0.8",
-    "bcrypt": "^5.0.1",
-    "connect-mongo": "^4.6.0",
-    "cookie-parser": "^1.4.6",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "express-handlebars": "^6.0.6",
-    "express-session": "^1.17.3",
-    "knex": "^2.1.0",
-    "mongodb": "^4.6.0",
-    "mongoose": "^6.3.4",
-    "mysql": "^2.18.1",
-    "node": "^17.7.2",
-    "nodemon": "^2.0.16",
-    "normalizr": "^3.6.2",
-    "passport": "^0.6.0",
-    "passport-local": "^1.0.0",
-    "socket.io": "^4.5.1"
-  }
+	"name": "backend",
+	"version": "1.0.0",
+	"description": "entrega clase 22 normalización",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/renedonaire/backend.git"
+	},
+	"author": "renedonaire",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/renedonaire/backend/issues"
+	},
+	"homepage": "https://github.com/renedonaire/backend#readme",
+	"dependencies": {
+		"@faker-js/faker": "^7.1.0",
+		"@vscode/sqlite3": "^5.0.8",
+		"bcrypt": "^5.0.1",
+		"connect-flash": "^0.1.1",
+		"connect-mongo": "^4.6.0",
+		"cookie-parser": "^1.4.6",
+		"dotenv": "^16.0.1",
+		"express": "^4.18.1",
+		"express-handlebars": "^6.0.6",
+		"express-session": "^1.17.3",
+		"knex": "^2.1.0",
+		"mongodb": "^4.6.0",
+		"mongoose": "^6.3.4",
+		"mysql": "^2.18.1",
+		"node": "^17.7.2",
+		"nodemon": "^2.0.16",
+		"normalizr": "^3.6.2",
+		"passport": "^0.6.0",
+		"passport-local": "^1.0.0",
+		"socket.io": "^4.5.1"
+	}
 }

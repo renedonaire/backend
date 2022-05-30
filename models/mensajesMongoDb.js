@@ -1,9 +1,9 @@
 const { MongoClient } = require('mongodb')
-const { mongodb } = require('../src/options.js')
+const { mongodatabase } = require('../src/options')
 const { config } = require('dotenv')
 config({ path: process.ENV })
 
-const client = new MongoClient(process.env.MONGO_cnxStr, mongodb.options)
+const client = new MongoClient(process.env.MONGO_cnxStr, mongodatabase.options)
 client.connect()
 console.log('conectado a mongodb - mensajes')
 

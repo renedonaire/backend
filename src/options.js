@@ -17,7 +17,7 @@ const sqlite3 = {
 	useNullAsDefault: false,
 }
 
-const mongodb = {
+const mongodatabase = {
 	cnxStr: process.env.MONGO_cnxStr,
 	options: {
 		useNewUrlParser: true,
@@ -26,4 +26,4 @@ const mongodb = {
 	},
 }
 
-module.exports = { mysql, sqlite3, mongodb }
+module.exports = { mysql, sqlite3, mongodatabase }
