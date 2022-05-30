@@ -1,6 +1,4 @@
 const express = require('express')
-const cookieParser = require('cookie-parser')
-const path = require('path')
 const flash = require('connect-flash')
 const session = require('express-session')
 const passport = require('passport')
@@ -41,7 +39,6 @@ app.use((req, res, next) => {
 	app.locals.signinMessage = req.flash('signinMessage')
 	app.locals.signupMessage = req.flash('signupMessage')
 	app.locals.user = req.user
-	console.log('App locals: ', app.locals)
 	next()
 })
 
