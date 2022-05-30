@@ -1,7 +1,7 @@
 {
 	"name": "backend",
 	"version": "1.0.0",
-	"description": "entrega clase 22 normalización",
+	"description": "entrega clase 26 inicio de sesión",
 	"main": "app.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
@@ -37,6 +37,7 @@
 		"normalizr": "^3.6.2",
 		"passport": "^0.6.0",
 		"passport-local": "^1.0.0",
+		"socket-io": "^1.0.0",
 		"socket.io": "^4.5.1"
 	}
 }

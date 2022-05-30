@@ -10,7 +10,6 @@ config({ path: process.ENV })
 const app = express()
 require('./src/database')
 require('./passport/local-auth')
-require('./src/sockets')
 
 // settings
 app.set('port', process.env.PORT || 8080)
@@ -21,7 +20,7 @@ app.engine(
 	})
 )
 app.set('view engine', 'hbs')
-app.use(express.static(__dirname + '/public'))
+app.use('/static', express.static(__dirname + '/public'))
 
 // middlewares
 app.use(express.urlencoded({ extended: false }))
@@ -43,10 +42,41 @@ app.use((req, res, next) => {
 	next()
 })
 
+/* --------------------------------- Sockets -------------------------------- */
+const { Server: HTTPServer } = require('http')
+const { Server: SocketServer } = require('socket.io')
+const httpServer = new HTTPServer(app)
+const io = new SocketServer(httpServer)
+
+io.on('connection', async (socket) => {
+	console.log('Nuevo cliente conectado a socket')
+	const messages = await mensajes.getMessages()
+	socket.emit('messages', messages)
+	const products = await productos.getProducts()
+	socket.emit('products', products)
+
+	socket
+		.on('new-message', async (message) => {
+			await mensajes.saveMessage(message)
+			const allMessages = await mensajes.getMessages()
+			io.sockets.emit('messages', allMessages)
+		})
+		.on('new-product', async (product) => {
+			await productos.saveProduct(product)
+			const allProducts = await productos.getProducts()
+			io.sockets.emit('products', allProducts)
+		})
+})
+
 // routes
 app.use('/', require('./routes/routes.js'))
 
-// Starting the server
-app.listen(app.get('port'), () => {
-	console.log('server on port', app.get('port'))
+//server
+const server = httpServer.listen(app.get('port'), () => {
+	console.log(
+		`Servidor (sockets sobre http) escuchando el puerto ${
+			server.address().port
+		}`
+	)
 })
+server.on('error', (error) => console.log(`Error en servidor: ${error}`))

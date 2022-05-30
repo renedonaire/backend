@@ -1,7 +1,7 @@
-const { Server: HTTPServer } = require('http')
-const { Server: SocketServer } = require('socket.io')
 const express = require('express')
 const app = express()
+const { Server: HTTPServer } = require('http')
+const { Server: SocketServer } = require('socket.io')
 const httpServer = new HTTPServer(app)
 const io = new SocketServer(httpServer)
 

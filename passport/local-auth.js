@@ -22,7 +22,6 @@ passport.use(
 		},
 		async (req, email, password, done) => {
 			const user = await User.findOne({ email: email })
-			console.log(user)
 			if (user) {
 				return done(
 					null,
@@ -33,7 +32,6 @@ passport.use(
 				const newUser = new User()
 				newUser.email = email
 				newUser.password = newUser.encryptPassword(password)
-				console.log(newUser)
 				await newUser.save()
 				done(null, newUser)
 			}
@@ -52,7 +50,6 @@ passport.use(
 		async (req, email, password, done) => {
 			const user = await User.findOne({ email: email })
 			if (!user) {
-				console.log('No user found')
 				return done(
 					null,
 					false,
@@ -60,14 +57,12 @@ passport.use(
 				)
 			}
 			if (!user.comparePassword(password)) {
-				console.log('Wrong password')
 				return done(
 					null,
 					false,
 					req.flash('signinMessage', 'Password incorrecto')
 				)
 			}
-			console.log('User found', user)
 			return done(null, user)
 		}
 	)
