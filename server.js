@@ -21,6 +21,7 @@ app.engine(
 	})
 )
 app.set('view engine', 'hbs')
+app.use(express.static(__dirname + '/public'))
 
 // middlewares
 app.use(express.urlencoded({ extended: false }))
