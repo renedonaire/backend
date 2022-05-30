@@ -16,7 +16,6 @@ require('./src/sockets')
 
 // settings
 app.set('port', process.env.PORT || 8080)
-// app.set('views', path.join(__dirname, 'views'))
 app.engine(
 	'hbs',
 	exphbs.engine({
@@ -42,7 +41,7 @@ app.use((req, res, next) => {
 	app.locals.signinMessage = req.flash('signinMessage')
 	app.locals.signupMessage = req.flash('signupMessage')
 	app.locals.user = req.user
-	console.log(app.locals)
+	console.log('App locals: ', app.locals)
 	next()
 })
 

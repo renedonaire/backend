@@ -1,51 +1,55 @@
 const router = require('express').Router()
 const passport = require('passport')
 
-router.get('/', (req, res, next) => {
-	res.render('../views/partials/list')
+router.get('/', isAuth, async (req, res) => {
+	if (req.session.nombre) {
+		const arrayProductos = await productos.getProducts()
+		res.render('../views/partials/list.hbs', {
+			list: arrayProductos,
+			nombre: req.session.nombre,
+		})
+	} else {
+		res.redirect('/login')
+	}
 })
 
-router.get('/signup', (req, res, next) => {
-	res.render('signup')
+router.get('/registro', (req, res, next) => {
+	res.render('../views/partials/registro.hbs')
 })
 
 router.post(
-	'/signup',
+	'/registro',
 	passport.authenticate('local-signup', {
-		successRedirect: '/profile',
-		failureRedirect: '/signup',
+		successRedirect: '/',
+		failureRedirect: '/registro',
 		failureFlash: true,
 	})
 )
 
-router.get('/signin', (req, res, next) => {
-	res.render('signin')
+router.get('/login', (req, res, next) => {
+	res.render('../views/partials/login.hbs')
 })
 
 router.post(
-	'/signin',
+	'/login',
 	passport.authenticate('local-signin', {
-		successRedirect: '/profile',
-		failureRedirect: '/signin',
+		successRedirect: '/',
+		failureRedirect: '/login',
 		failureFlash: true,
 	})
 )
-
-router.get('/profile', isAuthenticated, (req, res, next) => {
-	res.render('profile')
-})
 
 router.get('/logout', (req, res, next) => {
 	req.logout()
 	res.redirect('/')
 })
 
-function isAuthenticated(req, res, next) {
+function isAuth(req, res, next) {
 	if (req.isAuthenticated()) {
 		return next()
+	} else {
+		res.redirect('/login')
 	}
-
-	res.redirect('/')
 }
 
 module.exports = router

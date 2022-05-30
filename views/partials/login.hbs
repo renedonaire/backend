@@ -1,15 +1,15 @@
 <h2>Login de Usuario</h2>
-<h3>Ingrese su nombre</h3>
+<br />
 <form action='/login' method='post' role='form' autocomplete='off'>
-	Nombre:
+	<input type='email' id='email' name='email' placeholder='Tu email' required />
 	<input
-		type='text'
-		id='nombre'
-		name='nombre'
-		placeholder='Tu nombre'
+		type='password'
+		id='password'
+		name='password'
+		placeholder='Password'
 		required
 	/>
-	<br />
-	<input type='submit' value='Enviar' />
+	<input type='submit' value='Entrar' />
 </form>
 <hr />
+<button onclick="location.href = '/registro'">Ir a Registro</button>

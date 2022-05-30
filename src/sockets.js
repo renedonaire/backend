@@ -6,7 +6,7 @@ const httpServer = new HTTPServer(app)
 const io = new SocketServer(httpServer)
 
 io.on('connection', async (socket) => {
-	console.log('Nuevo cliente conectado')
+	console.log('Nuevo cliente conectado a socket')
 	const messages = await mensajes.getMessages()
 	socket.emit('messages', messages)
 	const products = await productos.getProducts()

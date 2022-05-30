@@ -5,7 +5,7 @@ mongoose
 	.connect(mongodb.URI, {
 		useNewUrlParser: true,
 	})
-	.then((db) => console.log('DB is connected'))
+	.then((db) => console.log('conectado a mongodb - usuarios'))
 	.catch((err) => console.log(err))
 
 const Mensajes = require('../models/mensajesMongoDb')
