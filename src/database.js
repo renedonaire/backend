@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const { mongodb } = require('../src/keys')
+const { mongodb } = require('./keys')
 
 mongoose
 	.connect(mongodb.URI, {

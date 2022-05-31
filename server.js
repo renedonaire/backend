@@ -48,11 +48,93 @@ const { Server: SocketServer } = require('socket.io')
 const httpServer = new HTTPServer(app)
 const io = new SocketServer(httpServer)
 
+/* ------------------------ Clases en bases de datos ------------------------ */
+const Mensajes = require('./models/mensajesMongoDb.js')
+const Productos = require('./models/productosMariaDB.js')
+const { sqlite3, mysql, mongodb } = require('./src/options.js')
+
+const mensajes = new Mensajes(
+	process.env.MONGO_database,
+	process.env.MONGO_collection
+)
+
+const productos = new Productos(mysql)
+productos.crearTablaProductos().catch((err) => {
+	console.log(err)
+})
+
+/* ---------------------------------- Rutas --------------------------------- */
+app.get('/', isAuth, async (req, res) => {
+	const arrayProductos = await productos.getProducts()
+	res.render('../views/partials/list.hbs', {
+		list: arrayProductos,
+		nombre: req.session.nombre,
+	})
+})
+
+app.get('/registro', (req, res, next) => {
+	res.render('../views/partials/registro.hbs')
+})
+
+app.post(
+	'/registro',
+	passport.authenticate('local-signup', {
+		successRedirect: '/',
+		failureRedirect: '/registro',
+		failureFlash: true,
+	})
+)
+
+app.get('/login', (req, res, next) => {
+	res.render('../views/partials/login.hbs')
+})
+
+app.post(
+	'/login',
+	passport.authenticate('local-signin', {
+		successRedirect: '/',
+		failureRedirect: '/login',
+		failureFlash: true,
+	})
+)
+
+app.get('/logout', (req, res, next) => {
+	const nombre = req.session.nombre
+	req.logout(function (err) {
+		if (err) {
+			return next(err)
+		} else {
+			res.render('../views/partials/logout.hbs', {
+				nombre: nombre,
+			})
+		}
+	})
+})
+
+const { variosProductos } = require('./api/fakerApi.js')
+app.get('/api/productos-test', async (req, res) => {
+	const arrayProductos = await variosProductos(5)
+	await res.render('../views/partials/listTest.hbs', { list: arrayProductos })
+})
+
+function isAuth(req, res, next) {
+	if (req.isAuthenticated()) {
+		console.log('isAuth')
+		return next()
+	} else {
+		console.log('isNotAuth')
+		res.redirect('/login')
+	}
+}
+
+/* --------------------------------- emision -------------------------------- */
 io.on('connection', async (socket) => {
-	console.log('Nuevo cliente conectado a socket')
+	console.log('Nuevo cliente conectado - socket id: ', socket.id)
 	const messages = await mensajes.getMessages()
+	console.log('messages: ', messages)
 	socket.emit('messages', messages)
 	const products = await productos.getProducts()
+	console.log('products: ', products)
 	socket.emit('products', products)
 
 	socket
@@ -68,11 +150,9 @@ io.on('connection', async (socket) => {
 		})
 })
 
-// routes
-app.use('/', require('./routes/routes.js'))
-
 //server
-const server = httpServer.listen(app.get('port'), () => {
+const PORT = 8080
+const server = httpServer.listen(PORT, () => {
 	console.log(
 		`Servidor (sockets sobre http) escuchando el puerto ${
 			server.address().port
