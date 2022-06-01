@@ -6,12 +6,12 @@ const exphbs = require('express-handlebars')
 const { config } = require('dotenv')
 config({ path: process.ENV })
 
-// initializations
+/* ------------------------------- Inicializa ------------------------------- */
 const app = express()
 require('./src/database')
 require('./passport/local-auth')
 
-// settings
+/* --------------------------------- Ajustes -------------------------------- */
 app.set('port', process.env.PORT || 8080)
 app.engine(
 	'hbs',
@@ -21,13 +21,11 @@ app.engine(
 )
 app
 	.set('view engine', 'hbs')
-	// app.use('/static', express.static(__dirname + '/public'))
 	.use(express.urlencoded({ extended: true }))
 	.use(express.static('public'))
 	.use(express.json())
 
-// middlewares
-// app.use(express.urlencoded({ extended: false }))
+/* ------------------------------- Middlewares ------------------------------ */
 app.use(
 	session({
 		secret: 'mysecretsession',
@@ -58,21 +56,12 @@ const Mensajes = require('./models/mensajesMongoDb.js')
 const Productos = require('./models/productosMariaDB.js')
 const { mysql } = require('./src/options.js')
 
-// const mensajes = new Mensajes(
-// 	process.env.MONGO_database,
-// 	process.env.MONGO_mensajes
-// )
 const mensajes = new Mensajes()
 
 const productos = new Productos(mysql)
 productos.crearTablaProductos().catch((err) => {
 	console.log(err)
 })
-
-// REQUERIDO para mensajes en sqlite3
-// mensajes.crearTablaMensajes().catch((err) => {
-// 	console.log(err)
-// })
 
 /* ---------------------------------- Rutas --------------------------------- */
 app.get('/', isAuth, async (req, res) => {
@@ -136,7 +125,7 @@ function isAuth(req, res, next) {
 	}
 }
 
-/* --------------------------------- emision -------------------------------- */
+/* --------------------------------- Listening -------------------------------- */
 io.on('connection', async (socket) => {
 	console.log('Nuevo cliente conectado')
 	const messages = await mensajes.getMessages()
@@ -157,7 +146,6 @@ io.on('connection', async (socket) => {
 		})
 })
 
-// const PORT = 8080
 const server = httpServer.listen(app.get('port'), () => {
 	console.log(
 		`Servidor (sockets sobre http) escuchando el puerto ${
