@@ -33,6 +33,7 @@ app.use(
 		secret: 'mysecretsession',
 		resave: false,
 		saveUninitialized: false,
+		cookie: { _expires: process.env.tiempoTTL * 1000 }, // time im ms
 	})
 )
 app.use(flash())
@@ -129,10 +130,8 @@ app.get('/api/productos-test', async (req, res) => {
 
 function isAuth(req, res, next) {
 	if (req.isAuthenticated()) {
-		console.log('isAuth')
 		return next()
 	} else {
-		console.log('isNotAuth')
 		res.redirect('/login')
 	}
 }
@@ -158,8 +157,8 @@ io.on('connection', async (socket) => {
 		})
 })
 
-const PORT = 8080
-const server = httpServer.listen(PORT, () => {
+// const PORT = 8080
+const server = httpServer.listen(app.get('port'), () => {
 	console.log(
 		`Servidor (sockets sobre http) escuchando el puerto ${
 			server.address().port
