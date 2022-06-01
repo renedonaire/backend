@@ -5,5 +5,5 @@ mongoose
 	.connect(mongodb.URI, {
 		useNewUrlParser: true,
 	})
-	.then((db) => console.log('conectado a mongodb'))
+	.then((db) => console.log('conectado a mongodb - usuarios'))
 	.catch((err) => console.log(err))

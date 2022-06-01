@@ -1,11 +1,11 @@
 <h2>Centro de Mensajes</h2>
 <h3>Bienvenido
-	{{nombre}}
+	{{emailUser}}
 	<button onclick="location.href = '/logout'">Logout</button>
 </h3>
 <form onsubmit='return addMessage(this)'>
 	Alias:
-	<input type='text' name='autor' id='autor' value={{nombre}} />
+	<input type='text' name='autor' id='autor' value={{emailUser}} />
 	<br />
 	Mensaje:
 	<input type='text' name='mensaje' id='mensaje' placeholder='Mensaje' />

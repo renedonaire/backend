@@ -78,7 +78,7 @@ app.get('/', isAuth, async (req, res) => {
 	const arrayProductos = await productos.getProducts()
 	res.render('../views/partials/list.hbs', {
 		list: arrayProductos,
-		nombre: req.session.nombre,
+		emailUser: req.user.email,
 	})
 })
 
@@ -109,13 +109,13 @@ app.post(
 )
 
 app.get('/logout', (req, res, next) => {
-	const nombre = req.session.nombre
-	req.logout(function (err) {
+	emailUser = req.user.email
+	req.logout(function (err, emailUser) {
 		if (err) {
 			return next(err)
 		} else {
 			res.render('../views/partials/logout.hbs', {
-				nombre: nombre,
+				emailUser: this.emailUser,
 			})
 		}
 	})
