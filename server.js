@@ -19,11 +19,15 @@ app.engine(
 		extname: 'hbs',
 	})
 )
-app.set('view engine', 'hbs')
-app.use('/static', express.static(__dirname + '/public'))
+app
+	.set('view engine', 'hbs')
+	// app.use('/static', express.static(__dirname + '/public'))
+	.use(express.urlencoded({ extended: true }))
+	.use(express.static('public'))
+	.use(express.json())
 
 // middlewares
-app.use(express.urlencoded({ extended: false }))
+// app.use(express.urlencoded({ extended: false }))
 app.use(
 	session({
 		secret: 'mysecretsession',
@@ -51,17 +55,23 @@ const io = new SocketServer(httpServer)
 /* ------------------------ Clases en bases de datos ------------------------ */
 const Mensajes = require('./models/mensajesMongoDb.js')
 const Productos = require('./models/productosMariaDB.js')
-const { sqlite3, mysql, mongodb } = require('./src/options.js')
+const { mysql } = require('./src/options.js')
 
-const mensajes = new Mensajes(
-	process.env.MONGO_database,
-	process.env.MONGO_collection
-)
+// const mensajes = new Mensajes(
+// 	process.env.MONGO_database,
+// 	process.env.MONGO_mensajes
+// )
+const mensajes = new Mensajes()
 
 const productos = new Productos(mysql)
 productos.crearTablaProductos().catch((err) => {
 	console.log(err)
 })
+
+// REQUERIDO para mensajes en sqlite3
+// mensajes.crearTablaMensajes().catch((err) => {
+// 	console.log(err)
+// })
 
 /* ---------------------------------- Rutas --------------------------------- */
 app.get('/', isAuth, async (req, res) => {
@@ -129,12 +139,10 @@ function isAuth(req, res, next) {
 
 /* --------------------------------- emision -------------------------------- */
 io.on('connection', async (socket) => {
-	console.log('Nuevo cliente conectado - socket id: ', socket.id)
+	console.log('Nuevo cliente conectado')
 	const messages = await mensajes.getMessages()
-	console.log('messages: ', messages)
 	socket.emit('messages', messages)
 	const products = await productos.getProducts()
-	console.log('products: ', products)
 	socket.emit('products', products)
 
 	socket
@@ -150,7 +158,6 @@ io.on('connection', async (socket) => {
 		})
 })
 
-//server
 const PORT = 8080
 const server = httpServer.listen(PORT, () => {
 	console.log(
