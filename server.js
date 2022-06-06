@@ -5,14 +5,28 @@ const passport = require('passport')
 const exphbs = require('express-handlebars')
 const { config } = require('dotenv')
 config({ path: process.ENV })
+const parseArgs = require('minimist')
+const args = parseArgs(process.argv.slice(2))
 
 /* ------------------------------- Inicializa ------------------------------- */
 const app = express()
 require('./src/database')
 require('./passport/local-auth')
 
+/* ----------------------- Argumento línea de comando ----------------------- */
+function param(p) {
+	const index = process.argv.indexOf(p)
+	return process.argv[index + 1]
+}
+
+const puerto = parseInt(param('--puerto'))
+
 /* --------------------------------- Ajustes -------------------------------- */
-app.set('port', process.env.PORT || 8080)
+if (typeof puerto === 'number' && puerto > 0) {
+	app.set('port', puerto)
+} else {
+	app.set('port', 8080)
+}
 app.engine(
 	'hbs',
 	exphbs.engine({
@@ -153,4 +167,4 @@ const server = httpServer.listen(app.get('port'), () => {
 		}`
 	)
 })
-server.on('error', (error) => console.log(`Error en servidor: ${error}`))
+server.on('error', (error) => console.log(`${error}`))
