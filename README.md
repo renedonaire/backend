@@ -17,5 +17,9 @@ el string de conexión está en el archivo '.env'
 ## Tiempo de caducidad de la sesión  
 Está definido en el archivo '.env'
 
-## Iniciar chat sobre sockets:
+## Iniciar chat sobre sockets - puerto por defecto (8080):
 - npm start
+
+## Iniciar chat sobre sockets - puerto a elección:
+- node server.js --puerto 'num'
+donde 'num' es el número del puerto deseado
