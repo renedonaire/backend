@@ -6,7 +6,7 @@ const exphbs = require('express-handlebars')
 const { config } = require('dotenv')
 config({ path: process.ENV })
 const parseArgs = require('minimist')
-const args = parseArgs(process.argv.slice(2))
+const nodeProcess = require('node:process')
 
 /* ------------------------------- Inicializa ------------------------------- */
 const app = express()
@@ -122,6 +122,23 @@ app.get('/logout', (req, res, next) => {
 				emailUser: this.emailUser,
 			})
 		}
+	})
+})
+
+app.get('/info', (req, res) => {
+	const args = JSON.stringify(process.argv.slice(2))
+	console.log('args: ', args)
+	const pathEjecucion = process.argv[1]
+	const processId = process.pid
+	const folder = process.cwd()
+	res.render('../views/partials/info.hbs', {
+		args: args,
+		plataforma: nodeProcess.platform,
+		version: nodeProcess.version,
+		memoria: (nodeProcess.memoryUsage.rss() / 1024 / 1024).toFixed(2),
+		ruta: pathEjecucion,
+		processId: processId,
+		folder: folder,
 	})
 })
 
