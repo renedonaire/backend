@@ -7,6 +7,7 @@ const { config } = require('dotenv')
 config({ path: process.ENV })
 const parseArgs = require('minimist')
 const nodeProcess = require('node:process')
+const { getRandom } = require('./api/randoms')
 
 /* ------------------------------- Inicializa ------------------------------- */
 const app = express()
@@ -139,6 +140,14 @@ app.get('/info', (req, res) => {
 		ruta: pathEjecucion,
 		processId: processId,
 		folder: folder,
+	})
+})
+
+app.get('/api/randoms', async (req, res) => {
+	const cant = parseInt(req.query.cant) || 100000000
+	const numeros = await getRandom(cant)
+	res.render('../views/partials/randoms.hbs', {
+		numeros: JSON.stringify(numeros),
 	})
 })
 

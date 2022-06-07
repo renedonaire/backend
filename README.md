@@ -23,3 +23,7 @@ Está definido en el archivo '.env'
 ## Iniciar chat sobre sockets - puerto a elección:
 - node server.js --puerto 'num'
 donde 'num' es el número del puerto deseado
+
+## Rutas:
+/info => muestra la información del sistema
+/api/randoms (opcional: ?cant='número') => genera 'cant' números aleratorios (si no se indica la cantidad, genera 100 millones)
