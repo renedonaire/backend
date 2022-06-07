@@ -14,4 +14,7 @@ const getRandom = (cant) => {
 	return numeros
 }
 
-module.exports = { getRandom }
+process.on('message', (cant) => {
+	const numeros = getRandom(cant)
+	process.send(numeros)
+})
