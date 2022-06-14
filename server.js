@@ -155,6 +155,15 @@ app.get('/api/randoms', (req, res) => {
 	})
 })
 
+app.get('/datos', (req, res) => {
+	const PORT = param('--puerto') || 8080
+	res.send(
+		`Server en PORT(${PORT}) - PID(${
+			process.pid
+		}) - FYH(${new Date().toLocaleString()})`
+	)
+})
+
 const { variosProductos } = require('./api/fakerApi.js')
 app.get('/api/productos-test', async (req, res) => {
 	const arrayProductos = await variosProductos(5)
@@ -190,11 +199,61 @@ io.on('connection', async (socket) => {
 		})
 })
 
-const server = httpServer.listen(app.get('port'), () => {
-	console.log(
-		`Servidor (sockets sobre http) escuchando el puerto ${
-			server.address().port
-		}`
-	)
-})
-server.on('error', (error) => console.log(`${error}`))
+/* --------------------------- SERVER CON CLUSTER --------------------------- */
+// const express = require('express')
+const cluster = require('cluster')
+const os = require('os')
+
+function param(p) {
+	const index = process.argv.indexOf(p)
+	return index === -1 ? null : process.argv[index + 1]
+}
+
+const MODO = param('--modo') || 'FORK'
+
+if (MODO == 'CLUSTER' && cluster.isMaster) {
+	console.log(`Modo: ${MODO}`)
+	const numCPUs = os.cpus().length
+	console.log(`Número de procesadores: ${numCPUs}`)
+	console.log(`PID MASTER ${process.pid}`)
+
+	for (let i = 0; i < numCPUs; i++) {
+		cluster.fork()
+	}
+
+	cluster.on('exit', (worker) => {
+		console.log(
+			'Worker',
+			worker.process.pid,
+			'died',
+			new Date().toLocaleString()
+		)
+		cluster.fork()
+	})
+} else {
+	const PORT = param('--puerto') || 8080
+	const app = express()
+
+	// app.get('/datos', (req, res) => {
+	// 	res.send(
+	// 		`Server en PORT(${PORT}) - PID(${
+	// 			process.pid
+	// 		}) - FYH(${new Date().toLocaleString()})`
+	// 	)
+	// })
+
+	const server = httpServer.listen(PORT, () => {
+		console.log(`Servidor (sockets sobre http) escuchando el puerto ${PORT}`)
+	})
+	server.on('error', (error) => console.log(`${error}`))
+
+	// app.listen(PORT, (err) => {
+	// 	if (err) {
+	// 		console.log(err)
+	// 	} else {
+	// 		console.log(
+	// 			`Servidor escuchando en el puerto ${PORT} - PID WORKER ${process.pid}`
+	// 		)
+	// 	}
+	// })
+}
