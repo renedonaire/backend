@@ -48,3 +48,14 @@ Tambien se puede pasar sólo uno de los parámetros. Para detener,
 - forever start server.js --watch --puerto 8080 --modo CLUSTER   
 Tambien se puede pasar sólo uno de los parámetros. Para detener,   
 - forever stopall   
+
+## NGINX y Ubuntu  
+Se incluye la configuración en el archivo 'nginx.conf'   
+Para usarlo, se quita la configuración por defecto:   
+- sudo rm -r /etc/nginx/sites-enabled/default   
+Y se crea el archivo de configuración en el directorio   
+- /etc/nginx/conf.d/   
+Para que los cambios tengan efecto, se debe reiniciar el servicio:   
+- sudo /etc/init.d/nginx restart   
+O también   
+- systemctl reload nginx.service   
