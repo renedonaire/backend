@@ -27,3 +27,16 @@ donde 'num' es el número del puerto deseado
 ## Rutas:
 /info => muestra la información del sistema
 /api/randoms (opcional: ?cant='número') => genera 'cant' números aleratorios (si no se indica la cantidad, genera 100 millones)
+
+/* ------------------------------ PROGRAMATICO ------------------------------ */
+//node server.js --puerto 8080 --modo FORK
+//node server.js --puerto 8080 --modo CLUSTER
+
+/* ----------------------------------- PM2 ---------------------------------- */
+//pm2 start server.js --name="Server1" --watch -- "--puerto" 8082 "--modo" FORK
+//pm2 start server.js --name="Server2" --watch -i max -- "--puerto" 8082 "--modo" CLUSTER
+//pm2 del all
+
+<!-- ------------------------------- FOREVER ------------------------------- -->
+forever start server.js --watch --puerto 8080 --modo CLUSTER
+forever stopall

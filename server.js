@@ -9,6 +9,8 @@ const parseArgs = require('minimist')
 const nodeProcess = require('node:process')
 const { getRandom } = require('./api/randoms')
 const { fork } = require('child_process')
+const cluster = require('cluster')
+const os = require('os')
 
 /* ------------------------------- Inicializa ------------------------------- */
 const app = express()
@@ -136,6 +138,7 @@ app.get('/info', (req, res) => {
 	res.render('../views/partials/info.hbs', {
 		args: args,
 		plataforma: nodeProcess.platform,
+		numCpus: os.cpus().length,
 		version: nodeProcess.version,
 		memoria: (nodeProcess.memoryUsage.rss() / 1024 / 1024).toFixed(2),
 		ruta: pathEjecucion,
@@ -160,7 +163,7 @@ app.get('/datos', (req, res) => {
 	res.send(
 		`Server en PORT(${PORT}) - PID(${
 			process.pid
-		}) - FYH(${new Date().toLocaleString()})`
+		}) - time: (${new Date().toLocaleString()})`
 	)
 })
 
@@ -200,10 +203,6 @@ io.on('connection', async (socket) => {
 })
 
 /* --------------------------- SERVER CON CLUSTER --------------------------- */
-// const express = require('express')
-const cluster = require('cluster')
-const os = require('os')
-
 function param(p) {
 	const index = process.argv.indexOf(p)
 	return index === -1 ? null : process.argv[index + 1]
@@ -232,28 +231,8 @@ if (MODO == 'CLUSTER' && cluster.isMaster) {
 	})
 } else {
 	const PORT = param('--puerto') || 8080
-	const app = express()
-
-	// app.get('/datos', (req, res) => {
-	// 	res.send(
-	// 		`Server en PORT(${PORT}) - PID(${
-	// 			process.pid
-	// 		}) - FYH(${new Date().toLocaleString()})`
-	// 	)
-	// })
-
 	const server = httpServer.listen(PORT, () => {
 		console.log(`Servidor (sockets sobre http) escuchando el puerto ${PORT}`)
 	})
 	server.on('error', (error) => console.log(`${error}`))
-
-	// app.listen(PORT, (err) => {
-	// 	if (err) {
-	// 		console.log(err)
-	// 	} else {
-	// 		console.log(
-	// 			`Servidor escuchando en el puerto ${PORT} - PID WORKER ${process.pid}`
-	// 		)
-	// 	}
-	// })
 }
