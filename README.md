@@ -38,12 +38,12 @@ donde 'num' es el número del puerto deseado
 Se puede reemplazar node por nodemon. Tambien se puede pasar sólo uno de los parámetros.
 
 ### Por línea de comandos usando PM2:
-- pm2 start server.js --name="Server1" --watch -- "--puerto" 8082 "--modo" FORK
-- pm2 start server.js --name="Server2" --watch -i max -- "--puerto" 8082 "--modo" CLUSTER
-Tambien se puede pasar sólo uno de los parámetros. Para detener, 
+- pm2 start server.js --name="Server1" --watch -- "--puerto" 8082 "--modo" FORK  
+- pm2 start server.js --name="Server2" --watch -i max -- "--puerto" 8082 "--modo" CLUSTER 
+Tambien se puede pasar sólo uno de los parámetros. Para detener,  
 - pm2 del all
 
 ### Por línea de comandos usando Forever:
-- forever start server.js --watch --puerto 8080 --modo CLUSTER
- Tambien se puede pasar sólo uno de los parámetros. Para detener,
+- forever start server.js --watch --puerto 8080 --modo CLUSTER 
+ Tambien se puede pasar sólo uno de los parámetros. Para detener, 
 - forever stopall
