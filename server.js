@@ -11,9 +11,11 @@ const { getRandom } = require('./api/randoms')
 const { fork } = require('child_process')
 const cluster = require('cluster')
 const os = require('os')
+const compression = require('compression')
 
 /* ------------------------------- Inicializa ------------------------------- */
 const app = express()
+app.use(compression())
 require('./src/database')
 require('./passport/local-auth')
 

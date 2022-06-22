@@ -59,3 +59,7 @@ Para que los cambios tengan efecto, se debe reiniciar el servicio:
 - sudo /etc/init.d/nginx restart   
 O también   
 - systemctl reload nginx.service   
+   
+## Compresión GZip   
+Para activar / desactivar, comentar línea 18.   
+   
