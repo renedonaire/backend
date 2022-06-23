@@ -1,0 +1,1039 @@
+Statistical profiling result from con_console-v8.log, (8103 ticks, 4 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+   5958   73.5%          /usr/local/bin/node
+    235    2.9%          /usr/lib/x86_64-linux-gnu/libc.so.6
+     20    0.2%          /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30
+      8    0.1%          [vdso]
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+     37    0.5%    2.0%  LazyCompile: *SourceNode_walk /home/rdonaire/Desktop/backend/node_modules/source-map/lib/source-node.js:221:53
+     31    0.4%    1.6%  LazyCompile: *wrap /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:101:22
+     31    0.4%    1.6%  LazyCompile: *parse /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:269:30
+     28    0.3%    1.5%  LazyCompile: *resolve node:path:1091:10
+     23    0.3%    1.2%  LazyCompile: *next /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:478:32
+     16    0.2%    0.9%  LazyCompile: *readPackage node:internal/modules/cjs/loader:290:21
+     14    0.2%    0.7%  LazyCompile: *step /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:31:18
+     14    0.2%    0.7%  LazyCompile: *makeAbs /home/rdonaire/Desktop/backend/node_modules/glob/common.js:203:18
+     14    0.2%    0.7%  LazyCompile: *fulfilled /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:21:27
+     11    0.1%    0.6%  LazyCompile: *castChunk /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:52:19
+     10    0.1%    0.5%  LazyCompile: *<anonymous> /home/rdonaire/Desktop/backend/node_modules/source-map/lib/source-node.js:174:29
+      7    0.1%    0.4%  LazyCompile: *SourceNode_add /home/rdonaire/Desktop/backend/node_modules/source-map/lib/source-node.js:172:51
+      7    0.1%    0.4%  LazyCompile: *<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:167:47
+      6    0.1%    0.3%  RegExp: ^(?:[^\x00]*?(?=(\{\{)))
+      6    0.1%    0.3%  LazyCompile: *join node:path:1166:7
+      5    0.1%    0.3%  LazyCompile: *compile /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:73:28
+      5    0.1%    0.3%  LazyCompile: *<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:368:47
+      4    0.0%    0.2%  RegExp: (^|\r?\n)\s*?$
+      4    0.0%    0.2%  LazyCompile: *setupHelperArgs /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:1104:44
+      4    0.0%    0.2%  LazyCompile: *next /home/rdonaire/Desktop/backend/node_modules/express/lib/router/index.js:177:16
+      4    0.0%    0.2%  LazyCompile: *invokeAmbiguous /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:699:44
+      4    0.0%    0.2%  LazyCompile: *generateList /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:143:38
+      4    0.0%    0.2%  LazyCompile: *anonymous /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:12:42
+      4    0.0%    0.2%  LazyCompile: *__generator /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:27:58
+      4    0.0%    0.2%  LazyCompile: *Module._nodeModulePaths node:internal/modules/cjs/loader:629:37
+      4    0.0%    0.2%  LazyCompile: *Glob._process /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:295:36
+      4    0.0%    0.2%  Function: ^Glob /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:117:15
+      3    0.0%    0.2%  RegExp: ^(?:\{\{(~)?#>)
+      3    0.0%    0.2%  LazyCompile: *readFileAfterClose node:internal/fs/read_file_context:46:28
+      3    0.0%    0.2%  LazyCompile: *normalizeString node:path:66:25
+      3    0.0%    0.2%  LazyCompile: *extend /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/utils.js:28:16
+      3    0.0%    0.2%  LazyCompile: *emit node:events:475:44
+      3    0.0%    0.2%  LazyCompile: *anonymous /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:549:49
+      3    0.0%    0.2%  LazyCompile: *WhitespaceControl.Program /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/whitespace-control.js:19:48
+      3    0.0%    0.2%  LazyCompile: *<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:30:40
+      3    0.0%    0.2%  Function: ^processPromiseRejections node:internal/process/promises:211:34
+      2    0.0%    0.1%  RegExp: ^(?:\{\{(~)?\/)
+      2    0.0%    0.1%  RegExp: ^(?:\{\{(~)?>)
+      2    0.0%    0.1%  LazyCompile: *validateString node:internal/validators:118:24
+      2    0.0%    0.1%  LazyCompile: *template /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/runtime.js:52:18
+      2    0.0%    0.1%  LazyCompile: *syncExports node:internal/bootstrap/loaders:287:14
+      2    0.0%    0.1%  LazyCompile: *setupParams /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:1034:36
+      2    0.0%    0.1%  LazyCompile: *readFile node:fs:373:18
+      2    0.0%    0.1%  LazyCompile: *quotedString /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:118:38
+      2    0.0%    0.1%  LazyCompile: *preparePath /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/helpers.js:63:21
+      2    0.0%    0.1%  LazyCompile: *formatRaw node:internal/util/inspect:820:19
+      2    0.0%    0.1%  LazyCompile: *formatPrimitive node:internal/util/inspect:1519:25
+      2    0.0%    0.1%  LazyCompile: *dirname node:path:1275:10
+      2    0.0%    0.1%  LazyCompile: *compileFunction node:vm:308:25
+      2    0.0%    0.1%  LazyCompile: *appendToBuffer /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:42:42
+      2    0.0%    0.1%  LazyCompile: *SubExpression /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:236:40
+      2    0.0%    0.1%  LazyCompile: *Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      2    0.0%    0.1%  LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      2    0.0%    0.1%  LazyCompile: *Glob._processReaddir2 /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:375:44
+      2    0.0%    0.1%  Function: ^writeHead /home/rdonaire/Desktop/backend/node_modules/on-headers/index.js:28:29
+      2    0.0%    0.1%  Function: ^stringToFlags node:internal/fs/utils:556:23
+      2    0.0%    0.1%  Function: ^ret /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:515:15
+      2    0.0%    0.1%  Function: ^resolvePath /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:492:36
+      2    0.0%    0.1%  Function: ^onResponseHeaders /home/rdonaire/Desktop/backend/node_modules/compression/index.js:140:47
+      2    0.0%    0.1%  Function: ^lookupOnContext /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:448:44
+      2    0.0%    0.1%  Function: ^id /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/helpers.js:44:12
+      2    0.0%    0.1%  Function: ^authenticate /home/rdonaire/Desktop/backend/node_modules/passport/lib/middleware/authenticate.js:94:31
+      2    0.0%    0.1%  Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      2    0.0%    0.1%  Function: ^Module._resolveLookupPaths node:internal/modules/cjs/loader:667:38
+      2    0.0%    0.1%  Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      2    0.0%    0.1%  Function: ^<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:227:47
+      1    0.0%    0.1%  RegExp: ^\s*([^;\s]*)(?:;|\s|$)
+      1    0.0%    0.1%  RegExp: ^\/logout\/?$
+      1    0.0%    0.1%  RegExp: ^\/info\/?$
+      1    0.0%    0.1%  RegExp: ^\.|this\b
+      1    0.0%    0.1%  RegExp: ^[a-zA-Z_][a-zA-Z_0-9]*$
+      1    0.0%    0.1%  RegExp: ^[\^_`a-zA-Z\-0-9!#$%&'*+.|~]+$
+      1    0.0%    0.1%  RegExp: ^[!#$%&'*+.^_`|~0-9A-Za-z-]+\/[!#$%&'*+.^_`|~0-9A-Za-z-]+$
+      1    0.0%    0.1%  RegExp: ^(?:null(?=([~}\s)])))
+      1    0.0%    0.1%  RegExp: ^(?:false(?=([~}\s)])))
+      1    0.0%    0.1%  RegExp: ^(?:\}(~)?\}\})
+      1    0.0%    0.1%  RegExp: ^(?:\|)
+      1    0.0%    0.1%  RegExp: ^(?:\{\{(~)?\{)
+      1    0.0%    0.1%  RegExp: ^(?:\{\{(~)?\*?)
+      1    0.0%    0.1%  RegExp: ^(?:\{\{(~)?!--)
+      1    0.0%    0.1%  RegExp: ^(?:\.\.)
+      1    0.0%    0.1%  RegExp: ^(?:-?[0-9]+(?:\.[0-9]+)?(?=([~}\s)])))
+      1    0.0%    0.1%  RegExp: \r?\n\s*?$
+      1    0.0%    0.1%  RegExp: \=+$
+      1    0.0%    0.1%  RegExp: \/+
+      1    0.0%    0.1%  RegExp: [^\t\x20-\x7e\x80-\xff]
+      1    0.0%    0.1%  RegExp: ;\s*charset\s*=
+      1    0.0%    0.1%  LazyCompile: *yy.locInfo /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/base.js:42:25
+      1    0.0%    0.1%  LazyCompile: *wrapper /home/rdonaire/Desktop/backend/node_modules/wrappy/wrappy.js:19:19
+      1    0.0%    0.1%  LazyCompile: *trim_prefix /home/rdonaire/Desktop/backend/node_modules/express/lib/router/index.js:293:23
+      1    0.0%    0.1%  LazyCompile: *realpathSync node:fs:2425:22
+      1    0.0%    0.1%  LazyCompile: *readPackageScope node:internal/modules/cjs/loader:321:26
+      1    0.0%    0.1%  LazyCompile: *readFileSync node:fs:450:22
+      1    0.0%    0.1%  LazyCompile: *readFileAfterStat node:fs:326:27
+      1    0.0%    0.1%  LazyCompile: *pushSource /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:881:34
+      1    0.0%    0.1%  LazyCompile: *push /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:868:22
+      1    0.0%    0.1%  LazyCompile: *processTicksAndRejections node:internal/process/task_queues:68:35
+      1    0.0%    0.1%  LazyCompile: *popStack /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:960:30
+      1    0.0%    0.1%  LazyCompile: *passLookupPropertyOption /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/runtime.js:366:34
+      1    0.0%    0.1%  LazyCompile: *parse /home/rdonaire/Desktop/backend/node_modules/vary/index.js:96:16
+      1    0.0%    0.1%  LazyCompile: *parse /home/rdonaire/Desktop/backend/node_modules/minimatch/minimatch.js:413:9
+      1    0.0%    0.1%  LazyCompile: *objectLiteral /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:123:40
+      1    0.0%    0.1%  LazyCompile: *normalize node:path:1127:12
+      1    0.0%    0.1%  LazyCompile: *nextTick node:internal/process/task_queues:104:18
+      1    0.0%    0.1%  LazyCompile: *module.exports /home/rdonaire/Desktop/backend/node_modules/utils-merge/index.js:16:36
+      1    0.0%    0.1%  LazyCompile: *isAbsolute node:path:1156:13
+      1    0.0%    0.1%  LazyCompile: *inflight /home/rdonaire/Desktop/backend/node_modules/inflight/inflight.js:7:19
+      1    0.0%    0.1%  LazyCompile: *formatProperty node:internal/util/inspect:1810:24
+      1    0.0%    0.1%  LazyCompile: *extname node:path:1385:10
+      1    0.0%    0.1%  LazyCompile: *basename node:path:1306:11
+      1    0.0%    0.1%  LazyCompile: *appendEscaped /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:416:40
+      1    0.0%    0.1%  LazyCompile: *appendContent /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:375:40
+      1    0.0%    0.1%  LazyCompile: *ambiguousSexpr /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:248:42
+      1    0.0%    0.1%  LazyCompile: *_storeHeader node:_http_outgoing:374:22
+      1    0.0%    0.1%  LazyCompile: *_addListener node:events:555:22
+      1    0.0%    0.1%  LazyCompile: *SourceNode_prepend /home/rdonaire/Desktop/backend/node_modules/source-map/lib/source-node.js:197:59
+      1    0.0%    0.1%  LazyCompile: *RES /home/rdonaire/Desktop/backend/node_modules/inflight/inflight.js:18:28
+      1    0.0%    0.1%  LazyCompile: *Module.require node:internal/modules/cjs/loader:997:36
+      1    0.0%    0.1%  LazyCompile: *Module._resolveLookupPaths node:internal/modules/cjs/loader:667:38
+      1    0.0%    0.1%  LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      1    0.0%    0.1%  LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+      1    0.0%    0.1%  LazyCompile: *Hash node:internal/crypto/hash:58:14
+      1    0.0%    0.1%  LazyCompile: *<anonymous> /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:85:24
+      1    0.0%    0.1%  LazyCompile: *<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:251:47
+      1    0.0%    0.1%  LazyCompile: *<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:227:47
+      1    0.0%    0.1%  LazyCompile: *<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:208:81
+      1    0.0%    0.1%  LazyCompile: *<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:201:47
+      1    0.0%    0.1%  Function: ^validateString node:internal/validators:118:24
+      1    0.0%    0.1%  Function: ^urlencodedParser /home/rdonaire/Desktop/backend/node_modules/body-parser/lib/types/urlencoded.js:79:36
+      1    0.0%    0.1%  Function: ^tryReadSync node:fs:429:21
+      1    0.0%    0.1%  Function: ^tryReadStart node:net:608:22
+      1    0.0%    0.1%  Function: ^touch /home/rdonaire/Desktop/backend/node_modules/express-session/session/memory.js:147:45
+      1    0.0%    0.1%  Function: ^shouldSetCookie /home/rdonaire/Desktop/backend/node_modules/express-session/index.js:464:29
+      1    0.0%    0.1%  Function: ^setupParams /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:1034:36
+      1    0.0%    0.1%  Function: ^setopts /home/rdonaire/Desktop/backend/node_modules/glob/common.js:48:18
+      1    0.0%    0.1%  Function: ^setRequestTimeout node:_http_server:767:27
+      1    0.0%    0.1%  Function: ^setImmediate node:timers:278:22
+      1    0.0%    0.1%  Function: ^set /home/rdonaire/Desktop/backend/node_modules/express/lib/application.js:359:23
+      1    0.0%    0.1%  Function: ^session /home/rdonaire/Desktop/backend/node_modules/express-session/index.js:179:26
+      1    0.0%    0.1%  Function: ^send /home/rdonaire/Desktop/backend/node_modules/express/lib/response.js:111:25
+      1    0.0%    0.1%  Function: ^ret /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/runtime.js:188:15
+      1    0.0%    0.1%  Function: ^resolve /home/rdonaire/Desktop/backend/node_modules/express/lib/view.js:146:42
+      1    0.0%    0.1%  Function: ^resOnFinish node:_http_server:793:21
+      1    0.0%    0.1%  Function: ^require node:internal/modules/cjs/helpers:101:31
+      1    0.0%    0.1%  Function: ^render /home/rdonaire/Desktop/backend/node_modules/express/lib/application.js:548:29
+      1    0.0%    0.1%  Function: ^removeColors node:internal/util:76:22
+      1    0.0%    0.1%  Function: ^readSync node:fs:684:18
+      1    0.0%    0.1%  Function: ^readStart node:_http_incoming:40:19
+      1    0.0%    0.1%  Function: ^readFileAfterRead node:internal/fs/read_file_context:25:27
+      1    0.0%    0.1%  Function: ^readFile /home/rdonaire/Desktop/backend/node_modules/graceful-fs/graceful-fs.js:111:21
+      1    0.0%    0.1%  Function: ^processImmediate node:internal/timers:421:28
+      1    0.0%    0.1%  Function: ^prepareProgram /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/helpers.js:185:24
+      1    0.0%    0.1%  Function: ^prepareMustache /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/helpers.js:99:25
+      1    0.0%    0.1%  Function: ^parse /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/commands.js:577:10
+      1    0.0%    0.1%  Function: ^parse /home/rdonaire/Desktop/backend/node_modules/express-session/node_modules/cookie/index.js:48:15
+      1    0.0%    0.1%  Function: ^onwrite node:internal/streams/writable:425:17
+      1    0.0%    0.1%  Function: ^onStatError /home/rdonaire/Desktop/backend/node_modules/send/index.js:412:57
+      1    0.0%    0.1%  Function: ^onDestroy node:internal/streams/destroy:73:21
+      1    0.0%    0.1%  Function: ^objectLiteral /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:123:40
+      1    0.0%    0.1%  Function: ^normalizeParseOptions /home/rdonaire/Desktop/backend/node_modules/qs/lib/parse.js:204:59
+      1    0.0%    0.1%  Function: ^nextTick node:internal/process/task_queues:104:18
+      1    0.0%    0.1%  Function: ^next /home/rdonaire/Desktop/backend/node_modules/send/index.js:728:17
+      1    0.0%    0.1%  Function: ^next /home/rdonaire/Desktop/backend/node_modules/express/lib/router/route.js:116:16
+      1    0.0%    0.1%  Function: ^multiplication32 /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/modules/mersenne/twister.js:1:872
+      1    0.0%    0.1%  Function: ^mergeSource /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:267:36
+      1    0.0%    0.1%  Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      1    0.0%    0.1%  Function: ^jsonParser /home/rdonaire/Desktop/backend/node_modules/body-parser/lib/types/json.js:98:30
+      1    0.0%    0.1%  Function: ^isInline /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:956:30
+      1    0.0%    0.1%  Function: ^invokeAmbiguous /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:699:44
+      1    0.0%    0.1%  Function: ^initialize /home/rdonaire/Desktop/backend/node_modules/passport/lib/middleware/initialize.js:51:29
+      1    0.0%    0.1%  Function: ^inflate /home/rdonaire/Desktop/backend/node_modules/express-session/index.js:371:22
+      1    0.0%    0.1%  Function: ^go$readFile /home/rdonaire/Desktop/backend/node_modules/graceful-fs/graceful-fs.js:117:26
+      1    0.0%    0.1%  Function: ^getSession /home/rdonaire/Desktop/backend/node_modules/express-session/session/memory.js:164:20
+      1    0.0%    0.1%  Function: ^getHeader node:_http_outgoing:590:57
+      1    0.0%    0.1%  Function: ^get node:internal/streams/duplex:94:8
+      1    0.0%    0.1%  Function: ^get node:_http_incoming:108:16
+      1    0.0%    0.1%  Function: ^formatProperty node:internal/util/inspect:1810:24
+      1    0.0%    0.1%  Function: ^findLongestRegisteredExtension node:internal/modules/cjs/loader:413:40
+      1    0.0%    0.1%  Function: ^extname node:path:1385:10
+      1    0.0%    0.1%  Function: ^endReadable node:internal/streams/readable:1328:21
+      1    0.0%    0.1%  Function: ^emitBeforeScript node:internal/async_hooks:510:26
+      1    0.0%    0.1%  Function: ^done /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:171:17
+      1    0.0%    0.1%  Function: ^debug /home/rdonaire/Desktop/backend/node_modules/express/node_modules/debug/src/debug.js:65:17
+      1    0.0%    0.1%  Function: ^clearTimeout node:timers:184:22
+      1    0.0%    0.1%  Function: ^clearBuffer node:internal/streams/writable:529:21
+      1    0.0%    0.1%  Function: ^blockParamIndex /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:461:44
+      1    0.0%    0.1%  Function: ^append /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:394:26
+      1    0.0%    0.1%  Function: ^anonymous /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:12:42
+      1    0.0%    0.1%  Function: ^allocate node:buffer:398:18
+      1    0.0%    0.1%  Function: ^alignPool node:buffer:159:19
+      1    0.0%    0.1%  Function: ^afterWriteDispatched node:internal/stream_base_commons:155:30
+      1    0.0%    0.1%  Function: ^adjustOffset node:buffer:1099:22
+      1    0.0%    0.1%  Function: ^__awaiter /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:18:54
+      1    0.0%    0.1%  Function: ^URLContext node:internal/url:161:14
+      1    0.0%    0.1%  Function: ^Timeout node:internal/timers:167:17
+      1    0.0%    0.1%  Function: ^Stats node:internal/fs/utils:496:15
+      1    0.0%    0.1%  Function: ^Socket._writeGeneric node:net:791:42
+      1    0.0%    0.1%  Function: ^Module._nodeModulePaths node:internal/modules/cjs/loader:629:37
+      1    0.0%    0.1%  Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1    0.0%    0.1%  Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1    0.0%    0.1%  Function: ^Long.negate /home/rdonaire/Desktop/backend/node_modules/bson/lib/long.js:613:38
+      1    0.0%    0.1%  Function: ^ExpressHandlebars.render /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:222:51
+      1    0.0%    0.1%  Function: ^ExpressHandlebars._getFile /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:364:53
+      1    0.0%    0.1%  Function: ^<anonymous> node:internal/validators:101:40
+      1    0.0%    0.1%  Function: ^<anonymous> node:internal/fs/utils:358:35
+      1    0.0%    0.1%  Function: ^<anonymous> node:internal/console/constructor:339:10
+      1    0.0%    0.1%  Function: ^<anonymous> :1:20
+      1    0.0%    0.1%  Function: ^<anonymous> /home/rdonaire/Desktop/backend/server.js:144:18
+      1    0.0%    0.1%  Function: ^<anonymous> /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/runtime.js:360:47
+      1    0.0%    0.1%  Function: ^<anonymous> /home/rdonaire/Desktop/backend/node_modules/graceful-fs/graceful-fs.js:118:50
+      1    0.0%    0.1%  Function: ^<anonymous> /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:625:43
+      1    0.0%    0.1%  Function: ^<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:98:47
+      1    0.0%    0.1%  Function: ^<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:30:40
+      1    0.0%    0.1%  Function: ^<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:201:47
+      1    0.0%    0.1%  Function: ^<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:164:57
+      1    0.0%    0.1%  Function: ^<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:107:67
+      1    0.0%    0.1%  Function: ^<anonymous> /home/rdonaire/Desktop/backend/node_modules/connect-flash/lib/flash.js:18:18
+
+ [C++]:
+   ticks  total  nonlib   name
+    269    3.3%   14.3%  __write@@GLIBC_2.2.5
+    216    2.7%   11.5%  __read@@GLIBC_2.2.5
+    173    2.1%    9.2%  pthread_cond_signal@@GLIBC_2.3.2
+    159    2.0%    8.4%  epoll_pwait@@GLIBC_2.6
+    131    1.6%    7.0%  fwrite@@GLIBC_2.2.5
+     73    0.9%    3.9%  std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@@GLIBCXX_3.4.9
+     49    0.6%    2.6%  syscall@@GLIBC_2.2.5
+     39    0.5%    2.1%  _IO_file_xsputn@@GLIBC_2.2.5
+     37    0.5%    2.0%  __libc_malloc@@GLIBC_2.2.5
+     29    0.4%    1.5%  std::ostream::sentry::sentry(std::ostream&)@@GLIBCXX_3.4
+     19    0.2%    1.0%  cfree@GLIBC_2.2.5
+     19    0.2%    1.0%  __mprotect@@GLIBC_PRIVATE
+     17    0.2%    0.9%  __open@@GLIBC_2.2.5
+     11    0.1%    0.6%  std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const@@GLIBCXX_3.4
+      8    0.1%    0.4%  std::ostream& std::ostream::_M_insert<long>(long)@@GLIBCXX_3.4.9
+      8    0.1%    0.4%  __pthread_mutex_unlock@GLIBC_2.2.5
+      6    0.1%    0.3%  __pthread_mutex_lock@GLIBC_2.2.5
+      5    0.1%    0.3%  operator new(unsigned long)@@GLIBCXX_3.4
+      4    0.0%    0.2%  writev@@GLIBC_2.2.5
+      4    0.0%    0.2%  std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<unsigned long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, unsigned long) const@@GLIBCXX_3.4
+      4    0.0%    0.2%  operator new[](unsigned long)@@GLIBCXX_3.4
+      4    0.0%    0.2%  __pthread_rwlock_unlock@GLIBC_2.2.5
+      4    0.0%    0.2%  __munmap@@GLIBC_PRIVATE
+      3    0.0%    0.2%  std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4
+      3    0.0%    0.2%  operator delete[](void*)@@GLIBCXX_3.4
+      3    0.0%    0.2%  __errno_location@@GLIBC_2.2.5
+      3    0.0%    0.2%  __clock_gettime@@GLIBC_PRIVATE
+      3    0.0%    0.2%  _IO_default_xsputn@@GLIBC_2.2.5
+      2    0.0%    0.1%  std::ostream::operator<<(int)@@GLIBCXX_3.4
+      2    0.0%    0.1%  std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const@@GLIBCXX_3.4
+      2    0.0%    0.1%  fstatat@@GLIBC_2.33
+      2    0.0%    0.1%  fdopen@@GLIBC_2.2.5
+      2    0.0%    0.1%  __pthread_rwlock_wrlock@GLIBC_2.2.5
+      2    0.0%    0.1%  __lll_lock_wait_private@@GLIBC_PRIVATE
+      2    0.0%    0.1%  _IO_do_write@@GLIBC_2.2.5
+      1    0.0%    0.1%  std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)@@GLIBCXX_3.4.9
+      1    0.0%    0.1%  std::locale::id::_M_id() const@@GLIBCXX_3.4
+      1    0.0%    0.1%  std::__detail::_Prime_rehash_policy::_M_next_bkt(unsigned long) const@@GLIBCXX_3.4.18
+      1    0.0%    0.1%  std::__detail::_List_node_base::_M_hook(std::__detail::_List_node_base*)@@GLIBCXX_3.4.15
+      1    0.0%    0.1%  sigemptyset@@GLIBC_2.2.5
+      1    0.0%    0.1%  shutdown@@GLIBC_2.2.5
+      1    0.0%    0.1%  operator new[](unsigned long, std::nothrow_t const&)@@GLIBCXX_3.4
+      1    0.0%    0.1%  operator delete(void*)@@GLIBCXX_3.4
+      1    0.0%    0.1%  getrusage@@GLIBC_2.2.5
+      1    0.0%    0.1%  fputc@@GLIBC_2.2.5
+      1    0.0%    0.1%  epoll_ctl@@GLIBC_2.3.2
+      1    0.0%    0.1%  accept4@@GLIBC_2.10
+      1    0.0%    0.1%  __vsnprintf@@GLIBC_2.2.5
+      1    0.0%    0.1%  __pthread_once@GLIBC_2.2.5
+      1    0.0%    0.1%  __libc_pread@@GLIBC_PRIVATE
+      1    0.0%    0.1%  __close_nocancel@@GLIBC_PRIVATE
+      1    0.0%    0.1%  _IO_unsave_markers@@GLIBC_2.2.5
+      1    0.0%    0.1%  _IO_setb@@GLIBC_2.2.5
+
+ [Summary]:
+   ticks  total  nonlib   name
+    543    6.7%   28.9%  JavaScript
+   1335   16.5%   70.9%  C++
+    345    4.3%   18.3%  GC
+   6221   76.8%          Shared libraries
+      4    0.0%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+    250   23.0%    3.1%  __write@@GLIBC_2.2.5
+    208   19.1%    2.6%  __read@@GLIBC_2.2.5
+    152   14.0%    1.9%  pthread_cond_signal@@GLIBC_2.3.2
+    130   12.0%    1.6%  fwrite@@GLIBC_2.2.5
+     73    6.7%    0.9%  std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@@GLIBCXX_3.4.9
+     49    4.5%    0.6%  syscall@@GLIBC_2.2.5
+     38    3.5%    0.5%  _IO_file_xsputn@@GLIBC_2.2.5
+     33    3.0%    0.4%  __libc_malloc@@GLIBC_2.2.5
+     28    2.6%    0.3%  std::ostream::sentry::sentry(std::ostream&)@@GLIBCXX_3.4
+     17    1.6%    0.2%  __open@@GLIBC_2.2.5
+     13    1.2%    0.2%  cfree@GLIBC_2.2.5
+     12    1.1%    0.1%  __mprotect@@GLIBC_PRIVATE
+     11    1.0%    0.1%  std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const@@GLIBCXX_3.4
+      8    0.7%    0.1%  std::ostream& std::ostream::_M_insert<long>(long)@@GLIBCXX_3.4.9
+      8    0.7%    0.1%  __pthread_mutex_unlock@GLIBC_2.2.5
+      4    0.4%    0.0%  writev@@GLIBC_2.2.5
+      4    0.4%    0.0%  std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<unsigned long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, unsigned long) const@@GLIBCXX_3.4
+      4    0.4%    0.0%  operator new[](unsigned long)@@GLIBCXX_3.4
+      4    0.4%    0.0%  operator new(unsigned long)@@GLIBCXX_3.4
+      3    0.3%    0.0%  std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4
+      3    0.3%    0.0%  operator delete[](void*)@@GLIBCXX_3.4
+      3    0.3%    0.0%  __pthread_rwlock_unlock@GLIBC_2.2.5
+      3    0.3%    0.0%  __pthread_mutex_lock@GLIBC_2.2.5
+      3    0.3%    0.0%  __clock_gettime@@GLIBC_PRIVATE
+      3    0.3%    0.0%  _IO_default_xsputn@@GLIBC_2.2.5
+      2    0.2%    0.0%  std::ostream::operator<<(int)@@GLIBCXX_3.4
+      2    0.2%    0.0%  std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const@@GLIBCXX_3.4
+      2    0.2%    0.0%  fstatat@@GLIBC_2.33
+      2    0.2%    0.0%  fdopen@@GLIBC_2.2.5
+      1    0.1%    0.0%  std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)@@GLIBCXX_3.4.9
+      1    0.1%    0.0%  std::locale::id::_M_id() const@@GLIBCXX_3.4
+      1    0.1%    0.0%  std::__detail::_List_node_base::_M_hook(std::__detail::_List_node_base*)@@GLIBCXX_3.4.15
+      1    0.1%    0.0%  operator new[](unsigned long, std::nothrow_t const&)@@GLIBCXX_3.4
+      1    0.1%    0.0%  operator delete(void*)@@GLIBCXX_3.4
+      1    0.1%    0.0%  fputc@@GLIBC_2.2.5
+      1    0.1%    0.0%  __vsnprintf@@GLIBC_2.2.5
+      1    0.1%    0.0%  __pthread_rwlock_wrlock@GLIBC_2.2.5
+      1    0.1%    0.0%  __pthread_once@GLIBC_2.2.5
+      1    0.1%    0.0%  __libc_pread@@GLIBC_PRIVATE
+      1    0.1%    0.0%  __errno_location@@GLIBC_2.2.5
+      1    0.1%    0.0%  __close_nocancel@@GLIBC_PRIVATE
+      1    0.1%    0.0%  _IO_unsave_markers@@GLIBC_2.2.5
+      1    0.1%    0.0%  _IO_setb@@GLIBC_2.2.5
+      1    0.1%    0.0%  _IO_do_write@@GLIBC_2.2.5
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   5958   73.5%  /usr/local/bin/node
+   3911   65.6%    /usr/local/bin/node
+    771   19.7%      Function: ^compileFunction node:vm:308:25
+    710   92.1%        Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+    709   99.9%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+    699   98.6%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     10    1.4%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     55    7.1%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+     55  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     55  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+    446   11.4%      Function: ^readSync node:fs:684:18
+    331   74.2%        Function: ^tryReadSync node:fs:429:21
+    331  100.0%          Function: ^readFileSync node:fs:450:22
+    316   95.5%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     12    3.6%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+    115   25.8%        LazyCompile: *readFileSync node:fs:450:22
+    115  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+    115  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+    164    4.2%      Function: ^handleWriteReq node:internal/stream_base_commons:45:24
+    164  100.0%        Function: ^writeGeneric node:internal/stream_base_commons:147:22
+    104   63.4%          Function: ^Socket._writeGeneric node:net:791:42
+    104  100.0%            Function: ^Socket._write node:net:828:35
+     60   36.6%          LazyCompile: *writeOrBuffer node:internal/streams/writable:365:23
+     51   85.0%            LazyCompile: *_write node:internal/streams/writable:283:16
+      9   15.0%            Function: ^_write node:internal/streams/writable:283:16
+    114    2.9%      /usr/local/bin/node
+      8    7.0%        Function: ^removeColors node:internal/util:76:22
+      8  100.0%          Function: ^isBelowBreakLength node:internal/util/inspect:1878:28
+      8  100.0%            Function: ^reduceToSingleString node:internal/util/inspect:1902:30
+      6    5.3%        Function: ^expressInit /home/rdonaire/Desktop/backend/node_modules/express/lib/middleware/init.js:29:30
+      4   66.7%          LazyCompile: *handle /home/rdonaire/Desktop/backend/node_modules/express/lib/router/layer.js:86:49
+      4  100.0%            Function: ^trim_prefix /home/rdonaire/Desktop/backend/node_modules/express/lib/router/index.js:293:23
+      1   16.7%          LazyCompile: *trim_prefix /home/rdonaire/Desktop/backend/node_modules/express/lib/router/index.js:293:23
+      1  100.0%            LazyCompile: *next /home/rdonaire/Desktop/backend/node_modules/express/lib/router/index.js:177:16
+      1   16.7%          Function: ^handle /home/rdonaire/Desktop/backend/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%            Function: ^trim_prefix /home/rdonaire/Desktop/backend/node_modules/express/lib/router/index.js:293:23
+      5    4.4%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      3   60.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      3  100.0%            Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      2   40.0%          Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+      2  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      5    4.4%        Function: ^header /home/rdonaire/Desktop/backend/node_modules/express/lib/response.js:777:29
+      4   80.0%          Function: ^contentType /home/rdonaire/Desktop/backend/node_modules/express/lib/response.js:619:32
+      4  100.0%            Function: ^send /home/rdonaire/Desktop/backend/node_modules/express/lib/response.js:111:25
+      1   20.0%          Function: ^send /home/rdonaire/Desktop/backend/node_modules/express/lib/response.js:111:25
+      1  100.0%            Function: ^done /home/rdonaire/Desktop/backend/node_modules/express/lib/response.js:1033:27
+      4    3.5%        LazyCompile: *parse /home/rdonaire/Desktop/backend/node_modules/minimatch/minimatch.js:413:9
+      4  100.0%          /usr/local/bin/node
+      4  100.0%            Function: ^<anonymous> /home/rdonaire/Desktop/backend/node_modules/minimatch/minimatch.js:222:19
+      4    3.5%        Function: ^FastBuffer node:internal/buffer:958:14
+      4  100.0%          Function: ^createUnsafeBuffer node:internal/buffer:1059:28
+      2   50.0%            Function: ^allocUnsafeSlow node:buffer:383:50
+      1   25.0%            Function: ^createPool node:buffer:151:20
+      1   25.0%            Function: ^allocate node:buffer:398:18
+      3    2.6%        LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+      2   66.7%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      2  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1   33.3%          LazyCompile: *Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      3    2.6%        Function: ^stat node:internal/modules/cjs/loader:151:14
+      2   66.7%          Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1   50.0%            LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1   50.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1   33.3%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      1  100.0%            Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      3    2.6%        Function: ^checkInvalidHeaderChar node:_http_common:232:32
+      3  100.0%          Function: ^<anonymous> node:_http_outgoing:564:45
+      3  100.0%            Function: ^setHeader node:_http_outgoing:574:57
+      3    2.6%        Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      3  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      3  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      3    2.6%        Function: ^Module node:internal/modules/cjs/loader:172:16
+      3  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2   66.7%            LazyCompile: *Module.require node:internal/modules/cjs/loader:997:36
+      1   33.3%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      2    1.8%        LazyCompile: ~checkServer /home/rdonaire/Desktop/backend/node_modules/mongodb/lib/sdam/monitor.js:143:21
+      2  100.0%          LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/mongodb/lib/sdam/monitor.js:229:12
+      2  100.0%            LazyCompile: ~executeAndReschedule /home/rdonaire/Desktop/backend/node_modules/mongodb/lib/utils.js:702:34
+      2    1.8%        LazyCompile: *compileFunction node:vm:308:25
+      2  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      2  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      2    1.8%        Function: ^parse /home/rdonaire/Desktop/backend/node_modules/minimatch/minimatch.js:413:9
+      2  100.0%          /usr/local/bin/node
+      2  100.0%            Function: ^<anonymous> /home/rdonaire/Desktop/backend/node_modules/minimatch/minimatch.js:222:19
+      2    1.8%        Function: ^parse /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:269:30
+      2  100.0%          LazyCompile: ~parseWithoutProcessing /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/base.js:33:32
+      2  100.0%            LazyCompile: ~parse /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/base.js:51:15
+      2    1.8%        Function: ^parse /home/rdonaire/Desktop/backend/node_modules/express-session/node_modules/cookie/index.js:48:15
+      2  100.0%          Function: ^getcookie /home/rdonaire/Desktop/backend/node_modules/express-session/index.js:529:19
+      2  100.0%            Function: ^session /home/rdonaire/Desktop/backend/node_modules/express-session/index.js:179:26
+      2    1.8%        Function: ^getConstructorName node:internal/util/inspect:567:28
+      2  100.0%          Function: ^formatRaw node:internal/util/inspect:820:19
+      2  100.0%            Function: ^formatValue node:internal/util/inspect:745:21
+      2    1.8%        Function: ^compileFunction node:vm:308:25
+      2  100.0%          Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+      2  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      2    1.8%        Function: ^<anonymous> /home/rdonaire/Desktop/backend/node_modules/minimatch/minimatch.js:222:19
+      2  100.0%          /usr/local/bin/node
+      2  100.0%            Function: ^make /home/rdonaire/Desktop/backend/node_modules/minimatch/minimatch.js:188:8
+    111    2.8%      Function: ^close node:internal/fs/read_file_context:111:8
+    111  100.0%        Function: ^readFileAfterRead node:internal/fs/read_file_context:25:27
+    103    2.6%      Function: ^cpus node:os:133:14
+    102   99.0%        Function: ^<anonymous> /home/rdonaire/Desktop/backend/server.js:144:18
+     54   52.9%          LazyCompile: *handle /home/rdonaire/Desktop/backend/node_modules/express/lib/router/layer.js:86:49
+     54  100.0%            Function: ^next /home/rdonaire/Desktop/backend/node_modules/express/lib/router/route.js:116:16
+     48   47.1%          Function: ^handle /home/rdonaire/Desktop/backend/node_modules/express/lib/router/layer.js:86:49
+     48  100.0%            Function: ^next /home/rdonaire/Desktop/backend/node_modules/express/lib/router/route.js:116:16
+     69    1.8%      Function: ^writevGeneric node:internal/stream_base_commons:122:23
+     69  100.0%        Function: ^Socket._writeGeneric node:net:791:42
+     69  100.0%          Function: ^Socket._writev node:net:823:36
+     69  100.0%            Function: ^doWrite node:internal/streams/writable:398:17
+     57    1.5%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     48   84.2%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      6   12.5%          Function: ~<anonymous> node:crypto:1:1
+      6  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      5   10.4%          Function: ~<anonymous> node:http:1:1
+      5  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    6.3%          Function: ~<anonymous> node:tls:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    6.3%          Function: ~<anonymous> node:internal/process/esm_loader:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    6.3%          Function: ~<anonymous> node:internal/modules/esm/loader:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    6.3%          Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    6.3%          Function: ~<anonymous> node:_http_client:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    4.2%          LazyCompile: ~lazyRequire node:internal/crypto/util:67:21
+      2  100.0%            LazyCompile: ~get node:crypto:287:8
+      2    4.2%          Function: ~<anonymous> node:internal/child_process:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    4.2%          Function: ~<anonymous> node:child_process:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.1%          LazyCompile: ~lazyLoadStreams node:fs:2858:25
+      1  100.0%            LazyCompile: ~get ReadStream node:fs:3001:17
+      1    2.1%          LazyCompile: ~get BlockList node:net:1826:16
+      1  100.0%            Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      1    2.1%          Function: ~<anonymous> node:net:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.1%          Function: ~<anonymous> node:internal/modules/esm/module_map:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.1%          Function: ~<anonymous> node:internal/modules/esm/load:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.1%          Function: ~<anonymous> node:internal/modules/esm/get_source:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.1%          Function: ~<anonymous> node:internal/modules/esm/get_format:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.1%          Function: ~<anonymous> node:internal/crypto/util:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.1%          Function: ~<anonymous> node:internal/crypto/pbkdf2:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.1%          Function: ~<anonymous> node:internal/crypto/hkdf:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.1%          Function: ~<anonymous> node:dns:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.1%          Function: ~<anonymous> node:cluster:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.1%          Function: ~<anonymous> node:assert:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.1%          Function: ~<anonymous> node:_tls_common:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.1%          Function: ~<anonymous> node:_http_server:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.1%          Function: ~<anonymous> node:_http_common:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      9   15.8%        Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      9  100.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      9  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+     45    1.2%      Function: ^readdir node:fs:1368:17
+     40   88.9%        Function: ^Glob._readdir /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:525:36
+     34   85.0%          Function: ^Glob._readdirInGlobStar /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:492:46
+     34  100.0%            Function: ^Glob._readdir /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:525:36
+      5   12.5%          Function: ^Glob._processGlobStar /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:623:44
+      5  100.0%            Function: ^Glob._process /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:295:36
+      1    2.5%          LazyCompile: ~Glob._readdirInGlobStar /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:492:46
+      1  100.0%            Function: ^Glob._readdir /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:525:36
+      5   11.1%        LazyCompile: *Glob._process /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:295:36
+      5  100.0%          Function: ^Glob /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:117:15
+      5  100.0%            Function: ^glob /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:62:15
+     41    1.0%      LazyCompile: *SourceNode_walk /home/rdonaire/Desktop/backend/node_modules/source-map/lib/source-node.js:221:53
+     39   95.1%        LazyCompile: *SourceNode_walk /home/rdonaire/Desktop/backend/node_modules/source-map/lib/source-node.js:221:53
+     36   92.3%          LazyCompile: *SourceNode_walk /home/rdonaire/Desktop/backend/node_modules/source-map/lib/source-node.js:221:53
+     34   94.4%            LazyCompile: *SourceNode_walk /home/rdonaire/Desktop/backend/node_modules/source-map/lib/source-node.js:221:53
+      2    5.6%            Function: ^SourceNode_toString /home/rdonaire/Desktop/backend/node_modules/source-map/lib/source-node.js:318:61
+      3    7.7%          Function: ^SourceNode_toString /home/rdonaire/Desktop/backend/node_modules/source-map/lib/source-node.js:318:61
+      3  100.0%            /usr/local/bin/node
+      2    4.9%        Function: ^SourceNode_toString /home/rdonaire/Desktop/backend/node_modules/source-map/lib/source-node.js:318:61
+      2  100.0%          /usr/local/bin/node
+      2  100.0%            Function: ^createFunctionContext /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:216:56
+    161    2.7%    LazyCompile: *compileFunction node:vm:308:25
+    161  100.0%      LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+    161  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     90   55.9%          LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+     66   73.3%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+     24   26.7%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+     71   44.1%          Function: ^Module.load node:internal/modules/cjs/loader:969:33
+     71  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+
+    269    3.3%  __write@@GLIBC_2.2.5
+    220   81.8%    /usr/local/bin/node
+      5    2.3%      /usr/local/bin/node
+      1   20.0%        LazyCompile: ~trimTabAndNewline /home/rdonaire/Desktop/backend/node_modules/whatwg-url/lib/url-state-machine.js:449:27
+      1  100.0%          Function: ^URLStateMachine /home/rdonaire/Desktop/backend/node_modules/whatwg-url/lib/url-state-machine.js:481:25
+      1  100.0%            LazyCompile: ~module.exports.basicURLParse /home/rdonaire/Desktop/backend/node_modules/whatwg-url/lib/url-state-machine.js:1206:41
+      1   20.0%        LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/minimatch/minimatch.js:222:19
+      1  100.0%          /usr/local/bin/node
+      1  100.0%            LazyCompile: ~make /home/rdonaire/Desktop/backend/node_modules/minimatch/minimatch.js:188:8
+      1   20.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/ws/lib/websocket.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1   20.0%        Function: ^writetop /home/rdonaire/Desktop/backend/node_modules/express-session/index.js:270:24
+      1  100.0%          Function: ^end /home/rdonaire/Desktop/backend/node_modules/express-session/index.js:250:27
+      1  100.0%            Function: ^send /home/rdonaire/Desktop/backend/node_modules/express/lib/response.js:111:25
+      1   20.0%        Function: ^getOwn node:internal/bootstrap/loaders:180:16
+      1  100.0%          Function: ^syncExports node:internal/bootstrap/loaders:287:14
+      1  100.0%            LazyCompile: ~<anonymous> node:internal/bootstrap/loaders:273:15
+      3    1.4%      LazyCompile: ~disableRenegotiation node:_tls_wrap:592:73
+      3  100.0%        LazyCompile: ~makeConnection /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:241:24
+      3  100.0%          LazyCompile: ~connect /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:30:17
+      3  100.0%            LazyCompile: ~measureRoundTripTime /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/sdam/monitor.js:280:30
+      3    1.4%      LazyCompile: ~connect node:_tls_wrap:1599:35
+      3  100.0%        LazyCompile: ~makeConnection /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:241:24
+      3  100.0%          LazyCompile: ~connect /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:30:17
+      2   66.7%            LazyCompile: ~measureRoundTripTime /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/sdam/monitor.js:280:30
+      1   33.3%            LazyCompile: ~checkServer /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/sdam/monitor.js:139:21
+     30   11.2%    LazyCompile: *compileFunction node:vm:308:25
+     30  100.0%      LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+     30  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     17   56.7%          Function: ^Module.load node:internal/modules/cjs/loader:969:33
+     17  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+     13   43.3%          LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+      7   53.8%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      6   46.2%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+
+    235    2.9%  /usr/lib/x86_64-linux-gnu/libc.so.6
+    120   51.1%    /usr/local/bin/node
+     20   16.7%      /usr/local/bin/node
+      2   10.0%        LazyCompile: *setupParams /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:1034:36
+      1   50.0%          LazyCompile: *setupHelperArgs /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:1104:44
+      1  100.0%            LazyCompile: *invokeAmbiguous /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:699:44
+      1   50.0%          Function: ^setupHelperArgs /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:1104:44
+      1  100.0%            LazyCompile: *invokeAmbiguous /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:699:44
+      2   10.0%        Function: ^prepareMustache /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/helpers.js:99:25
+      2  100.0%          LazyCompile: *anonymous /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:12:42
+      2  100.0%            LazyCompile: *parse /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:269:30
+      1    5.0%        LazyCompile: ~tagsStrictEqual /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/sdam/server_description.js:173:25
+      1  100.0%          LazyCompile: ~equals /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/sdam/server_description.js:118:11
+      1  100.0%            LazyCompile: ~serverUpdateHandler /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/sdam/topology.js:372:24
+      1    5.0%        LazyCompile: ~strEscape node:internal/util/inspect:475:19
+      1  100.0%          LazyCompile: ~formatPrimitive node:internal/util/inspect:1519:25
+      1  100.0%            LazyCompile: ~formatValue node:internal/util/inspect:745:21
+      1    5.0%        LazyCompile: *readFile node:fs:373:18
+      1  100.0%          LazyCompile: *go$readFile /home/rdonaire/Desktop/backend/node_modules/graceful-fs/graceful-fs.js:117:26
+      1  100.0%            Function: ^readFile /home/rdonaire/Desktop/backend/node_modules/graceful-fs/graceful-fs.js:111:21
+      1    5.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    5.0%        LazyCompile: *Glob._process /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:295:36
+      1  100.0%          LazyCompile: *Glob._processGlobStar2 /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:631:45
+      1  100.0%            Function: ^<anonymous> /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:625:43
+      1    5.0%        LazyCompile: *<anonymous> node:internal/fs/utils:681:42
+      1  100.0%          Function: ^readdir node:fs:1368:17
+      1  100.0%            LazyCompile: *Glob._process /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:295:36
+      1    5.0%        LazyCompile: *<anonymous> /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:130:39
+      1  100.0%          /usr/local/bin/node
+      1  100.0%            Function: ^objectLiteral /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:123:40
+      1    5.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/express/lib/router/index.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    5.0%        Function: ^realpathSync node:fs:2425:22
+      1  100.0%          Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%            Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      1    5.0%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      1  100.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    5.0%        Function: ^parse /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:269:30
+      1  100.0%          LazyCompile: ~parseWithoutProcessing /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/base.js:33:32
+      1  100.0%            LazyCompile: ~parse /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/base.js:51:15
+      1    5.0%        Function: ^format /home/rdonaire/Desktop/backend/node_modules/content-type/index.js:65:17
+      1  100.0%          Function: ^setCharset /home/rdonaire/Desktop/backend/node_modules/express/lib/utils.js:248:41
+      1  100.0%            Function: ^send /home/rdonaire/Desktop/backend/node_modules/express/lib/response.js:111:25
+      1    5.0%        Function: ^extname node:path:1385:10
+      1  100.0%          Function: ^ExpressHandlebars._resolveLayoutPath /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:423:63
+      1  100.0%            LazyCompile: *<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:251:47
+      1    5.0%        Function: ^checkInvalidHeaderChar node:_http_common:232:32
+      1  100.0%          Function: ^<anonymous> node:_http_outgoing:564:45
+      1  100.0%            Function: ^setHeader node:_http_outgoing:574:57
+      1    5.0%        Function: ^FastBuffer node:internal/buffer:958:14
+      1  100.0%          Function: ^createUnsafeBuffer node:internal/buffer:1059:28
+      1  100.0%            Function: ^allocUnsafeSlow node:buffer:383:50
+      1    5.0%        /usr/local/bin/node
+      1  100.0%          Function: ^touch /home/rdonaire/Desktop/backend/node_modules/express-session/session/memory.js:147:45
+      1  100.0%            Function: ^end /home/rdonaire/Desktop/backend/node_modules/express-session/index.js:250:27
+      5    4.2%      LazyCompile: *realpathSync node:fs:2425:22
+      4   80.0%        LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+      3   75.0%          LazyCompile: *Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      2   66.7%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1   33.3%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      1   25.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1   20.0%        Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      1  100.0%            Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      4    3.3%      LazyCompile: ~alphasort /home/rdonaire/Desktop/backend/node_modules/glob/common.js:19:20
+      4  100.0%        /usr/local/bin/node
+      4  100.0%          LazyCompile: ~finish /home/rdonaire/Desktop/backend/node_modules/glob/common.js:122:17
+      4  100.0%            LazyCompile: ~Glob._finish /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:185:35
+      2    1.7%      LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/nl_BE/name/suffix.js:1:311
+      2  100.0%        LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/nl_BE/name/index.js:1:355
+      2  100.0%          Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/nl_BE/name/index.js:1:1
+      2  100.0%            LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      2    1.7%      LazyCompile: *setupHelperArgs /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:1104:44
+      2  100.0%        LazyCompile: *invokeAmbiguous /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:699:44
+      2  100.0%          LazyCompile: *compile /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:73:28
+      2  100.0%            LazyCompile: *<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:227:47
+      2    1.7%      LazyCompile: *readFileAfterStat node:fs:326:27
+      2    1.7%      LazyCompile: *opcode /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:347:26
+      1   50.0%        Function: ^ambiguousSexpr /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:248:42
+      1  100.0%          Function: ^SubExpression /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:236:40
+      1  100.0%            Function: ^MustacheStatement /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:215:48
+      1   50.0%        Function: ^ContentStatement /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:228:46
+      1  100.0%          LazyCompile: *Program /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:113:28
+      1  100.0%            LazyCompile: *accept /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:101:26
+      2    1.7%      LazyCompile: *FastBuffer node:internal/buffer:958:14
+      1   50.0%        Function: ^createUnsafeBuffer node:internal/buffer:1059:28
+      1  100.0%          Function: ^createPool node:buffer:151:20
+      1  100.0%            Function: ^fromStringFast node:buffer:413:24
+      1   50.0%        Function: ^alloc node:buffer:360:30
+      1  100.0%          Function: ^deserializeObject /home/rdonaire/Desktop/backend/node_modules/bson/lib/parser/deserializer.js:65:27
+      1  100.0%            Function: ^deserializeObject /home/rdonaire/Desktop/backend/node_modules/bson/lib/parser/deserializer.js:65:27
+      2    1.7%      Function: ^setupHelperArgs /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:1104:44
+      2  100.0%        LazyCompile: *invokeAmbiguous /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:699:44
+      2  100.0%          LazyCompile: *compile /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:73:28
+      1   50.0%            LazyCompile: *<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:227:47
+      1   50.0%            Function: ^compileInput /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:507:24
+      2    1.7%      Function: ^inflight /home/rdonaire/Desktop/backend/node_modules/inflight/inflight.js:7:19
+      1   50.0%        LazyCompile: *wrapper /home/rdonaire/Desktop/backend/node_modules/wrappy/wrappy.js:19:19
+      1  100.0%          LazyCompile: *Glob._process /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:295:36
+      1  100.0%            Function: ^Glob /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:117:15
+      1   50.0%        Function: ^wrapper /home/rdonaire/Desktop/backend/node_modules/wrappy/wrappy.js:19:19
+      1  100.0%          Function: ^Glob._readdir /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:525:36
+      1  100.0%            Function: ^Glob._processGlobStar /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:623:44
+      2    1.7%      Function: ^<anonymous> /home/rdonaire/Desktop/backend/server.js:144:18
+      1   50.0%        LazyCompile: *handle /home/rdonaire/Desktop/backend/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%          Function: ^next /home/rdonaire/Desktop/backend/node_modules/express/lib/router/route.js:116:16
+      1  100.0%            Function: ^dispatch /home/rdonaire/Desktop/backend/node_modules/express/lib/router/route.js:98:45
+      1   50.0%        Function: ^handle /home/rdonaire/Desktop/backend/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%          Function: ^next /home/rdonaire/Desktop/backend/node_modules/express/lib/router/route.js:116:16
+      1  100.0%            Function: ^dispatch /home/rdonaire/Desktop/backend/node_modules/express/lib/router/route.js:98:45
+     22    9.4%    LazyCompile: *compileFunction node:vm:308:25
+     22  100.0%      LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+     22  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     15   68.2%          LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+     13   86.7%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      2   13.3%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      7   31.8%          Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      7  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      5    2.1%    LazyCompile: *readFile node:fs:373:18
+      4   80.0%      Function: ^go$readFile /home/rdonaire/Desktop/backend/node_modules/graceful-fs/graceful-fs.js:117:26
+      4  100.0%        Function: ^readFile /home/rdonaire/Desktop/backend/node_modules/graceful-fs/graceful-fs.js:111:21
+      3   75.0%          LazyCompile: *<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:368:47
+      3  100.0%            LazyCompile: *step /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:31:18
+      1   25.0%          Function: ^<anonymous> node:internal/util:346:24
+      1  100.0%            /usr/local/bin/node
+      1   20.0%      LazyCompile: *go$readFile /home/rdonaire/Desktop/backend/node_modules/graceful-fs/graceful-fs.js:117:26
+      1  100.0%        Function: ^readFile /home/rdonaire/Desktop/backend/node_modules/graceful-fs/graceful-fs.js:111:21
+      1  100.0%          LazyCompile: *<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:368:47
+      1  100.0%            LazyCompile: *step /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:31:18
+      4    1.7%    LazyCompile: *cpus node:os:133:14
+      4  100.0%      Function: ^<anonymous> /home/rdonaire/Desktop/backend/server.js:144:18
+      4  100.0%        LazyCompile: *handle /home/rdonaire/Desktop/backend/node_modules/express/lib/router/layer.js:86:49
+      4  100.0%          Function: ^next /home/rdonaire/Desktop/backend/node_modules/express/lib/router/route.js:116:16
+      4  100.0%            Function: ^dispatch /home/rdonaire/Desktop/backend/node_modules/express/lib/router/route.js:98:45
+      3    1.3%    LazyCompile: *readFileAfterStat node:fs:326:27
+      3    1.3%    LazyCompile: *readFileAfterOpen node:fs:310:27
+
+    216    2.7%  __read@@GLIBC_2.2.5
+    165   76.4%    LazyCompile: *readSync node:fs:684:18
+    165  100.0%      LazyCompile: *readFileSync node:fs:450:22
+    165  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+    120   72.7%          LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+     77   64.2%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+     43   35.8%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+     45   27.3%          Function: ^Module.load node:internal/modules/cjs/loader:969:33
+     45  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+     43   19.9%    LazyCompile: *cpus node:os:133:14
+     43  100.0%      Function: ^<anonymous> /home/rdonaire/Desktop/backend/server.js:144:18
+     43  100.0%        LazyCompile: *handle /home/rdonaire/Desktop/backend/node_modules/express/lib/router/layer.js:86:49
+     43  100.0%          Function: ^next /home/rdonaire/Desktop/backend/node_modules/express/lib/router/route.js:116:16
+     43  100.0%            Function: ^dispatch /home/rdonaire/Desktop/backend/node_modules/express/lib/router/route.js:98:45
+
+    173    2.1%  pthread_cond_signal@@GLIBC_2.3.2
+     56   32.4%    LazyCompile: *readFile node:fs:373:18
+     44   78.6%      LazyCompile: *go$readFile /home/rdonaire/Desktop/backend/node_modules/graceful-fs/graceful-fs.js:117:26
+     44  100.0%        Function: ^readFile /home/rdonaire/Desktop/backend/node_modules/graceful-fs/graceful-fs.js:111:21
+     44  100.0%          LazyCompile: *<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:368:47
+     44  100.0%            LazyCompile: *step /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:31:18
+     12   21.4%      Function: ^go$readFile /home/rdonaire/Desktop/backend/node_modules/graceful-fs/graceful-fs.js:117:26
+     12  100.0%        Function: ^readFile /home/rdonaire/Desktop/backend/node_modules/graceful-fs/graceful-fs.js:111:21
+      8   66.7%          LazyCompile: *<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:368:47
+      8  100.0%            LazyCompile: *step /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:31:18
+      4   33.3%          Function: ^<anonymous> node:internal/util:346:24
+      4  100.0%            /usr/local/bin/node
+     33   19.1%    LazyCompile: *readFileAfterStat node:fs:326:27
+     23   13.3%    LazyCompile: *readFileAfterOpen node:fs:310:27
+     13    7.5%    LazyCompile: *Glob._readdir /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:525:36
+     13  100.0%      Function: ^Glob._readdirInGlobStar /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:492:46
+     13  100.0%        LazyCompile: *Glob._readdir /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:525:36
+     13  100.0%          LazyCompile: *Glob._process /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:295:36
+     13  100.0%            LazyCompile: *Glob._processGlobStar2 /home/rdonaire/Desktop/backend/node_modules/glob/glob.js:631:45
+     12    6.9%    LazyCompile: *read node:internal/fs/read_file_context:85:7
+     12  100.0%      Function: ^readFileAfterStat node:fs:326:27
+      9    5.2%    LazyCompile: *readFileAfterRead node:internal/fs/read_file_context:25:27
+      6    3.5%    LazyCompile: *close node:internal/fs/read_file_context:111:8
+      6  100.0%      Function: ^readFileAfterRead node:internal/fs/read_file_context:25:27
+
+    159    2.0%  epoll_pwait@@GLIBC_2.6
+
+    131    1.6%  fwrite@@GLIBC_2.2.5
+     72   55.0%    /usr/local/bin/node
+      4    5.6%      /usr/local/bin/node
+      2   50.0%        LazyCompile: ~getStack /home/rdonaire/Desktop/backend/node_modules/depd/index.js:381:19
+      2  100.0%          LazyCompile: ~depd /home/rdonaire/Desktop/backend/node_modules/depd/index.js:103:15
+      2  100.0%            Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/body-parser/index.js:1:1
+      1   25.0%        LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/he/name/index.js:1:355
+      1  100.0%          LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/he/index.js:1:355
+      1  100.0%            Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/he/index.js:1:1
+      1   25.0%        LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/log4js/lib/appenders/console.js:5:10
+      1  100.0%          LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/log4js/lib/log4js.js:42:29
+      1  100.0%            /usr/local/bin/node
+      3    4.2%      LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      3  100.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      3  100.0%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      3  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:70:31
+      2    2.8%      LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      2  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    1.4%      LazyCompile: ~y /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/el/business/index.js:1:520
+      1  100.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/el/business/index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~wrapfunction /home/rdonaire/Desktop/backend/node_modules/depd/index.js:413:23
+      1  100.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/body-parser/index.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~u /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/pl/company/bs_adjective.js:1:375
+      1  100.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/pl/company/bs_adjective.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~u /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/fr_BE/name/male_first_name.js:1:375
+      1  100.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/fr_BE/name/male_first_name.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~setupWarningHandler node:internal/bootstrap/pre_execution:142:29
+      1  100.0%        LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      1  100.0%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    1.4%      LazyCompile: ~setTimeout node:timers:140:20
+      1  100.0%        LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/tarn/dist/PendingOperation.js:36:24
+      1  100.0%          /usr/local/bin/node
+      1  100.0%            LazyCompile: ~timeout /home/rdonaire/Desktop/backend/node_modules/tarn/dist/PendingOperation.js:35:17
+      1    1.4%      LazyCompile: ~serialize /home/rdonaire/Desktop/backend/node_modules/bson/lib/bson.js:111:19
+      1  100.0%        LazyCompile: ~toBin /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/commands.js:82:10
+      1  100.0%          LazyCompile: ~writeCommand /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/message_stream.js:35:17
+      1  100.0%            LazyCompile: ~write /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:513:15
+      1    1.4%      LazyCompile: ~processWaitQueue /home/rdonaire/Desktop/backend/node_modules/mongodb/lib/sdam/topology.js:574:26
+      1  100.0%        LazyCompile: ~serverUpdateHandler /home/rdonaire/Desktop/backend/node_modules/mongodb/lib/sdam/topology.js:360:24
+      1  100.0%          LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/mongodb/lib/sdam/topology.js:520:53
+      1  100.0%            Function: ^emit node:events:475:44
+      1    1.4%      LazyCompile: ~processTicksAndRejections node:internal/process/task_queues:68:35
+      1    1.4%      LazyCompile: ~parseOptions /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/connection_string.js:208:22
+      1  100.0%        LazyCompile: ~MongoClient /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/mongo_client.js:60:16
+      1  100.0%          LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/mongoose/lib/connection.js:781:31
+      1  100.0%            /usr/local/bin/node
+      1    1.4%      LazyCompile: ~onMessage /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:152:14
+      1  100.0%        LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:63:44
+      1  100.0%          Function: ^emit node:events:475:44
+      1  100.0%            LazyCompile: ~processIncomingData /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/message_stream.js:79:29
+      1    1.4%      LazyCompile: ~onMessage /home/rdonaire/Desktop/backend/node_modules/mongodb/lib/cmap/connection.js:159:14
+      1  100.0%        LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/mongodb/lib/cmap/connection.js:63:44
+      1  100.0%          Function: ^emit node:events:475:44
+      1  100.0%            LazyCompile: ~processIncomingData /home/rdonaire/Desktop/backend/node_modules/mongodb/lib/cmap/message_stream.js:84:29
+      1    1.4%      LazyCompile: ~nextTick node:internal/process/task_queues:104:18
+      1  100.0%        LazyCompile: ~construct node:internal/streams/destroy:225:19
+      1  100.0%          LazyCompile: ~Writable node:internal/streams/writable:219:18
+      1  100.0%            LazyCompile: ~WriteStream node:internal/fs/streams:306:21
+      1    1.4%      LazyCompile: ~maxWireVersion /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/utils.js:448:24
+      1  100.0%        LazyCompile: ~supportsOpMsg /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:495:23
+      1  100.0%          LazyCompile: ~command /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:247:12
+      1  100.0%            LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:78:43
+      1    1.4%      LazyCompile: ~m /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/sv/address/street_address.js:1:375
+      1  100.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/sv/address/street_address.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~m /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/hu/name/male_first_name.js:1:375
+      1  100.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/hu/name/male_first_name.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~getSameObject /home/rdonaire/Desktop/backend/node_modules/whatwg-url/lib/utils.js:65:23
+      1  100.0%        LazyCompile: ~get searchParams /home/rdonaire/Desktop/backend/node_modules/whatwg-url/lib/URL.js:371:21
+      1  100.0%          LazyCompile: ~ConnectionString /home/rdonaire/Desktop/backend/node_modules/mongodb-connection-string-url/lib/index.js:82:16
+      1  100.0%            LazyCompile: ~parseOptions /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/connection_string.js:208:22
+      1    1.4%      LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/body-parser/index.js:122:23
+      1  100.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/express/lib/express.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/ur/name/index.js:1:355
+      1  100.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/ur/name/index.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/ur/address/index.js:1:355
+      1  100.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/ur/address/index.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/uk/phone_number/index.js:1:355
+      1  100.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/uk/phone_number/index.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/pt_PT/phone_number/index.js:1:355
+      1  100.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/pt_PT/phone_number/index.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/he/address/city_suffix.js:1:311
+      1  100.0%        LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/he/address/index.js:1:355
+      1  100.0%          Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/he/address/index.js:1:1
+      1  100.0%            LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1    1.4%      LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/fr_CH/music/index.js:1:355
+      1  100.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/fr_CH/music/index.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/fr_CH/address/state.js:1:311
+      1  100.0%        /usr/local/bin/node
+      1  100.0%          LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/fr_CH/address/index.js:1:355
+      1  100.0%            Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/fr_CH/address/index.js:1:1
+      1    1.4%      LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/fr_BE/address/index.js:1:355
+      1  100.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/fr_BE/address/index.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/es_MX/internet/index.js:1:355
+      1  100.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/es_MX/internet/index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/en_AU_ocker/name/index.js:1:355
+      1  100.0%        LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/en_AU_ocker/index.js:1:355
+      1  100.0%          Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/en_AU_ocker/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1    1.4%      LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/el/business/credit_card_expiry_dates.js:1:311
+      1  100.0%        LazyCompile: ~get /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/el/business/index.js:1:355
+      1  100.0%          Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/el/business/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1    1.4%      LazyCompile: ~formatValue node:internal/util/inspect:745:21
+      1  100.0%        LazyCompile: ~inspect node:internal/util/inspect:292:17
+      1  100.0%          LazyCompile: ~formatWithOptionsInternal node:internal/util/inspect:2048:35
+      1  100.0%            LazyCompile: ~formatWithOptions node:internal/util/inspect:2024:27
+      1    1.4%      LazyCompile: ~error /home/rdonaire/Desktop/backend/node_modules/send/index.js:267:45
+      1  100.0%        LazyCompile: ~onStatError /home/rdonaire/Desktop/backend/node_modules/send/index.js:412:57
+      1  100.0%          LazyCompile: ~next /home/rdonaire/Desktop/backend/node_modules/send/index.js:728:17
+      1  100.0%            LazyCompile: ~onstat /home/rdonaire/Desktop/backend/node_modules/send/index.js:717:33
+      1    1.4%      LazyCompile: ~equals /home/rdonaire/Desktop/backend/node_modules/mongodb/lib/sdam/server_description.js:118:11
+      1  100.0%        LazyCompile: ~serverUpdateHandler /home/rdonaire/Desktop/backend/node_modules/mongodb/lib/sdam/topology.js:360:24
+      1  100.0%          LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/mongodb/lib/sdam/topology.js:520:53
+      1  100.0%            Function: ^emit node:events:475:44
+      1    1.4%      LazyCompile: ~done /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/operations/create_collection.js:41:22
+      1  100.0%        LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection_pool.js:267:27
+      1  100.0%          LazyCompile: ~handleOperationResult /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/sdam/server.js:325:42
+      1  100.0%            LazyCompile: ~onMessage /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:152:14
+      1    1.4%      LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1  100.0%        LazyCompile: ~getStderr node:internal/bootstrap/switches/is_main_thread:137:19
+      1  100.0%          Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/finalhandler/node_modules/debug/src/node.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      1    1.4%      LazyCompile: ~createAppender /home/rdonaire/Desktop/backend/node_modules/log4js/lib/appenders/index.js:62:24
+      1  100.0%        LazyCompile: ~getAppender /home/rdonaire/Desktop/backend/node_modules/log4js/lib/appenders/index.js:48:21
+      1  100.0%          LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/log4js/lib/appenders/index.js:112:41
+      1  100.0%            /usr/local/bin/node
+      1    1.4%      LazyCompile: ~compile /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:490:17
+      1  100.0%        LazyCompile: ~hb.compile /home/rdonaire/Desktop/backend/node_modules/handlebars/dist/cjs/handlebars.js:38:25
+      1  100.0%          LazyCompile: ~ExpressHandlebars._compileTemplate /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:313:61
+      1  100.0%            LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:181:44
+      1    1.4%      LazyCompile: ~b /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/zh_CN/address/default_country.js:1:375
+      1  100.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/zh_CN/address/default_country.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~b /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/ge/cell_phone/formats.js:1:375
+      1  100.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/ge/cell_phone/formats.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~b /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/en_IND/phone_number/formats.js:1:375
+      1  100.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/en_IND/phone_number/formats.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~URLStateMachine /home/rdonaire/Desktop/backend/node_modules/whatwg-url/lib/url-state-machine.js:481:25
+      1  100.0%        LazyCompile: ~module.exports.basicURLParse /home/rdonaire/Desktop/backend/node_modules/whatwg-url/lib/url-state-machine.js:1206:41
+      1  100.0%          LazyCompile: ~URLImpl /home/rdonaire/Desktop/backend/node_modules/whatwg-url/lib/URL-impl.js:7:14
+      1  100.0%            LazyCompile: ~exports.setup /home/rdonaire/Desktop/backend/node_modules/whatwg-url/lib/URL.js:49:17
+      1    1.4%      LazyCompile: ~Socket.read node:net:661:33
+      1  100.0%        LazyCompile: ~Socket node:net:285:16
+      1  100.0%          LazyCompile: ~ReadStream node:tty:47:20
+      1  100.0%            LazyCompile: ~getStdin node:internal/bootstrap/switches/is_main_thread:149:18
+      1    1.4%      LazyCompile: ~Long.fromNumber /home/rdonaire/Desktop/backend/node_modules/bson/lib/long.js:131:32
+      1  100.0%        Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/bson/lib/parser/deserializer.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.4%      LazyCompile: ~Connection /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:40:16
+      1  100.0%        LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:31:63
+      1  100.0%          LazyCompile: ~callback /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:254:31
+      1  100.0%            LazyCompile: ~connectHandler /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:298:28
+      1    1.4%      LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection_pool.js:364:44
+      1  100.0%        LazyCompile: ~callback /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:63:31
+      1  100.0%          LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:128:44
+      1  100.0%            LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/mongoose/node_modules/mongodb/lib/cmap/auth/scram.js:152:83
+      1    1.4%      LazyCompile: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:20:46
+      1  100.0%        /usr/local/bin/node
+      1  100.0%          LazyCompile: ~__awaiter /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:18:54
+      1  100.0%            LazyCompile: ~ExpressHandlebars._getDir /home/rdonaire/Desktop/backend/node_modules/express-handlebars/dist/express-handlebars.js:327:52
+      1    1.4%      Function: ~<anonymous> /home/rdonaire/Desktop/backend/server.js:1:1
+      1  100.0%        LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+      1    1.4%      Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/whatwg-url/lib/encoding.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.4%      Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/zh_TW/address/city_prefix.js:1:1
+      1  100.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+      1    1.4%      Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/ur/name/first_name.js:1:1
+      1  100.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+      1    1.4%      Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/ro/internet/free_email.js:1:1
+      1  100.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+      1    1.4%      Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/it/address/index.js:1:1
+      1  100.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.4%      Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/id_ID/internet/free_email.js:1:1
+      1  100.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.4%      Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/id_ID/address/street_address.js:1:1
+      1  100.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.4%      Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/id_ID/address/postcode.js:1:1
+      1  100.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.4%      Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/hy/address/street.js:1:1
+      1  100.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.4%      Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/fa/company/suffix.js:1:1
+      1  100.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.4%      Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/es/company/index.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.4%      Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/en_US/address/postcode_by_state.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.4%      Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/el/phone_number/index.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.4%      Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/de/internet/index.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      1    1.4%      Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/de/address/secondary_address.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      1    1.4%      Function: ~<anonymous> /home/rdonaire/Desktop/backend/node_modules/@faker-js/faker/dist/cjs/locales/ar/address/street_prefix.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      1    1.4%      Function: ^defaultTriggerAsyncIdScope node:internal/async_hooks:456:36
+      1  100.0%        LazyCompile: ~connectionListener node:_http_server:442:28
+      1  100.0%          Function: ^emit node:events:475:44
+      1  100.0%            LazyCompile: ~onconnection node:net:1587:22
+     58   44.3%    LazyCompile: *compileFunction node:vm:308:25
+     58  100.0%      LazyCompile: *Module._compile node:internal/modules/cjs/loader:1059:37
+     58  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     30   51.7%          LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+     20   66.7%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+     10   33.3%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+     28   48.3%          Function: ^Module.load node:internal/modules/cjs/loader:969:33
+     28  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+

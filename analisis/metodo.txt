@@ -2,6 +2,9 @@ Para GZip:
 - Se comentó la línea 47 del código, activando y desactivando la compresión.
 - Se aprecia una diferencia de x% en los byter entregados 
 
+- Para análisis se desactiva el logger de la ruta /info, comentando la línea 145.
+Todos los análisis en modo por defecto (FORK, puerto 8080)
+
 Para --prof:
 - node --prof server.js 
 - Se carga con artillery quick --count 50 -n 20 "http://localhost:8080/info" > result_con_console.txt
@@ -18,4 +21,5 @@ Para node --inspect:
 - Se observa que los procesos mas "caros" son 
 
 Para diagrama de flama 0x:
-- 
+- Se corre por cli 0x -0 server.js 
+- Se carga con autocannon -c 100 -d 20  http://localhost:8080/info

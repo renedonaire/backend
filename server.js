@@ -157,7 +157,7 @@ app.get('/info', (req, res) => {
 		processId: processId,
 		folder: folder,
 	}
-	console.log(response)
+	// console.log(response)
 	res.render('../views/partials/info.hbs', response)
 })
 
