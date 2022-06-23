@@ -12,10 +12,10 @@ const { fork } = require('child_process')
 const cluster = require('cluster')
 const os = require('os')
 const compression = require('compression')
+const { loggerConsola, loggerWarning, loggerError } = require('./logs/log4.js')
 
 /* ------------------------------- Inicializa ------------------------------- */
 const app = express()
-app.use(compression())
 require('./src/database')
 require('./passport/local-auth')
 
@@ -44,6 +44,7 @@ app
 	.use(express.urlencoded({ extended: true }))
 	.use(express.static('public'))
 	.use(express.json())
+	.use(compression())
 
 /* ------------------------------- Middlewares ------------------------------ */
 app.use(
@@ -65,6 +66,11 @@ app.use((req, res, next) => {
 	next()
 })
 
+const myLogger = (req, res, next) => {
+	loggerWarning.warn('Recurso inexistente ', req.url)
+	next()
+}
+
 /* --------------------------------- Sockets -------------------------------- */
 const { Server: HTTPServer } = require('http')
 const { Server: SocketServer } = require('socket.io')
@@ -80,11 +86,12 @@ const mensajes = new Mensajes()
 
 const productos = new Productos(mysql)
 productos.crearTablaProductos().catch((err) => {
-	console.log(err)
+	loggerError.error(err)
 })
 
 /* ---------------------------------- Rutas --------------------------------- */
 app.get('/', isAuth, async (req, res) => {
+	loggerConsola.info('Ruta /, método GET')
 	const arrayProductos = await productos.getProducts()
 	res.render('../views/partials/list.hbs', {
 		list: arrayProductos,
@@ -93,6 +100,7 @@ app.get('/', isAuth, async (req, res) => {
 })
 
 app.get('/registro', (req, res, next) => {
+	loggerConsola.info('Ruta /registro, método GET')
 	res.render('../views/partials/registro.hbs')
 })
 
@@ -106,6 +114,7 @@ app.post(
 )
 
 app.get('/login', (req, res, next) => {
+	loggerConsola.info('Ruta /login, método GET')
 	res.render('../views/partials/login.hbs')
 })
 
@@ -119,6 +128,7 @@ app.post(
 )
 
 app.get('/logout', (req, res, next) => {
+	loggerConsola.info('Ruta /logout, método GET')
 	emailUser = req.user.email
 	req.logout(function (err, emailUser) {
 		if (err) {
@@ -132,8 +142,8 @@ app.get('/logout', (req, res, next) => {
 })
 
 app.get('/info', (req, res) => {
+	loggerConsola.info('Ruta /info, método GET')
 	const args = JSON.stringify(process.argv.slice(2))
-	console.log('args: ', args)
 	const pathEjecucion = process.argv[1]
 	const processId = process.pid
 	const folder = process.cwd()
@@ -150,6 +160,7 @@ app.get('/info', (req, res) => {
 })
 
 app.get('/api/randoms', (req, res) => {
+	loggerConsola.info('Ruta /api/randoms, método GET')
 	const cant = parseInt(req.query.cant) || 100000000
 	const computo = fork('./api/randoms.js')
 	computo.send(cant)
@@ -161,6 +172,7 @@ app.get('/api/randoms', (req, res) => {
 })
 
 app.get('/datos', (req, res) => {
+	loggerConsola.info('Ruta /datos, método GET')
 	const PORT = param('--puerto') || 8080
 	res.send(
 		`Server en PORT(${PORT}) - PID(${
@@ -171,9 +183,12 @@ app.get('/datos', (req, res) => {
 
 const { variosProductos } = require('./api/fakerApi.js')
 app.get('/api/productos-test', async (req, res) => {
+	loggerConsola.info('Ruta /api/productos/test, método GET')
 	const arrayProductos = await variosProductos(5)
 	await res.render('../views/partials/listTest.hbs', { list: arrayProductos })
 })
+
+app.use(myLogger)
 
 function isAuth(req, res, next) {
 	if (req.isAuthenticated()) {
@@ -185,7 +200,7 @@ function isAuth(req, res, next) {
 
 /* --------------------------------- Listening -------------------------------- */
 io.on('connection', async (socket) => {
-	console.log('Nuevo cliente conectado')
+	loggerConsola.info('Nuevo cliente conectado')
 	const messages = await mensajes.getMessages()
 	socket.emit('messages', messages)
 	const products = await productos.getProducts()
@@ -213,20 +228,20 @@ function param(p) {
 const MODO = param('--modo') || 'FORK'
 
 if (MODO == 'CLUSTER' && cluster.isMaster) {
-	console.log(`Modo: ${MODO}`)
+	loggerConsola.info(`Modo: ${MODO}`)
 	const numCPUs = os.cpus().length
-	console.log(`Número de procesadores: ${numCPUs}`)
-	console.log(`PID MASTER ${process.pid}`)
+	loggerConsola.info(`Número de procesadores: ${numCPUs}`)
+	loggerConsola.info(`PID MASTER ${process.pid}`)
 
 	for (let i = 0; i < numCPUs; i++) {
 		cluster.fork()
 	}
 
 	cluster.on('exit', (worker) => {
-		console.log(
-			'Worker',
+		loggerConsola.info(
+			'Worker ',
 			worker.process.pid,
-			'died',
+			' died ',
 			new Date().toLocaleString()
 		)
 		cluster.fork()
@@ -234,7 +249,9 @@ if (MODO == 'CLUSTER' && cluster.isMaster) {
 } else {
 	const PORT = param('--puerto') || 8080
 	const server = httpServer.listen(PORT, () => {
-		console.log(`Servidor (sockets sobre http) escuchando el puerto ${PORT}`)
+		loggerConsola.info(
+			`Servidor (sockets sobre http) escuchando el puerto ${PORT}`
+		)
 	})
-	server.on('error', (error) => console.log(`${error}`))
+	server.on('error', (error) => loggerError.error(`${error}`))
 }

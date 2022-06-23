@@ -1,4 +1,5 @@
 const fs = require('fs')
+const { loggerError } = require('../logs/log4')
 
 module.exports = class Mensajes {
 	constructor(ruta) {
@@ -26,7 +27,7 @@ module.exports = class Mensajes {
 			)
 			return arrayMessages
 		} catch (err) {
-			console.log('Error al guardar: ', err)
+			loggerError.error('Error al guardar: ', err)
 		}
 	}
 }

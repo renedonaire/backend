@@ -61,5 +61,5 @@ O también
 - systemctl reload nginx.service   
    
 ## Compresión GZip   
-Para activar / desactivar, comentar línea 18.   
+Para activar / desactivar, comentar línea 47.   
    

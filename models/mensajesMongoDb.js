@@ -2,10 +2,11 @@ const { MongoClient } = require('mongodb')
 const { mongodatabase } = require('../src/options')
 const { config } = require('dotenv')
 config({ path: process.ENV })
+const { loggerConsola, loggerWarning, loggerError } = require('../logs/log4.js')
 
 const client = new MongoClient(process.env.MONGO_cnxStr, mongodatabase.options)
 client.connect()
-console.log('conectado a mongodb - mensajes')
+loggerConsola.info('conectado a mongodb - mensajes')
 
 module.exports = class Mensajes {
 	constructor(baseDatos, coleccion) {

@@ -1,4 +1,5 @@
 const knex = require('knex')
+const { loggerConsola, loggerWarning, loggerError } = require('./logs/log4.js')
 
 module.exports = class Mensajes {
 	constructor(config) {
@@ -8,14 +9,14 @@ module.exports = class Mensajes {
 	crearTablaMensajes() {
 		return this.knex.schema.hasTable('mensajes').then((exists) => {
 			if (!exists) {
-				console.log('Tabla Mensajes creada')
+				loggerConsola.info('Tabla Mensajes creada')
 				return this.knex.schema.createTable('mensajes', (table) => {
 					table.string('autor', 50).notNullable()
 					table.string('texto', 100).notNullable()
 					table.string('fecha', 50).notNullable()
 				})
 			} else {
-				console.log('Tabla Mensajes ya existe')
+				loggerConsola.info('Tabla Mensajes ya existe')
 				return this.knex.schema
 			}
 		})

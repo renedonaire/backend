@@ -1,5 +1,6 @@
 const knex = require('knex')
 const productosInicial = require('./valoresIniciales.js')
+const { loggerConsola, loggerWarning, loggerError } = require('../logs/log4.js')
 
 module.exports = class Productos {
 	constructor(config) {
@@ -15,10 +16,10 @@ module.exports = class Productos {
 					table.integer('price').notNullable()
 					table.string('thumbnail', 1000).notNullable()
 				})
-				console.log('Tabla Productos creada')
+				loggerConsola.info('Tabla Productos creada')
 				return this.knex('productos').saveProduct(productosInicial)
 			} else {
-				console.log('Tabla Productos ya existe')
+				loggerConsola.info('Tabla Productos ya existe')
 				return this.knex.schema
 			}
 		})
