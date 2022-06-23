@@ -147,7 +147,7 @@ app.get('/info', (req, res) => {
 	const pathEjecucion = process.argv[1]
 	const processId = process.pid
 	const folder = process.cwd()
-	res.render('../views/partials/info.hbs', {
+	const response = {
 		args: args,
 		plataforma: nodeProcess.platform,
 		numCpus: os.cpus().length,
@@ -156,7 +156,9 @@ app.get('/info', (req, res) => {
 		ruta: pathEjecucion,
 		processId: processId,
 		folder: folder,
-	})
+	}
+	console.log(response)
+	res.render('../views/partials/info.hbs', response)
 })
 
 app.get('/api/randoms', (req, res) => {

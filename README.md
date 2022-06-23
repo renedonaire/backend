@@ -63,3 +63,8 @@ O también
 ## Compresión GZip   
 Para activar / desactivar, comentar línea 47.   
    
+## Logger   
+Se usa 'log4js' para registrar los logs.   
+El archivo de configuración y los registros se encuentran en el directorio   
+- logs   
+   
