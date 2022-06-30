@@ -249,7 +249,7 @@ if (MODO == 'CLUSTER' && cluster.isMaster) {
 		cluster.fork()
 	})
 } else {
-	const PORT = param('--puerto') || 8080
+	const PORT = param('--puerto') || process.env.PORT || 8080
 	const server = httpServer.listen(PORT, () => {
 		loggerConsola.info(
 			`Servidor (sockets sobre http) escuchando el puerto ${PORT}`
