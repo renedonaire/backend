@@ -79,15 +79,18 @@ const io = new SocketServer(httpServer)
 
 /* ------------------------ Clases en bases de datos ------------------------ */
 const Mensajes = require('./models/mensajesMongoDb.js')
-const Productos = require('./models/productosMariaDB.js')
-const { mysql } = require('./src/options.js')
+// const Productos = require('./models/productosMariaDB.js')
+const Productos = require('./models/productosMongoDb.js')
+// const { mysql } = require('./src/options.js')
 
 const mensajes = new Mensajes()
 
-const productos = new Productos(mysql)
-productos.crearTablaProductos().catch((err) => {
-	loggerError.error(err)
-})
+// const productos = new Productos(mysql)
+// productos.crearTablaProductos().catch((err) => {
+// 	loggerError.error(err)
+// })
+
+const productos = new Productos()
 
 /* ---------------------------------- Rutas --------------------------------- */
 app.get('/', isAuth, async (req, res) => {
