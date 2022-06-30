@@ -1,0 +1,19 @@
+[2022-06-22T21:12:30.123] [ERROR] archivoError - Error: connect ECONNREFUSED 127.0.0.1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1187:16)
+    --------------------
+    at Protocol._enqueue (/home/rdonaire/Desktop/backend/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/home/rdonaire/Desktop/backend/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at Connection.connect (/home/rdonaire/Desktop/backend/node_modules/mysql/lib/Connection.js:116:18)
+    at /home/rdonaire/Desktop/backend/node_modules/knex/lib/dialects/mysql/index.js:66:18
+    at new Promise (<anonymous>)
+    at Client_MySQL.acquireRawConnection (/home/rdonaire/Desktop/backend/node_modules/knex/lib/dialects/mysql/index.js:61:12)
+    at create (/home/rdonaire/Desktop/backend/node_modules/knex/lib/client.js:249:39)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 3306,
+  fatal: true
+}
+[2022-06-22T21:57:04.484] [ERROR] archivoError - Error: listen EADDRINUSE: address already in use :::8080
