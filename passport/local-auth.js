@@ -35,8 +35,8 @@ passport.use(
 				newUser.nombre = req.body.nombre
 				newUser.direccion = req.body.direccion
 				newUser.edad = req.body.edad
-				newUser.telefono = req.body.telefono
-				newUser.avatar = req.body.avatar
+				newUser.telefono = req.body.fullPhone
+				newUser.avatar = req.file.filename
 				await newUser.save()
 				done(null, newUser)
 			}

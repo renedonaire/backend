@@ -119,6 +119,7 @@ app.post(
 		failureFlash: true,
 	}),
 	(req, res) => {
+		loggerConsola.info('Ruta /registro, método POST')
 		res.redirect('/')
 	}
 )
