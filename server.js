@@ -113,20 +113,13 @@ app.get('/registro', (req, res) => {
 
 app.post(
 	'/registro',
-	// passport.authenticate('local-signup', {
-	// 	// successRedirect: '/',
-	// 	failureRedirect: '/registro',
-	// 	failureFlash: true,
-	// }),
+	uploadImage,
+	passport.authenticate('local-signup', {
+		failureRedirect: '/registro',
+		failureFlash: true,
+	}),
 	(req, res) => {
-		uploadImage(req, res, (err) => {
-			if (err) {
-				console.log(err)
-			} else {
-				console.log('Imagen cargada')
-				res.redirect('/')
-			}
-		})
+		res.redirect('/')
 	}
 )
 
