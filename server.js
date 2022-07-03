@@ -111,28 +111,23 @@ app.get('/registro', (req, res) => {
 	res.render('../views/partials/registro.hbs')
 })
 
-// app.post('/registro', (req, res, next) => {
-// 	uploadImage(req, res, (err) => {
-// 		if (err) {
-// 			console.log(err)
-// 		} else {
-// 			return next()
-// 		}
-// 	})
-// 	passport.authenticate('local-signup', {
-// 		successRedirect: '/',
-// 		failureRedirect: '/registro',
-// 		failureFlash: true,
-// 	})
-// })
-
 app.post(
 	'/registro',
-	passport.authenticate('local-signup', {
-		successRedirect: '/',
-		failureRedirect: '/registro',
-		failureFlash: true,
-	})
+	// passport.authenticate('local-signup', {
+	// 	// successRedirect: '/',
+	// 	failureRedirect: '/registro',
+	// 	failureFlash: true,
+	// }),
+	(req, res) => {
+		uploadImage(req, res, (err) => {
+			if (err) {
+				console.log(err)
+			} else {
+				console.log('Imagen cargada')
+				res.redirect('/')
+			}
+		})
+	}
 )
 
 app.get('/login', (req, res, next) => {
