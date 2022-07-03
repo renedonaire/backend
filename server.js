@@ -5,9 +5,7 @@ const passport = require('passport')
 const exphbs = require('express-handlebars')
 const { config } = require('dotenv')
 config({ path: process.ENV })
-const parseArgs = require('minimist')
 const nodeProcess = require('node:process')
-const { getRandom } = require('./api/randoms')
 const { fork } = require('child_process')
 const cluster = require('cluster')
 const os = require('os')
@@ -79,17 +77,8 @@ const io = new SocketServer(httpServer)
 
 /* ------------------------ Clases en bases de datos ------------------------ */
 const Mensajes = require('./models/mensajesMongoDb.js')
-// const Productos = require('./models/productosMariaDB.js')
 const Productos = require('./models/productosMongoDb.js')
-// const { mysql } = require('./src/options.js')
-
 const mensajes = new Mensajes()
-
-// const productos = new Productos(mysql)
-// productos.crearTablaProductos().catch((err) => {
-// 	loggerError.error(err)
-// })
-
 const productos = new Productos()
 
 /* ---------------------------------- Rutas --------------------------------- */
@@ -160,7 +149,6 @@ app.get('/info', (req, res) => {
 		processId: processId,
 		folder: folder,
 	}
-	// console.log(response)
 	res.render('../views/partials/info.hbs', response)
 })
 
@@ -237,11 +225,9 @@ if (MODO == 'CLUSTER' && cluster.isMaster) {
 	const numCPUs = os.cpus().length
 	loggerConsola.info(`Número de procesadores: ${numCPUs}`)
 	loggerConsola.info(`PID MASTER ${process.pid}`)
-
 	for (let i = 0; i < numCPUs; i++) {
 		cluster.fork()
 	}
-
 	cluster.on('exit', (worker) => {
 		loggerConsola.info(
 			'Worker ',

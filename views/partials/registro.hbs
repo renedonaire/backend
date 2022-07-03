@@ -4,9 +4,25 @@
 <br />
 <form action='/registro' method='post' role='form' autocomplete='off'>
 		<input id='nombre' name='nombre' placeholder='nombre' type='text' required/>
+		<input id="direccion" name="direccion" placeholder="direccion" type="text" required/>
+		<input id="edad" name="edad" placeholder="edad" type="text" required/>
+		<input id="telefono" name="telefono" placeholder="telefono" type="text" required/>
 		<input id='email' name='email' placeholder='email' type='email' required />
 		<input id='password' name='password' placeholder='password' type='password' required/>
-		<input type='submit' value='Registrar'></inputtype='submit'>
+		<input id="avatar" name="avatar" type="file" required/>
+		<img id="avatar-preview" src="{{avatar}}" alt="avatar" width="100" height=auto>
+		<input type='submit' value='Registrar'></input type='submit'>
+
+		<script>
+			document.querySelector('#avatar').addEventListener('change', function(e) {
+				var file = e.target.files[0];
+				var reader = new FileReader();
+				reader.onload = function(e) {
+					document.querySelector('#avatar-preview').src = e.target.result;
+				};
+				reader.readAsDataURL(file);
+			});
+		</script>
 </form>
 <hr />
 <div>
