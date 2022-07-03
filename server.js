@@ -11,6 +11,8 @@ const cluster = require('cluster')
 const os = require('os')
 const compression = require('compression')
 const { loggerConsola, loggerWarning, loggerError } = require('./logs/log4.js')
+const multer = require('multer')
+const path = require('path')
 
 /* ------------------------------- Inicializa ------------------------------- */
 const app = express()
@@ -45,6 +47,19 @@ app
 	.use(compression())
 
 /* ------------------------------- Middlewares ------------------------------ */
+/* Multer config */
+const storage = multer.diskStorage({
+	destination: path.join(__dirname, './uploads'),
+	filename: (req, file, cb) => {
+		cb(null, file.originalname)
+	},
+})
+const uploadImage = multer({
+	storage,
+	limits: { fileSize: 1000000 },
+}).single('avatar')
+/*-----*/
+
 app.use(
 	session({
 		secret: 'mysecretsession',
@@ -96,14 +111,29 @@ app.get('/registro', (req, res, next) => {
 	res.render('../views/partials/registro.hbs')
 })
 
-app.post(
-	'/registro',
-	passport.authenticate('local-signup', {
-		successRedirect: '/',
-		failureRedirect: '/registro',
-		failureFlash: true,
+app.post('/registro', (req, res) => {
+	uploadImage(req, res, (err) => {
+		if (err) {
+			console.log(err)
+		} else {
+			res.send('uploaded')
+			passport.authenticate('local-signup', {
+				successRedirect: '/',
+				failureRedirect: '/registro',
+				failureFlash: true,
+			})
+		}
 	})
-)
+})
+
+// app.post(
+// 	'/registro',
+// 	passport.authenticate('local-signup', {
+// 		successRedirect: '/',
+// 		failureRedirect: '/registro',
+// 		failureFlash: true,
+// 	})
+// )
 
 app.get('/login', (req, res, next) => {
 	loggerConsola.info('Ruta /login, método GET')

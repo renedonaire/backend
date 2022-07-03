@@ -2,7 +2,7 @@
 <h3>{{signupMessage}}</h3>
 
 <br />
-<form action='/registro' method='post' role='form' autocomplete='off'>
+<form action='/registro' method="post" enctype="multipart/form-data" role='form' autocomplete='off'>
 		<input id='nombre' name='nombre' placeholder='nombre' type='text' required/>
 		<input id="direccion" name="direccion" placeholder="direccion" type="text" required/>
 		<input id="edad" name="edad" placeholder="edad" type="text" required/>
@@ -13,16 +13,16 @@
 		<img id="avatar-preview" src="{{avatar}}" alt="avatar" width="100" height=auto>
 		<input type='submit' value='Registrar'></input type='submit'>
 
-		<script>
+		<!-- <script>
 			document.querySelector('#avatar').addEventListener('change', function(e) {
 				var file = e.target.files[0];
 				var reader = new FileReader();
 				reader.onload = function(e) {
 					document.querySelector('#avatar-preview').src = e.target.result;
 				};
-				reader.readAsDataURL(file);
+				reader.readAsDataURL(file)
 			});
-		</script>
+		</script> -->
 </form>
 <hr />
 <div>
