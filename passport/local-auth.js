@@ -32,6 +32,11 @@ passport.use(
 				const newUser = new User()
 				newUser.email = email
 				newUser.password = newUser.encryptPassword(password)
+				newUser.nombre = req.body.nombre
+				newUser.direccion = req.body.direccion
+				newUser.edad = req.body.edad
+				newUser.telefono = req.body.telefono
+				newUser.avatar = req.body.avatar
 				await newUser.save()
 				done(null, newUser)
 			}

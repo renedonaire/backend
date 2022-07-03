@@ -106,34 +106,34 @@ app.get('/', isAuth, async (req, res) => {
 	})
 })
 
-app.get('/registro', (req, res, next) => {
+app.get('/registro', (req, res) => {
 	loggerConsola.info('Ruta /registro, método GET')
 	res.render('../views/partials/registro.hbs')
 })
 
-app.post('/registro', (req, res) => {
-	uploadImage(req, res, (err) => {
-		if (err) {
-			console.log(err)
-		} else {
-			res.send('uploaded')
-			passport.authenticate('local-signup', {
-				successRedirect: '/',
-				failureRedirect: '/registro',
-				failureFlash: true,
-			})
-		}
-	})
-})
-
-// app.post(
-// 	'/registro',
+// app.post('/registro', (req, res, next) => {
+// 	uploadImage(req, res, (err) => {
+// 		if (err) {
+// 			console.log(err)
+// 		} else {
+// 			return next()
+// 		}
+// 	})
 // 	passport.authenticate('local-signup', {
 // 		successRedirect: '/',
 // 		failureRedirect: '/registro',
 // 		failureFlash: true,
 // 	})
-// )
+// })
+
+app.post(
+	'/registro',
+	passport.authenticate('local-signup', {
+		successRedirect: '/',
+		failureRedirect: '/registro',
+		failureFlash: true,
+	})
+)
 
 app.get('/login', (req, res, next) => {
 	loggerConsola.info('Ruta /login, método GET')
