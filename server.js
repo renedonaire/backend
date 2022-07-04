@@ -38,6 +38,7 @@ app
 	.set('view engine', 'hbs')
 	.use(express.urlencoded({ extended: true }))
 	.use(express.static('public'))
+	.use(express.static('uploads'))
 	.use(express.json())
 	.use(compression())
 

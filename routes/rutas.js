@@ -46,12 +46,31 @@ const mensajes = new Mensajes()
 const productos = new Productos()
 
 /* ---------------------------------- Rutas --------------------------------- */
+// router.get('/', isAuth, async (req, res) => {
+// 	loggerConsola.info('Ruta /, método GET')
+// 	const arrayProductos = await productos.getProducts()
+// 	res.render('../views/partials/list.hbs', {
+// 		list: arrayProductos,
+// 		emailUser: req.user.email,
+// 	})
+// })
 router.get('/', isAuth, async (req, res) => {
 	loggerConsola.info('Ruta /, método GET')
+	// const arrayProductos = await productos.getProducts()
+	res.render('../views/partials/home.hbs', {
+		// list: arrayProductos,
+		userName: req.user.nombre,
+		userImage: req.user.avatar,
+	})
+})
+
+router.get('/productos', isAuth, async (req, res) => {
+	loggerConsola.info('Ruta /productos, método GET')
 	const arrayProductos = await productos.getProducts()
-	res.render('../views/partials/list.hbs', {
+	res.render('../views/partials/productos.hbs', {
 		list: arrayProductos,
-		emailUser: req.user.email,
+		userName: req.user.nombre,
+		userImage: req.user.avatar,
 	})
 })
 
@@ -89,13 +108,13 @@ router.post(
 
 router.get('/logout', (req, res, next) => {
 	loggerConsola.info('Ruta /logout, método GET')
-	emailUser = req.user.email
-	req.logout(function (err, emailUser) {
+	userName = req.user.nombre
+	req.logout(function (err, userName) {
 		if (err) {
 			return next(err)
 		} else {
 			res.render('../views/partials/logout.hbs', {
-				emailUser: this.emailUser,
+				userName: this.userName,
 			})
 		}
 	})
