@@ -1,0 +1,23 @@
+<h2>Bienvenido
+	{{userName}}
+	<img src='{{userImage}}' alt='{{userName}}' width='100' height='auto' />
+</h2>
+<h3>Mensajes</h3>
+<nav>
+	<ul>
+		<li><a href='/'>Home</a></li>
+		<li><a href='/productos'>Productos</a></li>
+		<li><a href='/carrito'>Carrito</a></li>
+		<li><a href='/logout'>Logout</a></li>
+	</ul>
+</nav>
+<hr />
+<form onsubmit='return addMessage(this)'>
+	Alias:
+	<input type='text' name='autor' id='autor' value={{emailUser}} />
+	<br />
+	Mensaje:
+	<input type='text' name='mensaje' id='mensaje' placeholder='Mensaje' />
+	<input type='submit' value='Postear' />
+</form>
+<div id='mensajes'></div>

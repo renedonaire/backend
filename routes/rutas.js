@@ -64,6 +64,15 @@ router.get('/', isAuth, async (req, res) => {
 	})
 })
 
+router.get('/mensajes', isAuth, async (req, res) => {
+	loggerConsola.info('Ruta /mensajes, método GET')
+	res.render('../views/partials/mensajes.hbs', {
+		userName: req.user.nombre,
+		userImage: req.user.avatar,
+		emailUser: req.user.email,
+	})
+})
+
 router.get('/productos', isAuth, async (req, res) => {
 	loggerConsola.info('Ruta /productos, método GET')
 	const arrayProductos = await productos.getProducts()
