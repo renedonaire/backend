@@ -46,14 +46,6 @@ const mensajes = new Mensajes()
 const productos = new Productos()
 
 /* ---------------------------------- Rutas --------------------------------- */
-// router.get('/', isAuth, async (req, res) => {
-// 	loggerConsola.info('Ruta /, método GET')
-// 	const arrayProductos = await productos.getProducts()
-// 	res.render('../views/partials/list.hbs', {
-// 		list: arrayProductos,
-// 		emailUser: req.user.email,
-// 	})
-// })
 router.get('/', isAuth, async (req, res) => {
 	loggerConsola.info('Ruta /, método GET')
 	// const arrayProductos = await productos.getProducts()
@@ -168,6 +160,11 @@ router.get('/datos', (req, res) => {
 			process.pid
 		}) - time: (${new Date().toLocaleString()})`
 	)
+})
+
+router.post('/comprar', isAuth, (req, res) => {
+	loggerConsola.info('Ruta /comprar, método POST')
+	res.send(req.body)
 })
 
 const { variosProductos } = require('../api/fakerApi.js')

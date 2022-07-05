@@ -14,9 +14,11 @@
 <hr />
 <h2>Ingresar Producto</h2>
 <form onsubmit='return addProduct(this)'>
-	Title:
+	Código:
+	<input type='text' id='code' required />
+	Título:
 	<input type='text' id='title' required />
-	Price:
+	Precio:
 	<input type='number' id='price' required />
 	Thumbnail:
 	<input type='text' id='thumbnail' required />
@@ -25,5 +27,6 @@
 <hr />
 
 <h2>Lista de Productos</h2>
-<table id='productos'></table>
+<tr><th>Código</th><th>Título</th><th>Precio</th><th>Thumbnail</th><th>Cantidad</th><tr/>
+<div id="productos"></div>
 <hr />
