@@ -162,11 +162,6 @@ router.get('/datos', (req, res) => {
 	)
 })
 
-router.post('/comprar', isAuth, (req, res) => {
-	loggerConsola.info('Ruta /comprar, método POST')
-	res.send(req.body)
-})
-
 const { variosProductos } = require('../api/fakerApi.js')
 router.get('/api/productos-test', async (req, res) => {
 	loggerConsola.info('Ruta /api/productos/test, método GET')

@@ -25,6 +25,21 @@ const addMessage = () => {
 	return false
 }
 
+const agregar = (e) => {
+	const code = e.code.value
+	const title = e.title.value
+	const price = e.price.value
+	const qty = e.qty.value
+	const product = {
+		code: code,
+		title: title,
+		price: price,
+		qty: qty,
+	}
+	console.log(product)
+	return false
+}
+
 const renderMessages = (messages) => {
 	let html = ''
 	if (messages.length > 0) {
@@ -46,24 +61,27 @@ const renderMessages = (messages) => {
 }
 
 const renderProducts = (products) => {
-	const html =
-		`<form action="/comprar" method="post">` +
-		products
-			.map((element) => {
-				return `
-				<input type="text" id="code${element.code}" value="${element.code}">
-				<input type="text" id="title${element.code}" value="${element.title}">
-				<input type="text" id="price${element.code}" value="${element.price}">
-				<img src=" ${element.thumbnail} " width="50" height="auto" alt="miniatura no disponible">
-				<input type='number' id="qty${element.code}"  min=0 value=0 /> 
-				<br/>
+	let html = ''
+	if (products.length > 0) {
+		products.forEach((element) => {
+			html =
+				html +
 				`
-			})
-			.join('') +
-		`<input type="submit" value="Agregar" />` +
-		`</form>`
-	document.getElementById('productos').innerHTML = html
-	console.log(html)
+				<form onsubmit="return agregar(this)">
+					<input type="text" id="code" value=${element.code}>
+					<input type="text" id="title" value=${element.title}>
+					<input type="text" id="price" value=${element.price}>
+					<img src=${element.thumbnail} width="50" height="auto" alt="miniatura no disponible">
+					<input type="number" id="qty"  min=0 value=0 /> 
+					<input type="submit" value="Agregar" />
+					<br/>
+				</form>
+				`
+		})
+	} else {
+		html = 'No hay productos'
+	}
+	document.getElementById('contenedor').innerHTML = html
 }
 
 socket
