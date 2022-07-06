@@ -48,9 +48,7 @@ const productos = new Productos()
 /* ---------------------------------- Rutas --------------------------------- */
 router.get('/', isAuth, async (req, res) => {
 	loggerConsola.info('Ruta /, método GET')
-	// const arrayProductos = await productos.getProducts()
 	res.render('../views/partials/home.hbs', {
-		// list: arrayProductos,
 		userName: req.user.nombre,
 		userImage: req.user.avatar,
 	})
