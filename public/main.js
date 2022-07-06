@@ -25,14 +25,14 @@ const addMessage = () => {
 	return false
 }
 
-const agregar = (e) => {
-	const product = {
+const addToCart = (e) => {
+	const item = {
 		code: e.code.value,
 		title: e.title.value,
 		price: e.price.value,
 		qty: e.qty.value,
 	}
-	console.log(product)
+	socket.emit('new-cart', item)
 	return false
 }
 
@@ -56,14 +56,14 @@ const renderMessages = (messages) => {
 	document.getElementById('mensajes').innerHTML = html
 }
 
-const renderProducts = (products) => {
+const renderProducts = async (products) => {
 	let html = ''
 	if (products.length > 0) {
 		products.forEach((element) => {
 			html =
 				html +
 				`
-				<form onsubmit="return agregar(this)">
+				<form onsubmit="return addToCart(this)">
 					<input type="text" id="code" value="${element.code}">
 					<input type="text" id="title" value="${element.title}">
 					<input type="text" id="price" value="${element.price}">
@@ -84,6 +84,6 @@ socket
 	.on('messages', async (data) => {
 		renderMessages(data)
 	})
-	.on('products', (data) => {
+	.on('products', async (data) => {
 		renderProducts(data)
 	})

@@ -160,6 +160,19 @@ router.get('/datos', (req, res) => {
 	)
 })
 
+// router.post('/add', isAuth, (req, res) => {
+// 	console.log('REQ: ', req.body)
+// 	loggerConsola.info('Ruta /add, método POST')
+// 	const product = {
+// 		code: req.code,
+// 		title: req.title,
+// 		price: req.price,
+// 		qty: req.qty,
+// 	}
+// 	console.log('product: ', product)
+// 	res.send(product)
+// })
+
 const { variosProductos } = require('../api/fakerApi.js')
 router.get('/api/productos-test', async (req, res) => {
 	loggerConsola.info('Ruta /api/productos/test, método GET')

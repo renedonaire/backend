@@ -94,6 +94,9 @@ io.on('connection', async (socket) => {
 			const allProducts = await productos.getProducts()
 			io.sockets.emit('products', allProducts)
 		})
+		.on('new-cart', (item) => {
+			console.log('On new-cart: ', item)
+		})
 })
 
 /* --------------------------- Server con opciones -------------------------- */
