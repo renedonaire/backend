@@ -11,7 +11,7 @@ const userSchema = new Schema({
 	email: String,
 	password: String,
 	avatar: String,
-	carrito: String,
+	carrito: Array,
 })
 
 userSchema.methods.encryptPassword = (password) => {

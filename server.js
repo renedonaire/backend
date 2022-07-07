@@ -99,8 +99,22 @@ io.on('connection', async (socket) => {
 			io.sockets.emit('products', allProducts)
 		})
 		.on('new-cart', async (item) => {
-			console.log('Add item: ', item)
-			const usuario = await User.findOne({ name: item.username })
+			try {
+				console.log(item)
+				const newProducto = {
+					code: item.code,
+					title: item.title,
+					price: item.price,
+					qty: item.qty,
+				}
+				const actualizado = await User.findOneAndUpdate(
+					{ name: item.username },
+					{ $push: { carrito: newProducto } }
+				)
+				loggerConsola.info('Nuevo producto agregado al carrito')
+			} catch (error) {
+				loggerError.error(error)
+			}
 		})
 })
 
