@@ -31,6 +31,7 @@ const addToCart = (e) => {
 		title: e.title.value,
 		price: e.price.value,
 		qty: e.qty.value,
+		username: e.username.value,
 	}
 	socket.emit('new-cart', item)
 	return false
@@ -69,8 +70,9 @@ const renderProducts = async (products) => {
 					<input type="text" id="price" value="${element.price}">
 					<img src="${element.thumbnail}" width="50" height="auto" alt="miniatura no disponible">
 					<input type="number" id="qty"  min=0 value=0 /> 
-					<input type="submit" value="Agregar" />
-					<br/>
+					<input type="submit" value="Agregar" />` +
+				document.getElementById('comodin').innerHTML +
+				`<br/>
 				</form>
 				`
 		})

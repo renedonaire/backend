@@ -60,6 +60,9 @@ app.use((req, res, next) => {
 	next()
 })
 
+const User = require('./models/userSchema')
+const user = new User()
+
 /* -------------------------- Sockets Configuración ------------------------- */
 const { Server: HTTPServer } = require('http')
 const { Server: SocketServer } = require('socket.io')
@@ -69,6 +72,7 @@ const io = new SocketServer(httpServer)
 /* ----------------------------- Bases de Datos ----------------------------- */
 const Mensajes = require('./models/mensajesMongoDb.js')
 const Productos = require('./models/productosMongoDb.js')
+const passport = require('passport')
 const mensajes = new Mensajes()
 const productos = new Productos()
 
@@ -94,8 +98,9 @@ io.on('connection', async (socket) => {
 			const allProducts = await productos.getProducts()
 			io.sockets.emit('products', allProducts)
 		})
-		.on('new-cart', (item) => {
-			console.log('On new-cart: ', item)
+		.on('new-cart', async (item) => {
+			console.log('Add item: ', item)
+			const usuario = await User.findOne({ name: item.username })
 		})
 })
 
