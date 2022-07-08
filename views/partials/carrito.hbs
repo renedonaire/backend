@@ -1,0 +1,31 @@
+<h2>Bienvenido
+	{{userName}}
+	<img src='{{userImage}}' alt='{{userName}}' width='100' height='auto' />
+</h2>
+<h3>Carrito</h3>
+<nav>
+	<ul>
+		<li><a href='/'>Home</a></li>
+		<li><a href='/mensajes'>Mensajes</a></li>
+		<li><a href='/productos'>Productos</a></li>
+		<li><a href='/logout'>Logout</a></li>
+	</ul>
+</nav>
+<hr />
+
+<h2>Carrito</h2>
+<tr><th>Código</th><th>Título</th><th>Precio</th><th>Thumbnail</th><th>Cantidad</th><tr/>
+<div id="contenedor">
+   {{#each carrito}}
+   <hr/>
+   <tr>
+      <td>{{code}}</td>
+      <td>{{title}}</td>
+      <td>{{price}}</td>
+      <td>{{qty}}</td>
+      <br/>
+   </tr>
+   {{/each}}
+</div>
+<hr/>
+<button id="btn-carrito">Comprar</button>

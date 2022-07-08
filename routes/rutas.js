@@ -73,6 +73,15 @@ router.get('/productos', isAuth, async (req, res) => {
 	})
 })
 
+router.get('/carrito', isAuth, async (req, res) => {
+	loggerConsola.info('Ruta /carrito, método GET')
+	res.render('../views/partials/carrito.hbs', {
+		carrito: req.user.carrito,
+		userName: req.user.nombre,
+		userImage: req.user.avatar,
+	})
+})
+
 router.get('/registro', (req, res) => {
 	loggerConsola.info('Ruta /registro, método GET')
 	res.render('../views/partials/registro.hbs')
