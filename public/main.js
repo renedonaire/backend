@@ -26,6 +26,10 @@ const addMessage = () => {
 }
 
 const addToCart = (e) => {
+	document.getElementById(e.code.value).innerHTML = 'Agregado'
+	setTimeout(function () {
+		document.getElementById(e.code.value).innerHTML = ''
+	}, 2000)
 	const item = {
 		code: e.code.value,
 		title: e.title.value,
@@ -34,6 +38,14 @@ const addToCart = (e) => {
 		username: e.username.value,
 	}
 	socket.emit('new-cart', item)
+	return false
+}
+
+const comprar = () => {
+	document.getElementById(
+		'contenedor'
+	).innerHTML = `<br/><h3>Gracias por tu compra!</h3><p>En breve te contactaremos con los detalles.</p>`
+	socket.emit('new-buy', null)
 	return false
 }
 
@@ -70,9 +82,10 @@ const renderProducts = async (products) => {
 					<input type="text" id="price" value="${element.price}">
 					<img src="${element.thumbnail}" width="50" height="auto" alt="miniatura no disponible">
 					<input type="number" id="qty"  min=0 value=0 /> 
-					<input type="submit" value="Agregar" />` +
+					<input type="submit" value="Agregar" />
+					<span id='${element.code}'></span>` +
 				document.getElementById('comodin').innerHTML +
-				`<br/>
+				`<hr/>
 				</form>
 				`
 		})

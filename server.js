@@ -100,7 +100,6 @@ io.on('connection', async (socket) => {
 		})
 		.on('new-cart', async (item) => {
 			try {
-				console.log(item)
 				const newProducto = {
 					code: item.code,
 					title: item.title,
@@ -115,6 +114,12 @@ io.on('connection', async (socket) => {
 			} catch (error) {
 				loggerError.error(error)
 			}
+		})
+		.on('new-buy', async (e) => {
+			// Email y whatsapp al administrador
+			// SMS al usuario
+			//Agregar carrito a coleccion 'Pedidos'
+			// Eliminar carrito de usuario
 		})
 })
 
