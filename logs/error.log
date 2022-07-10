@@ -1,122 +1,32 @@
-[2022-06-22T21:12:30.123] [ERROR] archivoError - Error: connect ECONNREFUSED 127.0.0.1:3306
-    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1187:16)
-    --------------------
-    at Protocol._enqueue (/home/rdonaire/Desktop/backend/node_modules/mysql/lib/protocol/Protocol.js:144:48)
-    at Protocol.handshake (/home/rdonaire/Desktop/backend/node_modules/mysql/lib/protocol/Protocol.js:51:23)
-    at Connection.connect (/home/rdonaire/Desktop/backend/node_modules/mysql/lib/Connection.js:116:18)
-    at /home/rdonaire/Desktop/backend/node_modules/knex/lib/dialects/mysql/index.js:66:18
-    at new Promise (<anonymous>)
-    at Client_MySQL.acquireRawConnection (/home/rdonaire/Desktop/backend/node_modules/knex/lib/dialects/mysql/index.js:61:12)
-    at create (/home/rdonaire/Desktop/backend/node_modules/knex/lib/client.js:249:39)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
-  errno: -111,
-  code: 'ECONNREFUSED',
-  syscall: 'connect',
-  address: '127.0.0.1',
-  port: 3306,
-  fatal: true
+[2022-07-10T16:38:10.379] [ERROR] archivoError - Error: Invalid login: 535 Incorrect authentication data
+    at SMTPConnection._formatError (/home/rdonaire/Desktop/backend/node_modules/nodemailer/lib/smtp-connection/index.js:787:19)
+    at SMTPConnection._actionAUTHComplete (/home/rdonaire/Desktop/backend/node_modules/nodemailer/lib/smtp-connection/index.js:1539:34)
+    at SMTPConnection.<anonymous> (/home/rdonaire/Desktop/backend/node_modules/nodemailer/lib/smtp-connection/index.js:543:26)
+    at SMTPConnection._processResponse (/home/rdonaire/Desktop/backend/node_modules/nodemailer/lib/smtp-connection/index.js:950:20)
+    at SMTPConnection._onData (/home/rdonaire/Desktop/backend/node_modules/nodemailer/lib/smtp-connection/index.js:752:14)
+    at SMTPConnection._onSocketData (/home/rdonaire/Desktop/backend/node_modules/nodemailer/lib/smtp-connection/index.js:191:44)
+    at TLSSocket.emit (node:events:537:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    at readableAddChunk (node:internal/streams/readable:297:9)
+    at Readable.push (node:internal/streams/readable:234:10) {
+  code: 'EAUTH',
+  response: '535 Incorrect authentication data',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
 }
-[2022-06-22T21:57:04.484] [ERROR] archivoError - Error: listen EADDRINUSE: address already in use :::8080
-[2022-07-06T23:29:29.109] [ERROR] archivoError - ReferenceError: usuario is not defined
-    at Socket.<anonymous> (/home/rdonaire/Desktop/backend/server.js:103:20)
-    at Socket.emit (node:events:537:28)
-    at Socket.emitUntyped (/home/rdonaire/Desktop/backend/node_modules/socket.io/dist/typed-events.js:69:22)
-    at /home/rdonaire/Desktop/backend/node_modules/socket.io/dist/socket.js:465:39
-    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
-[2022-07-06T23:43:32.693] [ERROR] archivoError - TypeError: usuario is not iterable
-    at Socket.<anonymous> (/home/rdonaire/Desktop/backend/server.js:104:30)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-[2022-07-06T23:44:08.660] [ERROR] archivoError - TypeError: usuario.carrito is not iterable
-    at Socket.<anonymous> (/home/rdonaire/Desktop/backend/server.js:104:38)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-[2022-07-06T23:45:57.272] [ERROR] archivoError - TypeError: Cannot read properties of undefined (reading 'push')
-    at Socket.<anonymous> (/home/rdonaire/Desktop/backend/server.js:104:42)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-[2022-07-06T23:46:23.996] [ERROR] archivoError - TypeError: Cannot read properties of undefined (reading 'push')
-    at Socket.<anonymous> (/home/rdonaire/Desktop/backend/server.js:104:42)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-[2022-07-06T23:52:48.310] [ERROR] archivoError - CastError: Cast to string failed for value "{
-  code: '001',
-  title: 'La Vuelta al Mundo en 80 días',
-  price: '15900',
-  qty: '1',
-  username: 'rené'
-}" (type Object) at path "carrito"
-    at model.Query.exec (/home/rdonaire/Desktop/backend/node_modules/mongoose/lib/query.js:4777:21)
-    at Query.then (/home/rdonaire/Desktop/backend/node_modules/mongoose/lib/query.js:4876:15)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
-  messageFormat: undefined,
-  stringValue: '"{\n' +
-    "  code: '001',\n" +
-    "  title: 'La Vuelta al Mundo en 80 días',\n" +
-    "  price: '15900',\n" +
-    "  qty: '1',\n" +
-    "  username: 'rené'\n" +
-    '}"',
-  kind: 'string',
-  value: {
-    code: '001',
-    title: 'La Vuelta al Mundo en 80 días',
-    price: '15900',
-    qty: '1',
-    username: 'rené'
-  },
-  path: 'carrito',
-  reason: null,
-  valueType: 'Object'
+[2022-07-10T16:41:32.464] [ERROR] archivoError - Error: Invalid login: 535 Incorrect authentication data
+    at SMTPConnection._formatError (/home/rdonaire/Desktop/backend/node_modules/nodemailer/lib/smtp-connection/index.js:787:19)
+    at SMTPConnection._actionAUTHComplete (/home/rdonaire/Desktop/backend/node_modules/nodemailer/lib/smtp-connection/index.js:1539:34)
+    at SMTPConnection.<anonymous> (/home/rdonaire/Desktop/backend/node_modules/nodemailer/lib/smtp-connection/index.js:543:26)
+    at SMTPConnection._processResponse (/home/rdonaire/Desktop/backend/node_modules/nodemailer/lib/smtp-connection/index.js:950:20)
+    at SMTPConnection._onData (/home/rdonaire/Desktop/backend/node_modules/nodemailer/lib/smtp-connection/index.js:752:14)
+    at SMTPConnection._onSocketData (/home/rdonaire/Desktop/backend/node_modules/nodemailer/lib/smtp-connection/index.js:191:44)
+    at TLSSocket.emit (node:events:537:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    at readableAddChunk (node:internal/streams/readable:297:9)
+    at Readable.push (node:internal/streams/readable:234:10) {
+  code: 'EAUTH',
+  response: '535 Incorrect authentication data',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
 }
-[2022-07-06T23:59:06.144] [ERROR] archivoError - MongoServerError: Plan executor error during findAndModify :: caused by :: The field 'carrito' must be an array but is of type object in document {_id: ObjectId('62c35fc945780ee3923d33fc')}
-    at Connection.onMessage (/home/rdonaire/Desktop/backend/node_modules/mongodb/lib/cmap/connection.js:210:30)
-    at MessageStream.<anonymous> (/home/rdonaire/Desktop/backend/node_modules/mongodb/lib/cmap/connection.js:63:60)
-    at MessageStream.emit (node:events:537:28)
-    at processIncomingData (/home/rdonaire/Desktop/backend/node_modules/mongodb/lib/cmap/message_stream.js:132:20)
-    at MessageStream._write (/home/rdonaire/Desktop/backend/node_modules/mongodb/lib/cmap/message_stream.js:33:9)
-    at writeOrBuffer (node:internal/streams/writable:392:12)
-    at _write (node:internal/streams/writable:333:10)
-    at Writable.write (node:internal/streams/writable:337:10)
-    at TLSSocket.ondata (node:internal/streams/readable:766:22)
-    at TLSSocket.emit (node:events:537:28) {
-  ok: 0,
-  code: 2,
-  codeName: 'BadValue',
-  '$clusterTime': {
-    clusterTime: new Timestamp({ t: 1657166345, i: 1 }),
-    signature: {
-      hash: new Binary(Buffer.from("f9d95fbed988db3c28a7214d5962f9832b0deca2", "hex"), 0),
-      keyId: new Long("7057902861115457538")
-    }
-  },
-  operationTime: new Timestamp({ t: 1657166345, i: 1 }),
-  [Symbol(errorLabels)]: Set(0) {}
-}
-[2022-07-06T23:59:49.843] [ERROR] archivoError - MongoServerError: Plan executor error during findAndModify :: caused by :: The field 'carrito' must be an array but is of type object in document {_id: ObjectId('62c35fc945780ee3923d33fc')}
-    at Connection.onMessage (/home/rdonaire/Desktop/backend/node_modules/mongodb/lib/cmap/connection.js:210:30)
-    at MessageStream.<anonymous> (/home/rdonaire/Desktop/backend/node_modules/mongodb/lib/cmap/connection.js:63:60)
-    at MessageStream.emit (node:events:537:28)
-    at processIncomingData (/home/rdonaire/Desktop/backend/node_modules/mongodb/lib/cmap/message_stream.js:132:20)
-    at MessageStream._write (/home/rdonaire/Desktop/backend/node_modules/mongodb/lib/cmap/message_stream.js:33:9)
-    at writeOrBuffer (node:internal/streams/writable:392:12)
-    at _write (node:internal/streams/writable:333:10)
-    at Writable.write (node:internal/streams/writable:337:10)
-    at TLSSocket.ondata (node:internal/streams/readable:766:22)
-    at TLSSocket.emit (node:events:537:28) {
-  ok: 0,
-  code: 2,
-  codeName: 'BadValue',
-  '$clusterTime': {
-    clusterTime: new Timestamp({ t: 1657166389, i: 1 }),
-    signature: {
-      hash: new Binary(Buffer.from("37dc907d25e715f1183bd66cce4e618978d50c96", "hex"), 0),
-      keyId: new Long("7057902861115457538")
-    }
-  },
-  operationTime: new Timestamp({ t: 1657166389, i: 1 }),
-  [Symbol(errorLabels)]: Set(0) {}
-}
-[2022-07-07T00:09:59.608] [ERROR] archivoError - SyntaxError: Unexpected number in JSON at position 1
-    at JSON.parse (<anonymous>)
-    at Socket.<anonymous> (/home/rdonaire/Desktop/backend/server.js:104:30)
-    at Socket.emit (node:events:537:28)
-    at Socket.emitUntyped (/home/rdonaire/Desktop/backend/node_modules/socket.io/dist/typed-events.js:69:22)
-    at /home/rdonaire/Desktop/backend/node_modules/socket.io/dist/socket.js:465:39
-    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)

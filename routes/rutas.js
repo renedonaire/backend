@@ -101,7 +101,13 @@ router.post(
 		enviarMail(
 			(to = `${destinatario}`),
 			(subject = 'Nuevo usuario'),
-			(body = `${req.user} se ha registrado`)
+			(body = `<h3>Se ha registrado un nuevo usuario:</h3>
+			<p>Nombre: ${req.body.nombre}</p>
+			<p>direccion: ${req.body.direccion}</p>
+			<p>Edad: ${req.body.edad} </p>
+			<p>Teléfono: ${req.body.telefono}</p>
+			<p>Email: ${req.body.email}</p>
+			`)
 		)
 		res.redirect('/')
 	}

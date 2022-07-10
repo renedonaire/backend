@@ -1,14 +1,13 @@
-const nodemailer = require('nodemailer')
+const { createTransport } = require('nodemailer')
 const { loggerError } = require('../logs/log4')
 
 const enviarMail = async (to, subject, body) => {
-	const transporter = nodemailer.createTransport({
+	const transporter = await createTransport({
 		host: 'mail.smtp2go.com',
 		port: 2525,
-		secure: false,
 		auth: {
-			user: process.env.EMAIL_USER,
-			pass: process.env.EMAIL_PASS,
+			user: 'backend@coder.cl',
+			pass: 'GCbPXhMz6pP0nnZp',
 		},
 	})
 
@@ -17,7 +16,7 @@ const enviarMail = async (to, subject, body) => {
 			from: 'backend@coder.cl',
 			to: `${to}`,
 			subject: `${subject}`,
-			text: `${body}`,
+			html: `${body}`,
 		})
 		console.log('Message sent: %s', info.messageId)
 	} catch (error) {
