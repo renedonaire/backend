@@ -7,6 +7,7 @@ const { loggerConsola, loggerWarning, loggerError } = require('../logs/log4.js')
 const nodeProcess = require('node:process')
 const os = require('os')
 const { fork } = require('child_process')
+const { enviarMail } = require('../mensajería/enviaEmail.js')
 
 /* ------------------------------- Middlewares ------------------------------ */
 const myLogger = (req, res, next) => {
@@ -96,6 +97,12 @@ router.post(
 	}),
 	(req, res) => {
 		loggerConsola.info('Ruta /registro, método POST')
+		const destinatario = process.env.ADMIN_EMAIL
+		enviarMail(
+			(to = `${destinatario}`),
+			(subject = 'Nuevo usuario'),
+			(body = `${req.user} se ha registrado`)
+		)
 		res.redirect('/')
 	}
 )
@@ -114,17 +121,10 @@ router.post(
 	})
 )
 
-router.get('/logout', (req, res, next) => {
+router.get('/logout', isAuth, async (req, res) => {
 	loggerConsola.info('Ruta /logout, método GET')
-	userName = req.user.nombre
-	req.logout(function (err, userName) {
-		if (err) {
-			return next(err)
-		} else {
-			res.render('../views/partials/logout.hbs', {
-				userName: this.userName,
-			})
-		}
+	res.render('../views/partials/logout.hbs', {
+		userName: req.user.nombre,
 	})
 })
 
