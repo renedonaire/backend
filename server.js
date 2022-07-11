@@ -120,20 +120,24 @@ io.on('connection', async (socket) => {
 		})
 		.on('new-buy', async (nombre) => {
 			// Email y whatsapp al administrador
-			console.log('Username: ', nombre)
 			const user = await User.findOne({ nombre: nombre })
-			console.log('User: ', user)
 			const destinatario = process.env.ADMIN_EMAIL
+			let carrito = ''
+			for (let index = 0; index < user.carrito.length; index++) {
+				carrito =
+					carrito +
+					`${user.carrito[index].title} - ${user.carrito[index].qty} unidades <br/>`
+			}
 			enviarMail(
 				(to = `${destinatario}`),
 				(subject = `Nuevo pedido de ${user.nombre} - ${user.email}`),
-				(body = `<h3>Se ha registrado un nuevo pedido de ${user.nombre} - ${user.email}:</h3>
-			<p>${user.carrito}</p>
-			`)
+				(body =
+					`<h3>Se ha registrado un nuevo pedido de ${user.nombre} - ${user.email}:</h3>` +
+					`<p>${carrito}</p>`)
 			)
 
 			// SMS al usuario
-			//Agregar carrito a coleccion 'Pedidos'
+			// Agregar carrito a coleccion 'Pedidos'
 			// Eliminar carrito de usuario
 		})
 })
