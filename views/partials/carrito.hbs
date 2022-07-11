@@ -28,10 +28,8 @@
    {{/each}}
 </div>
 <hr/>
-<button id="btn-carrito">Comprar</button>
-<script>
-   const btn = document.getElementById("btn-carrito")
-   btn.addEventListener('click', event => {
-      comprar()
-   })
-</script>
+<form onsubmit="return comprar(this)">
+	<input type="hidden" id="username" value={{userName}}>
+   <input type='submit' value='Comprar' />
+</form>
+

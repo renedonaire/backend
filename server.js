@@ -76,6 +76,9 @@ const passport = require('passport')
 const mensajes = new Mensajes()
 const productos = new Productos()
 
+/* ------------------------------- Mensajería ------------------------------- */
+const { enviarMail } = require('./mensajería/enviaEmail.js')
+
 /* ---------------------------------- Rutas --------------------------------- */
 app.use(require('./routes/rutas.js'))
 
@@ -115,8 +118,20 @@ io.on('connection', async (socket) => {
 				loggerError.error(error)
 			}
 		})
-		.on('new-buy', async (e) => {
+		.on('new-buy', async (nombre) => {
 			// Email y whatsapp al administrador
+			console.log('Username: ', nombre)
+			const user = await User.findOne({ nombre: nombre })
+			console.log('User: ', user)
+			const destinatario = process.env.ADMIN_EMAIL
+			enviarMail(
+				(to = `${destinatario}`),
+				(subject = `Nuevo pedido de ${user.nombre} - ${user.email}`),
+				(body = `<h3>Se ha registrado un nuevo pedido de ${user.nombre} - ${user.email}:</h3>
+			<p>${user.carrito}</p>
+			`)
+			)
+
 			// SMS al usuario
 			//Agregar carrito a coleccion 'Pedidos'
 			// Eliminar carrito de usuario

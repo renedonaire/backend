@@ -68,3 +68,6 @@ Se usa 'log4js' para registrar los logs.
 El archivo de configuración y los registros se encuentran en el directorio   
 - logs   
    
+## Mensajería   
+El email del -admin, así como las claves del servicio de correo y de mensajería se encuentran en el archivo   
+- .env   

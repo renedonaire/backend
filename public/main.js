@@ -42,10 +42,11 @@ const addToCart = (e) => {
 }
 
 const comprar = () => {
+	const nombre = document.getElementById('username').value
 	document.getElementById(
 		'contenedor'
 	).innerHTML = `<br/><h3>Gracias por tu compra!</h3><p>En breve te contactaremos con los detalles.</p>`
-	socket.emit('new-buy', null)
+	socket.emit('new-buy', nombre)
 	return false
 }
 

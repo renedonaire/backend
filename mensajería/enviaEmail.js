@@ -1,5 +1,5 @@
 const { createTransport } = require('nodemailer')
-const { loggerError } = require('../logs/log4')
+const { loggerError, loggerConsola } = require('../logs/log4')
 
 const enviarMail = async (to, subject, body) => {
 	const transporter = await createTransport({
@@ -18,7 +18,7 @@ const enviarMail = async (to, subject, body) => {
 			subject: `${subject}`,
 			html: `${body}`,
 		})
-		console.log('Message sent: %s', info.messageId)
+		loggerConsola.info('Message sent: %s', info.messageId)
 	} catch (error) {
 		loggerError.error(error)
 	}
