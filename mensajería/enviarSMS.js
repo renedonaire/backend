@@ -8,8 +8,8 @@ const enviarSMS = async (to, body) => {
 	const client = twilio(accountSid, authToken)
 
 	const options = {
+		messagingServiceSid: process.env.TWILIO_SMS_ID,
 		body: body,
-		from: process.env.TWILIO_FROM_SMS,
 		to: to,
 	}
 

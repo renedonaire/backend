@@ -79,6 +79,7 @@ const productos = new Productos()
 /* ------------------------------- Mensajería ------------------------------- */
 const { enviarMail } = require('./mensajería/enviaEmail.js')
 const { enviarWS } = require('./mensajería/enviaWhatsapp.js')
+const { enviarSMS } = require('./mensajería/enviarSMS.js')
 /* ---------------------------------- Rutas --------------------------------- */
 app.use(require('./routes/rutas.js'))
 
@@ -146,8 +147,17 @@ io.on('connection', async (socket) => {
 			)
 
 			// SMS al usuario
+			const destinatario_sms = user.telefono
+			const mensaje_sms = `Gracias por tu compra! Tu pedido se encuentra en proceso`
+			enviarSMS((to = `${destinatario_sms}`), (body = `${mensaje_sms}`))
+
 			// Agregar carrito a coleccion 'Pedidos'
 			// Eliminar carrito de usuario
+			const vaciado = await User.findOneAndUpdate(
+				{ nombre: nombre },
+				{ $set: { carrito: [] } }
+			)
+			loggerConsola.info('Carrito vaciado')
 		})
 })
 

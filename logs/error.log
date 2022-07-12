@@ -156,3 +156,45 @@
   moreInfo: 'https://www.twilio.com/docs/errors/63007',
   details: undefined
 }
+[2022-07-11T23:03:05.810] [ERROR] archivoError - RestException [Error]: The From phone number +14155238886 is not a valid, SMS-capable inbound phone number or short code for your account.
+    at success (/home/rdonaire/Desktop/backend/node_modules/twilio/lib/base/Version.js:135:15)
+    at Promise_then_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:766:44)
+    at Promise_done_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:835:31)
+    at Fulfilled.Fulfilled_dispatch [as dispatch] (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1229:9)
+    at Pending_become_eachMessage_task (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1369:30)
+    at RawTask.call (/home/rdonaire/Desktop/backend/node_modules/asap/asap.js:40:19)
+    at flush (/home/rdonaire/Desktop/backend/node_modules/asap/raw.js:50:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+  status: 400,
+  code: 21606,
+  moreInfo: 'https://www.twilio.com/docs/errors/21606',
+  details: undefined
+}
+[2022-07-11T23:13:39.219] [ERROR] archivoError - RestException [Error]: The From phone number +14155238886 is not a valid, SMS-capable inbound phone number or short code for your account.
+    at success (/home/rdonaire/Desktop/backend/node_modules/twilio/lib/base/Version.js:135:15)
+    at Promise_then_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:766:44)
+    at Promise_done_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:835:31)
+    at Fulfilled.Fulfilled_dispatch [as dispatch] (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1229:9)
+    at Pending_become_eachMessage_task (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1369:30)
+    at RawTask.call (/home/rdonaire/Desktop/backend/node_modules/asap/asap.js:40:19)
+    at flush (/home/rdonaire/Desktop/backend/node_modules/asap/raw.js:50:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+  status: 400,
+  code: 21606,
+  moreInfo: 'https://www.twilio.com/docs/errors/21606',
+  details: undefined
+}
+[2022-07-11T23:20:00.031] [ERROR] archivoError - RestException [Error]: The From phone number +14155238886 is not a valid, SMS-capable inbound phone number or short code for your account.
+    at success (/home/rdonaire/Desktop/backend/node_modules/twilio/lib/base/Version.js:135:15)
+    at Promise_then_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:766:44)
+    at Promise_done_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:835:31)
+    at Fulfilled.Fulfilled_dispatch [as dispatch] (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1229:9)
+    at Pending_become_eachMessage_task (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1369:30)
+    at RawTask.call (/home/rdonaire/Desktop/backend/node_modules/asap/asap.js:40:19)
+    at flush (/home/rdonaire/Desktop/backend/node_modules/asap/raw.js:50:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+  status: 400,
+  code: 21606,
+  moreInfo: 'https://www.twilio.com/docs/errors/21606',
+  details: undefined
+}
