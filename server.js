@@ -7,6 +7,7 @@ config({ path: process.ENV })
 const { fork } = require('child_process')
 const cluster = require('cluster')
 const compression = require('compression')
+const os = require('os')
 const { loggerConsola, loggerWarning, loggerError } = require('./logs/log4.js')
 
 /* ------------------------------- Inicializa ------------------------------- */
