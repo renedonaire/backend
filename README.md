@@ -30,8 +30,10 @@ donde 'num' es el número del puerto deseado
 (si no se indica la cantidad, genera 100 millones)
 
 ## Modos del Server:
-### Para arrancar por defecto (con nodemon, puerto 8080, modo FORK)
-- npm start
+### Para arrancar por defecto (con nodemon, puerto 8080)
+- npm start   
+Em el archivo .env, se usa la variable 'MODE' para indicar el modo por defecto   
+('FORK' o 'CLUSTER')
 
 ### Programáticamente, se puede elegir el puerto y el modo usando:
 - node server.js --puerto 8080 --modo FORK   

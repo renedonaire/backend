@@ -198,3 +198,4 @@
   moreInfo: 'https://www.twilio.com/docs/errors/21606',
   details: undefined
 }
+[2022-07-12T00:33:16.976] [ERROR] archivoError - Error: listen EADDRINUSE: address already in use :::8080

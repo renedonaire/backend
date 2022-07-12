@@ -168,7 +168,7 @@ function param(p) {
 	return index === -1 ? null : process.argv[index + 1]
 }
 
-const MODO = param('--modo') || 'FORK'
+const MODO = param('--modo') || process.env.MODE || 'FORK'
 
 if (MODO == 'CLUSTER' && cluster.isMaster) {
 	loggerConsola.info(`Modo: ${MODO}`)
