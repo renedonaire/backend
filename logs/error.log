@@ -30,3 +30,129 @@
   responseCode: 535,
   command: 'AUTH PLAIN'
 }
+[2022-07-11T22:18:13.863] [ERROR] archivoError - RestException [Error]: From(+19707177097) and To(whatsapp:++56988107373) addresses should be of the same channel.
+    at success (/home/rdonaire/Desktop/backend/node_modules/twilio/lib/base/Version.js:135:15)
+    at Promise_then_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:766:44)
+    at Promise_done_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:835:31)
+    at Fulfilled.Fulfilled_dispatch [as dispatch] (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1229:9)
+    at Pending_become_eachMessage_task (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1369:30)
+    at RawTask.call (/home/rdonaire/Desktop/backend/node_modules/asap/asap.js:40:19)
+    at flush (/home/rdonaire/Desktop/backend/node_modules/asap/raw.js:50:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+  status: 400,
+  code: 21910,
+  moreInfo: 'https://www.twilio.com/docs/errors/21910',
+  details: undefined
+}
+[2022-07-11T22:21:13.761] [ERROR] archivoError - RestException [Error]: The 'To' number whatsapp:++56988107373 is not a valid phone number.
+    at success (/home/rdonaire/Desktop/backend/node_modules/twilio/lib/base/Version.js:135:15)
+    at Promise_then_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:766:44)
+    at Promise_done_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:835:31)
+    at Fulfilled.Fulfilled_dispatch [as dispatch] (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1229:9)
+    at Pending_become_eachMessage_task (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1369:30)
+    at RawTask.call (/home/rdonaire/Desktop/backend/node_modules/asap/asap.js:40:19)
+    at flush (/home/rdonaire/Desktop/backend/node_modules/asap/raw.js:50:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+  status: 400,
+  code: 21211,
+  moreInfo: 'https://www.twilio.com/docs/errors/21211',
+  details: undefined
+}
+[2022-07-11T22:22:04.164] [ERROR] archivoError - RestException [Error]: The 'To' number whatsapp:++56988107373 is not a valid phone number.
+    at success (/home/rdonaire/Desktop/backend/node_modules/twilio/lib/base/Version.js:135:15)
+    at Promise_then_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:766:44)
+    at Promise_done_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:835:31)
+    at Fulfilled.Fulfilled_dispatch [as dispatch] (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1229:9)
+    at Pending_become_eachMessage_task (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1369:30)
+    at RawTask.call (/home/rdonaire/Desktop/backend/node_modules/asap/asap.js:40:19)
+    at flush (/home/rdonaire/Desktop/backend/node_modules/asap/raw.js:50:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+  status: 400,
+  code: 21211,
+  moreInfo: 'https://www.twilio.com/docs/errors/21211',
+  details: undefined
+}
+[2022-07-11T22:23:17.075] [ERROR] archivoError - RestException [Error]: The 'To' number whatsapp:++56988107373 is not a valid phone number.
+    at success (/home/rdonaire/Desktop/backend/node_modules/twilio/lib/base/Version.js:135:15)
+    at Promise_then_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:766:44)
+    at Promise_done_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:835:31)
+    at Fulfilled.Fulfilled_dispatch [as dispatch] (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1229:9)
+    at Pending_become_eachMessage_task (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1369:30)
+    at RawTask.call (/home/rdonaire/Desktop/backend/node_modules/asap/asap.js:40:19)
+    at flush (/home/rdonaire/Desktop/backend/node_modules/asap/raw.js:50:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+  status: 400,
+  code: 21211,
+  moreInfo: 'https://www.twilio.com/docs/errors/21211',
+  details: undefined
+}
+[2022-07-11T22:24:13.462] [ERROR] archivoError - RestException [Error]: The 'To' number whatsapp:++56988107373 is not a valid phone number.
+    at success (/home/rdonaire/Desktop/backend/node_modules/twilio/lib/base/Version.js:135:15)
+    at Promise_then_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:766:44)
+    at Promise_done_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:835:31)
+    at Fulfilled.Fulfilled_dispatch [as dispatch] (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1229:9)
+    at Pending_become_eachMessage_task (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1369:30)
+    at RawTask.call (/home/rdonaire/Desktop/backend/node_modules/asap/asap.js:40:19)
+    at flush (/home/rdonaire/Desktop/backend/node_modules/asap/raw.js:50:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+  status: 400,
+  code: 21211,
+  moreInfo: 'https://www.twilio.com/docs/errors/21211',
+  details: undefined
+}
+[2022-07-11T22:25:37.432] [ERROR] archivoError - RestException [Error]: The 'To' number whatsapp:++56988107373 is not a valid phone number.
+    at success (/home/rdonaire/Desktop/backend/node_modules/twilio/lib/base/Version.js:135:15)
+    at Promise_then_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:766:44)
+    at Promise_done_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:835:31)
+    at Fulfilled.Fulfilled_dispatch [as dispatch] (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1229:9)
+    at Pending_become_eachMessage_task (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1369:30)
+    at RawTask.call (/home/rdonaire/Desktop/backend/node_modules/asap/asap.js:40:19)
+    at flush (/home/rdonaire/Desktop/backend/node_modules/asap/raw.js:50:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+  status: 400,
+  code: 21211,
+  moreInfo: 'https://www.twilio.com/docs/errors/21211',
+  details: undefined
+}
+[2022-07-11T22:27:52.528] [ERROR] archivoError - RestException [Error]: Twilio could not find a Channel with the specified From address
+    at success (/home/rdonaire/Desktop/backend/node_modules/twilio/lib/base/Version.js:135:15)
+    at Promise_then_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:766:44)
+    at Promise_done_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:835:31)
+    at Fulfilled.Fulfilled_dispatch [as dispatch] (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1229:9)
+    at Pending_become_eachMessage_task (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1369:30)
+    at RawTask.call (/home/rdonaire/Desktop/backend/node_modules/asap/asap.js:40:19)
+    at flush (/home/rdonaire/Desktop/backend/node_modules/asap/raw.js:50:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+  status: 400,
+  code: 63007,
+  moreInfo: 'https://www.twilio.com/docs/errors/63007',
+  details: undefined
+}
+[2022-07-11T22:28:47.187] [ERROR] archivoError - RestException [Error]: From(+19707177097) and To(whatsapp:+56988107373) addresses should be of the same channel.
+    at success (/home/rdonaire/Desktop/backend/node_modules/twilio/lib/base/Version.js:135:15)
+    at Promise_then_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:766:44)
+    at Promise_done_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:835:31)
+    at Fulfilled.Fulfilled_dispatch [as dispatch] (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1229:9)
+    at Pending_become_eachMessage_task (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1369:30)
+    at RawTask.call (/home/rdonaire/Desktop/backend/node_modules/asap/asap.js:40:19)
+    at flush (/home/rdonaire/Desktop/backend/node_modules/asap/raw.js:50:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+  status: 400,
+  code: 21910,
+  moreInfo: 'https://www.twilio.com/docs/errors/21910',
+  details: undefined
+}
+[2022-07-11T22:30:20.036] [ERROR] archivoError - RestException [Error]: Twilio could not find a Channel with the specified From address
+    at success (/home/rdonaire/Desktop/backend/node_modules/twilio/lib/base/Version.js:135:15)
+    at Promise_then_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:766:44)
+    at Promise_done_fulfilled (/home/rdonaire/Desktop/backend/node_modules/q/q.js:835:31)
+    at Fulfilled.Fulfilled_dispatch [as dispatch] (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1229:9)
+    at Pending_become_eachMessage_task (/home/rdonaire/Desktop/backend/node_modules/q/q.js:1369:30)
+    at RawTask.call (/home/rdonaire/Desktop/backend/node_modules/asap/asap.js:40:19)
+    at flush (/home/rdonaire/Desktop/backend/node_modules/asap/raw.js:50:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) {
+  status: 400,
+  code: 63007,
+  moreInfo: 'https://www.twilio.com/docs/errors/63007',
+  details: undefined
+}

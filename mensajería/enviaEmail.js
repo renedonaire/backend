@@ -6,8 +6,8 @@ const enviarMail = async (to, subject, body) => {
 		host: 'mail.smtp2go.com',
 		port: 2525,
 		auth: {
-			user: 'backend@coder.cl',
-			pass: 'GCbPXhMz6pP0nnZp',
+			user: process.env.EMAIL_USER,
+			pass: process.env.EMAIL_PASS,
 		},
 	})
 
@@ -18,7 +18,7 @@ const enviarMail = async (to, subject, body) => {
 			subject: `${subject}`,
 			html: `${body}`,
 		})
-		loggerConsola.info('Message sent: %s', info.messageId)
+		loggerConsola.info('Email enviado: %s', info.messageId)
 	} catch (error) {
 		loggerError.error(error)
 	}

@@ -78,7 +78,7 @@ const productos = new Productos()
 
 /* ------------------------------- Mensajería ------------------------------- */
 const { enviarMail } = require('./mensajería/enviaEmail.js')
-
+const { enviarWS } = require('./mensajería/enviaWhatsapp.js')
 /* ---------------------------------- Rutas --------------------------------- */
 app.use(require('./routes/rutas.js'))
 
@@ -123,10 +123,14 @@ io.on('connection', async (socket) => {
 			const user = await User.findOne({ nombre: nombre })
 			const destinatario = process.env.ADMIN_EMAIL
 			let carrito = ''
+			let carrito_ws = ''
 			for (let index = 0; index < user.carrito.length; index++) {
 				carrito =
 					carrito +
 					`${user.carrito[index].title} - ${user.carrito[index].qty} unidades <br/>`
+				carrito_ws =
+					carrito_ws +
+					`${user.carrito[index].title} - ${user.carrito[index].qty} unidades \n`
 			}
 			enviarMail(
 				(to = `${destinatario}`),
@@ -134,6 +138,11 @@ io.on('connection', async (socket) => {
 				(body =
 					`<h3>Se ha registrado un nuevo pedido de ${user.nombre} - ${user.email}:</h3>` +
 					`<p>${carrito}</p>`)
+			)
+			enviarWS(
+				`whatsapp:${process.env.ADMIN_PHONE}`,
+				`Se ha registrado un nuevo pedido de ${user.nombre} - ${user.email} \n` +
+					`${carrito_ws}`
 			)
 
 			// SMS al usuario
