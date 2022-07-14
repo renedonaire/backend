@@ -7,7 +7,7 @@ const { loggerConsola, loggerWarning, loggerError } = require('../logs/log4.js')
 const nodeProcess = require('node:process')
 const os = require('os')
 const { fork } = require('child_process')
-const { enviarMail } = require('../mensajería/enviaEmail.js')
+const { enviarMail } = require('../services/enviaEmail.js')
 
 /* ------------------------------- Middlewares ------------------------------ */
 const myLogger = (req, res, next) => {
@@ -30,7 +30,7 @@ router.use(myLogger)
 
 /* ------------------------------ Configuración ----------------------------- */
 const storage = multer.diskStorage({
-	destination: path.join(__dirname, '../uploads'),
+	destination: path.join(__dirname, '../public/uploads'),
 	filename: (req, file, cb) => {
 		cb(null, file.originalname)
 	},

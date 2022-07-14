@@ -1,19 +1,24 @@
 const express = require('express')
 const flash = require('connect-flash')
 const session = require('express-session')
-const exphbs = require('express-handlebars')
+// const hbs = require('express-handlebars')
 const { config } = require('dotenv')
 config({ path: process.ENV })
 const { fork } = require('child_process')
 const cluster = require('cluster')
 const compression = require('compression')
 const os = require('os')
-const { loggerConsola, loggerWarning, loggerError } = require('./logs/log4.js')
+const path = require('path')
+const {
+	loggerConsola,
+	loggerWarning,
+	loggerError,
+} = require('./src/logs/log4.js')
 
 /* ------------------------------- Inicializa ------------------------------- */
 const app = express()
-require('./src/database')
-require('./passport/local-auth')
+require('./src/config/database')
+require('./src/config/local-auth')
 
 /* ----------------------- Argumento línea de comando ----------------------- */
 function param(p) {
@@ -29,17 +34,28 @@ if (typeof puerto === 'number' && puerto > 0) {
 } else {
 	app.set('port', 8080)
 }
+
+// Handlebars
+const exphbs = require('express-handlebars')
+const viewsPath = path.join(__dirname, '/src/views')
+app.set('views', viewsPath)
+const hbs = exphbs.create({
+	defaultLayout: 'main',
+	layoutsDir: viewsPath + '/layouts',
+	partialsDir: viewsPath + '/partials',
+})
 app.engine(
 	'hbs',
 	exphbs.engine({
 		extname: 'hbs',
 	})
 )
+app.set('view engine', 'hbs')
+
 app
-	.set('view engine', 'hbs')
 	.use(express.urlencoded({ extended: true }))
-	.use(express.static('public'))
-	.use(express.static('uploads'))
+	.use(express.static('./src/public'))
+	.use(express.static('./src/public/uploads'))
 	.use(express.json())
 	.use(compression())
 
@@ -61,7 +77,7 @@ app.use((req, res, next) => {
 	next()
 })
 
-const User = require('./models/userSchema')
+const User = require('./src/models/userSchema')
 const user = new User()
 
 /* -------------------------- Sockets Configuración ------------------------- */
@@ -71,18 +87,18 @@ const httpServer = new HTTPServer(app)
 const io = new SocketServer(httpServer)
 
 /* ----------------------------- Bases de Datos ----------------------------- */
-const Mensajes = require('./models/mensajesMongoDb.js')
-const Productos = require('./models/productosMongoDb.js')
+const Mensajes = require('./src/models/mensajesMongoDb.js')
+const Productos = require('./src/models/productosMongoDb.js')
 const passport = require('passport')
 const mensajes = new Mensajes()
 const productos = new Productos()
 
 /* ------------------------------- Mensajería ------------------------------- */
-const { enviarMail } = require('./mensajería/enviaEmail.js')
-const { enviarWS } = require('./mensajería/enviaWhatsapp.js')
-const { enviarSMS } = require('./mensajería/enviarSMS.js')
+const { enviarMail } = require('./src/services/enviaEmail.js')
+const { enviarWS } = require('./src/services/enviaWhatsapp.js')
+const { enviarSMS } = require('./src/services/enviarSMS.js')
 /* ---------------------------------- Rutas --------------------------------- */
-app.use(require('./routes/rutas.js'))
+app.use(require('./src/routes/rutas.js'))
 
 /* ---------------------------- Sockets Listening --------------------------- */
 io.on('connection', async (socket) => {

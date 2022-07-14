@@ -1,5 +1,5 @@
 const { MongoClient } = require('mongodb')
-const { mongodatabase } = require('../src/options')
+const { mongodatabase } = require('../config/options')
 const { config } = require('dotenv')
 config({ path: process.ENV })
 const { loggerConsola, loggerWarning, loggerError } = require('../logs/log4.js')
