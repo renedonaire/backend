@@ -6,27 +6,27 @@ const { loggerConsola, loggerWarning, loggerError } = require('../logs/log4.js')
 
 const client = new MongoClient(process.env.MONGO_cnxStr, mongodatabase.options)
 client.connect()
-loggerConsola.info('conectado a mongodb - mensajes')
+loggerConsola.info('conectado a mongodb - productos')
 
-module.exports = class Mensajes {
+module.exports = class ProductosDaoMongodb {
 	constructor(baseDatos, coleccion) {
 		this.baseDatos = process.env.MONGO_database
-		this.coleccion = process.env.MONGO_mensajes
+		this.coleccion = process.env.MONGO_productos
 	}
 
-	async saveMessage(mensajes) {
+	async saveProduct(producto) {
 		try {
 			const result = await client
 				.db(this.baseDatos)
 				.collection(this.coleccion)
-				.insertOne(mensajes)
+				.insertOne(producto)
 			return { Estado: 'Guardado' }
 		} catch (error) {
 			return { 'Error al guardar ': `${error}` }
 		}
 	}
 
-	async getMessages() {
+	async getProducts() {
 		try {
 			const result = await client
 				.db(this.baseDatos)

@@ -1,7 +1,7 @@
 const knex = require('knex')
 const { loggerConsola, loggerWarning, loggerError } = require('./logs/log4.js')
 
-module.exports = class Mensajes {
+module.exports = class MensajesDaoSQL {
 	constructor(config) {
 		this.knex = knex(config)
 	}

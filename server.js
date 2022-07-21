@@ -1,7 +1,6 @@
 const express = require('express')
 const flash = require('connect-flash')
 const session = require('express-session')
-// const hbs = require('express-handlebars')
 const { config } = require('dotenv')
 config({ path: process.ENV })
 const { fork } = require('child_process')
@@ -77,9 +76,6 @@ app.use((req, res, next) => {
 	next()
 })
 
-const User = require('./src/models/userSchema')
-const user = new User()
-
 /* -------------------------- Sockets Configuración ------------------------- */
 const { Server: HTTPServer } = require('http')
 const { Server: SocketServer } = require('socket.io')
@@ -87,16 +83,29 @@ const httpServer = new HTTPServer(app)
 const io = new SocketServer(httpServer)
 
 /* ----------------------------- Bases de Datos ----------------------------- */
+const User = require('./src/models/userSchema')
+const user = new User()
 const Mensajes = require('./src/models/mensajesMongoDb.js')
 const Productos = require('./src/models/productosMongoDb.js')
 const passport = require('passport')
 const mensajes = new Mensajes()
 const productos = new Productos()
 
+// HABILITAR ESTO
+import MensajesDaoFactory from './daos/MensajesDaoFactory.js'
+import ProductosDaoFactory from './daos/ProductosDaoFactory.js'
+
+const mensajesDao = MensajesDaoFactory.getDao()
+await mensajesDao.init()
+
+const productosDao = ProductosDaoFactory.getDao()
+await productosDao.init()
+
 /* ------------------------------- Mensajería ------------------------------- */
 const { enviarMail } = require('./src/services/enviaEmail.js')
 const { enviarWS } = require('./src/services/enviaWhatsapp.js')
 const { enviarSMS } = require('./src/services/enviarSMS.js')
+
 /* ---------------------------------- Rutas --------------------------------- */
 app.use(require('./src/routes/rutas.js'))
 

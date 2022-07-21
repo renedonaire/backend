@@ -2,7 +2,7 @@ const knex = require('knex')
 const productosInicial = require('./valoresIniciales.js')
 const { loggerConsola, loggerWarning, loggerError } = require('../logs/log4.js')
 
-module.exports = class Productos {
+module.exports = class ProductosDaoMariadb {
 	constructor(config) {
 		this.knex = knex(config)
 	}

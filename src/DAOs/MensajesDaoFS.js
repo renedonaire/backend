@@ -1,12 +1,12 @@
 const fs = require('fs')
 const { loggerError } = require('../logs/log4')
 
-module.exports = class Mensajes {
+module.exports = class MensajesDaoFS {
 	constructor(ruta) {
 		this.route = ruta
 	}
 
-	getMessages = async () => {
+	async getMessages() {
 		try {
 			const result = await fs.promises.readFile(this.route, 'utf-8')
 			return JSON.parse(result)
@@ -17,7 +17,7 @@ module.exports = class Mensajes {
 		}
 	}
 
-	saveMessage = async (message) => {
+	async saveMessage(message) {
 		const arrayMessages = await this.getMessages()
 		try {
 			arrayMessages.unshift(message)
