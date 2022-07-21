@@ -1,4 +1,3 @@
-const { config } = require('dotenv')
 const twilio = require('twilio')
 const { loggerError, loggerConsola } = require('../logs/log4')
 
