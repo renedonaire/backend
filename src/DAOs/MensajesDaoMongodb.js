@@ -1,11 +1,12 @@
-const { MongoClient } = require('mongodb')
-const { mongodatabase } = require('../config/options')
-const { config } = require('dotenv')
-config({ path: process.ENV })
+// const { MongoClient } = require('mongodb')
+// const { mongodatabase } = require('../config/options')
+const Mongodb = require('../config/database')
+// config({ path: process.ENV })
 const { loggerConsola } = require('../logs/log4.js')
 
-const client = new MongoClient(process.env.MONGO_cnxStr, mongodatabase.options)
-client.connect()
+// const client = new MongoClient(process.env.MONGO_cnxStr, mongodatabase.options)
+const client = new Mongodb()
+// client.connect()
 loggerConsola.info('conectado a mongodb - mensajes')
 
 module.exports = class MensajesDaoMongodb {

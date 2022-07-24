@@ -85,21 +85,19 @@ const io = new SocketServer(httpServer)
 /* ----------------------------- Bases de Datos ----------------------------- */
 const User = require('./src/models/userSchema')
 const user = new User()
-const Mensajes = require('./src/models/mensajesMongoDb.js')
-const Productos = require('./src/models/productosMongoDb.js')
-const passport = require('passport')
-const mensajes = new Mensajes()
-const productos = new Productos()
 
-// HABILITAR ESTO
-import MensajesDaoFactory from './daos/MensajesDaoFactory.js'
-import ProductosDaoFactory from './daos/ProductosDaoFactory.js'
+// const Mensajes = require('./src/models/mensajesMongoDb.js')
+// const Productos = require('./src/models/productosMongoDb.js')
+// const mensajes = new Mensajes()
+// const productos = new Productos()
 
-const mensajesDao = MensajesDaoFactory.getDao()
-await mensajesDao.init()
+const MensajesDaoFactory = require('./src/DAOs/MensajesDaoFactory')
+const mensajes = MensajesDaoFactory.getDao()
+// mensajes.init()
 
-const productosDao = ProductosDaoFactory.getDao()
-await productosDao.init()
+const ProductosDaoFactory = require('./src/DAOs/ProductosDaoFactory')
+const productos = ProductosDaoFactory.getDao()
+// productos.init()
 
 /* ------------------------------- Mensajería ------------------------------- */
 const { enviarMail } = require('./src/services/enviaEmail.js')
