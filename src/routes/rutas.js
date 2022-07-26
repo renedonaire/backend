@@ -41,10 +41,15 @@ const uploadImage = multer({
 }).single('avatar')
 
 /* ----------------------------- Bases de Datos ----------------------------- */
-const Mensajes = require('../models/mensajesMongoDb.js')
-const Productos = require('../models/productosMongoDb.js')
-const mensajes = new Mensajes()
-const productos = new Productos()
+// const Mensajes = require('../models/mensajesMongoDb.js')
+// const Productos = require('../models/productosMongoDb.js')
+// const mensajes = new Mensajes()
+// const productos = new Productos()
+const MensajesDaoFactory = require('../DAOs/MensajesDaoFactory')
+const mensajes = MensajesDaoFactory.getDao()
+
+const ProductosDaoFactory = require('../DAOs/ProductosDaoFactory')
+const productos = ProductosDaoFactory.getDao()
 
 /* ---------------------------------- Rutas --------------------------------- */
 router.get('/', isAuth, async (req, res) => {
