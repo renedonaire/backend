@@ -25,25 +25,3 @@ module.exports = class MensajesDaoFactory {
 		return dao
 	}
 }
-
-// let dao
-// switch (opcion) {
-// 	case 'Mongo':
-// 		dao = new MensajesDaoMongodb()
-// 		// await dao.init()
-// 		dao.init()
-// 		break
-// 	case 'SQL':
-// 		dao = new MensajesDaoSQL()
-// 		dao.init()
-// 		break
-// 	default:
-// 		dao = new MensajesDaoFS(rutaArchivo)
-// 		dao.init()
-// }
-
-// export default class MensajesDaoFactory {
-// 	static getDao() {
-// 		return dao
-// 	}
-// }

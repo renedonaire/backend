@@ -1,10 +1,7 @@
 const MongoDbConnection = require('../config/database')
 const { loggerConsola } = require('../logs/log4.js')
 
-// const client = new MongoClient(process.env.MONGO_cnxStr, mongodatabase.options)
-// // client.connect()
 loggerConsola.info('MensajesDaoMongodb')
-// const client = new Mongodb()()
 
 module.exports = class MensajesDaoMongodb {
 	constructor() {
@@ -34,6 +31,7 @@ module.exports = class MensajesDaoMongodb {
 				.collection(this.coleccion)
 				.find()
 				.toArray()
+			console.log(result)
 			return result
 		} catch (error) {
 			return { Error: `${error}` }
