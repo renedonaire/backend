@@ -1,16 +1,17 @@
 // const { MongoClient } = require('mongodb')
 // const { mongodatabase } = require('../config/options')
-const Mongodb = require('../config/database')
+const MongoDbConnection = require('../config/database')
 // config({ path: process.ENV })
 const { loggerConsola } = require('../logs/log4.js')
 
 // const client = new MongoClient(process.env.MONGO_cnxStr, mongodatabase.options)
-const client = new Mongodb()
-// client.connect()
-loggerConsola.info('conectado a mongodb - productos')
+loggerConsola.info('ProductosDaoMongodb')
+// const client = new Mongodb()
+// // client.connect()
 
 module.exports = class ProductosDaoMongodb {
 	constructor(baseDatos, coleccion) {
+		this.client = MongoDbConnection.Get()
 		this.baseDatos = process.env.MONGO_database
 		this.coleccion = process.env.MONGO_productos
 	}

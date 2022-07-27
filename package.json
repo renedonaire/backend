@@ -20,8 +20,8 @@
 	"dependencies": {
 		"@faker-js/faker": "^7.3.0",
 		"@vscode/sqlite3": "^5.0.8",
-		"0x": "^5.3.1",
-		"artillery": "^1.5.6",
+		"0x": "^5.4.0",
+		"artillery": "^1.7.9",
 		"autocannon": "^7.9.0",
 		"bcrypt-nodejs": "^0.0.3",
 		"compression": "^1.7.4",
@@ -32,20 +32,20 @@
 		"express": "^4.18.1",
 		"express-handlebars": "^6.0.6",
 		"express-session": "^1.17.3",
-		"knex": "^2.1.0",
-		"log4js": "^6.5.2",
+		"knex": "^2.2.0",
+		"log4js": "^6.6.0",
 		"minimist": "^1.2.6",
-		"mongodb": "^4.7.0",
-		"mongoose": "^6.4.2",
+		"mongodb": "^4.8.0",
+		"mongoose": "^6.4.7",
 		"multer": "^1.4.5-lts.1",
 		"mysql": "^2.18.1",
-		"node": "^18.4.0",
+		"node": "^18.5.0",
 		"nodemailer": "^6.7.7",
 		"nodemon": "^2.0.19",
 		"normalizr": "^3.6.2",
 		"passport": "^0.6.0",
 		"passport-local": "^1.0.0",
 		"socket.io": "^4.5.1",
-		"twilio": "^3.78.0"
+		"twilio": "^3.80.0"
 	}
 }

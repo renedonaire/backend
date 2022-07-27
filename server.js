@@ -86,18 +86,11 @@ const io = new SocketServer(httpServer)
 const User = require('./src/models/userSchema')
 const user = new User()
 
-// const Mensajes = require('./src/models/mensajesMongoDb.js')
-// const Productos = require('./src/models/productosMongoDb.js')
-// const mensajes = new Mensajes()
-// const productos = new Productos()
-
 const MensajesDaoFactory = require('./src/DAOs/MensajesDaoFactory')
 const mensajes = MensajesDaoFactory.getDao()
-// mensajes.init()
 
 const ProductosDaoFactory = require('./src/DAOs/ProductosDaoFactory')
 const productos = ProductosDaoFactory.getDao()
-// productos.init()
 
 /* ------------------------------- Mensajería ------------------------------- */
 const { enviarMail } = require('./src/services/enviaEmail.js')
@@ -109,7 +102,7 @@ app.use(require('./src/routes/rutas.js'))
 
 /* ---------------------------- Sockets Listening --------------------------- */
 io.on('connection', async (socket) => {
-	loggerConsola.info('Nuevo cliente conectado')
+	loggerConsola.info('Nueva conexión - sockets')
 	const messages = await mensajes.getMessages()
 	socket.emit('messages', messages)
 	const products = await productos.getProducts()
