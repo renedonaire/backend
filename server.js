@@ -83,14 +83,16 @@ const httpServer = new HTTPServer(app)
 const io = new SocketServer(httpServer)
 
 /* ----------------------------- Bases de Datos ----------------------------- */
-const User = require('./src/models/userSchema')
-const user = new User()
+// const User = require('./src/models/userSchema')
+// const user = new User()
 
 const MensajesDaoFactory = require('./src/DAOs/MensajesDaoFactory')
 const mensajes = MensajesDaoFactory.getDao()
+console.log('MensajesDaoFactory.getDao() => ', mensajes)
 
 const ProductosDaoFactory = require('./src/DAOs/ProductosDaoFactory')
 const productos = ProductosDaoFactory.getDao()
+console.log('ProductosDaoFactory.getDao() => ', productos)
 
 /* ------------------------------- Mensajería ------------------------------- */
 const { enviarMail } = require('./src/services/enviaEmail.js')

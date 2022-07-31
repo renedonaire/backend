@@ -53,22 +53,26 @@ passport.use(
 			passReqToCallback: true,
 		},
 		async (req, email, password, done) => {
-			const user = await User.findOne({ email: email })
-			if (!user) {
-				return done(
-					null,
-					false,
-					req.flash('signinMessage', 'No se encontró el usuario')
-				)
+			try {
+				const user = await User.findOne({ email: email })
+				if (!user) {
+					return done(
+						null,
+						false,
+						req.flash('signinMessage', 'No se encontró el usuario')
+					)
+				}
+				if (!user.comparePassword(password)) {
+					return done(
+						null,
+						false,
+						req.flash('signinMessage', 'Password incorrecto')
+					)
+				}
+				return done(null, user)
+			} catch (error) {
+				console.log('error en local-auth', error)
 			}
-			if (!user.comparePassword(password)) {
-				return done(
-					null,
-					false,
-					req.flash('signinMessage', 'Password incorrecto')
-				)
-			}
-			return done(null, user)
 		}
 	)
 )
