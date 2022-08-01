@@ -9,7 +9,7 @@ const data = {
 }
 
 obtenerProductos = async () => {
-	const response = await axios.get('http://localhost:8080/api/productos')
+	const response = await axios.get('http://localhost:8080/api/getProducts')
 	console.log(response.data)
 	return response.data
 }

@@ -22,8 +22,8 @@ const Productos = require('../models/productosMongoDb.js')
 const productos = new Productos()
 
 /* -------------------------------- Rutas API ------------------------------- */
-router.get('/api/productos', async (req, res) => {
-	loggerConsola.info('Ruta /api/productos, método GET')
+router.get('/api/getProducts', async (req, res) => {
+	loggerConsola.info('Ruta /api/getProducts, método GET')
 	const arrayProductos = await productos.getProducts()
 	res.status(200).send(arrayProductos)
 })
