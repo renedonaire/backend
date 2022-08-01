@@ -35,7 +35,31 @@ module.exports = class Productos {
 				.toArray()
 			return result
 		} catch (error) {
-			return { Error: `${error}` }
+			return { 'Error al obtener ': `${error}` }
+		}
+	}
+
+	async updateProduct(producto) {
+		try {
+			const result = await client
+				.db(this.baseDatos)
+				.collection(this.coleccion)
+				.updateOne({ code: producto.code }, { $set: producto })
+			return result
+		} catch (error) {
+			return { 'Error al actualizar ': `${error}` }
+		}
+	}
+
+	async deleteProduct(code) {
+		try {
+			const result = await client
+				.db(this.baseDatos)
+				.collection(this.coleccion)
+				.deleteOne({ code: code })
+			return result
+		} catch (error) {
+			return { 'Error al eliminar ': `${error}` }
 		}
 	}
 }

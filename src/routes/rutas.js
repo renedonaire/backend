@@ -74,6 +74,12 @@ router.get('/productos', isAuth, async (req, res) => {
 	})
 })
 
+router.get('/api/productos', async (req, res) => {
+	loggerConsola.info('Ruta /api/productos, método GET')
+	const arrayProductos = await productos.getProducts()
+	res.status(200).send(arrayProductos)
+})
+
 router.get('/carrito', isAuth, async (req, res) => {
 	loggerConsola.info('Ruta /carrito, método GET')
 	res.render('../views/partials/carrito.hbs', {
@@ -175,18 +181,17 @@ router.get('/datos', (req, res) => {
 	)
 })
 
-// router.post('/add', isAuth, (req, res) => {
-// 	console.log('REQ: ', req.body)
-// 	loggerConsola.info('Ruta /add, método POST')
-// 	const product = {
-// 		code: req.code,
-// 		title: req.title,
-// 		price: req.price,
-// 		qty: req.qty,
-// 	}
-// 	console.log('product: ', product)
-// 	res.send(product)
-// })
+router.post('/addProduct', isAuth, async (req, res) => {
+	loggerConsola.info('Ruta /addProduct, método POST')
+	const producto = {
+		title: req.body.title,
+		price: req.body.price,
+		thumbnail: req.file.thumbnail,
+		code: req.body.code,
+	}
+	await productos.saveProduct(producto)
+	res.redirect('/productos')
+})
 
 const { variosProductos } = require('../api/fakerApi.js')
 router.get('/api/productos-test', async (req, res) => {
