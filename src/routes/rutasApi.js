@@ -28,6 +28,27 @@ router.get('/api/getProducts', async (req, res) => {
 	res.status(200).send(arrayProductos)
 })
 
+router.post('/api/saveProduct', async (req, res) => {
+	loggerConsola.info('Ruta /api/saveProduct, método POST')
+	const producto = req.body
+	const result = await productos.saveProduct(producto)
+	res.status(200).send(result)
+})
+
+router.put('/api/updateProduct', async (req, res) => {
+	loggerConsola.info('Ruta /api/updateProduct, método PUT')
+	const producto = req.body
+	const result = await productos.updateProduct(producto)
+	res.status(200).send(result)
+})
+
+router.delete('/api/deleteProduct/:code', async (req, res) => {
+	loggerConsola.info('Ruta /api/deleteProduct, método DELETE')
+	const code = req.params.code
+	const result = await productos.deleteProduct(code)
+	res.status(200).send(result)
+})
+
 router.get('/api/randoms', (req, res) => {
 	loggerConsola.info('Ruta /api/randoms, método GET')
 	const cant = parseInt(req.query.cant) || 100000000
